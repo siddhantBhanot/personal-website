@@ -77,8 +77,17 @@ export function Sidebar() {
   return (
     <div className="nn-sidebar-slot">
       <aside className={`nn-side ${mobileOpen ? "is-mobile-open" : ""}`}>
-        {/* Subtle architectural Jaali background on sidebar */}
-        <JaaliBackgroundPattern className="opacity-[0.025] dark:opacity-[0.035]" />
+        {/* Prominent Architectural Jaali Background on Sidebar */}
+        <JaaliBackgroundPattern
+          patternId="sidebar-jaali"
+          className="opacity-[0.22] dark:opacity-[0.28] text-[var(--accent-gold)]"
+          strokeWidth={1.1}
+        />
+        {/* Subtle stone wash gradient over jaali */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[var(--bg)]/30 via-transparent to-[var(--bg)]/50"
+          aria-hidden="true"
+        />
 
         {/* Profile Info with Cusped Jharokha Arch */}
         <div className="nn-side-profile relative z-10">
@@ -105,22 +114,8 @@ export function Sidebar() {
           </Link>
 
           <p className="nn-side-name mt-1">
-            <Link
-              href="/"
-              className="text-[var(--ink)] no-underline group leading-snug block"
-            >
-              <span className="group-hover:text-[var(--accent)] transition-colors">
-                siddhant
-              </span>{" "}
-              <span
-                style={{ fontFamily: "var(--font-devanagari)" }}
-                className="text-[13px] font-normal text-[var(--accent)] tracking-wide opacity-90 inline-block align-baseline"
-              >
-                (सिद्धांत)
-              </span>{" "}
-              <span className="block sm:inline lg:block text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors">
-                bhanot
-              </span>
+            <Link href="/" className="text-[var(--ink)] no-underline hover:text-[var(--accent)]">
+              {profile.name.toLowerCase()}
             </Link>
           </p>
           <span className="nn-side-role">backend engineer • 4+ yoe</span>

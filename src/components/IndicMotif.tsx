@@ -2,12 +2,16 @@ import React from "react";
 
 /**
  * Geometric 8-point star & diamond Jaali (lattice screen) SVG pattern.
- * Creates an authentic stone fretwork atmosphere with ultra-low opacity.
+ * Creates an authentic stone fretwork screen.
  */
 export function JaaliBackgroundPattern({
-  className = "opacity-[0.035] dark:opacity-[0.04]",
+  className = "opacity-20 dark:opacity-25 text-[var(--accent-gold)]",
+  strokeWidth = 1,
+  patternId = "indic-jaali",
 }: {
   className?: string;
+  strokeWidth?: number;
+  patternId?: string;
 }) {
   return (
     <div
@@ -17,34 +21,83 @@ export function JaaliBackgroundPattern({
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern
-            id="indic-jaali"
-            width="48"
-            height="48"
+            id={patternId}
+            width="56"
+            height="56"
             patternUnits="userSpaceOnUse"
           >
-            {/* 8-point geometric star jaali cell */}
-            <path
-              d="M 24 0 L 31 10 L 41 7 L 38 17 L 48 24 L 38 31 L 41 41 L 31 38 L 24 48 L 17 38 L 7 41 L 10 31 L 0 24 L 10 17 L 7 7 L 17 10 Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.8"
-            />
-            {/* Concentric octagram inner diamond */}
-            <circle cx="24" cy="24" r="5" fill="none" stroke="currentColor" strokeWidth="0.6" />
+            {/* Center 8-pointed star */}
             <polygon
-              points="24,19 29,24 24,29 19,24"
+              points="28,4 34,18 48,18 38,28 48,38 34,38 28,52 22,38 8,38 18,28 8,18 22,18"
               fill="none"
               stroke="currentColor"
-              strokeWidth="0.6"
+              strokeWidth={strokeWidth}
             />
-            {/* Corner interlock joints */}
-            <circle cx="0" cy="0" r="2.5" fill="none" stroke="currentColor" strokeWidth="0.6" />
-            <circle cx="48" cy="0" r="2.5" fill="none" stroke="currentColor" strokeWidth="0.6" />
-            <circle cx="0" cy="48" r="2.5" fill="none" stroke="currentColor" strokeWidth="0.6" />
-            <circle cx="48" cy="48" r="2.5" fill="none" stroke="currentColor" strokeWidth="0.6" />
+            {/* Central Bindu Octagram */}
+            <circle cx="28" cy="28" r="4.5" fill="none" stroke="currentColor" strokeWidth={strokeWidth * 0.8} />
+            <circle cx="28" cy="28" r="1.5" fill="currentColor" />
+
+            {/* Corner 8-pointed star fragments creating interlocking grid */}
+            {/* Top-left */}
+            <polygon
+              points="0,0 6,0 10,10 0,6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth * 0.75}
+            />
+            <circle cx="0" cy="0" r="8" fill="none" stroke="currentColor" strokeWidth={strokeWidth * 0.6} />
+
+            {/* Top-right */}
+            <polygon
+              points="56,0 50,0 46,10 56,6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth * 0.75}
+            />
+            <circle cx="56" cy="0" r="8" fill="none" stroke="currentColor" strokeWidth={strokeWidth * 0.6} />
+
+            {/* Bottom-left */}
+            <polygon
+              points="0,56 6,56 10,46 0,50"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth * 0.75}
+            />
+            <circle cx="0" cy="56" r="8" fill="none" stroke="currentColor" strokeWidth={strokeWidth * 0.6} />
+
+            {/* Bottom-right */}
+            <polygon
+              points="56,56 50,56 46,46 56,50"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth * 0.75}
+            />
+            <circle cx="56" cy="56" r="8" fill="none" stroke="currentColor" strokeWidth={strokeWidth * 0.6} />
+
+            {/* Diagonal lattice connectors connecting stars */}
+            <line x1="18" y1="28" x2="0" y2="28" stroke="currentColor" strokeWidth={strokeWidth * 0.7} />
+            <line x1="38" y1="28" x2="56" y2="28" stroke="currentColor" strokeWidth={strokeWidth * 0.7} />
+            <line x1="28" y1="18" x2="28" y2="0" stroke="currentColor" strokeWidth={strokeWidth * 0.7} />
+            <line x1="28" y1="38" x2="28" y2="56" stroke="currentColor" strokeWidth={strokeWidth * 0.7} />
+
+            {/* Diamond facets */}
+            <polygon
+              points="28,10 32,18 28,26 24,18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth * 0.5}
+              strokeDasharray="2 2"
+            />
+            <polygon
+              points="28,30 32,38 28,46 24,38"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth * 0.5}
+              strokeDasharray="2 2"
+            />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill="url(#indic-jaali)" />
+        <rect width="100%" height="100%" fill={`url(#${patternId})`} />
       </svg>
     </div>
   );
