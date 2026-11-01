@@ -3,64 +3,71 @@ export interface TechCategory {
   description: string;
   skills: {
     name: string;
-    level: string; // e.g. "Primary", "Proficient", "Familiar"
+    level: "Primary" | "Proficient" | "Familiar";
     note?: string;
   }[];
 }
 
 export const techStackData: TechCategory[] = [
   {
-    category: "Languages & Runtimes",
-    description: "Core backend development languages, focusing on concurrency and memory management.",
+    category: "Languages & Core Runtimes",
+    description: "Core JVM and multi-paradigm languages used for enterprise backend development.",
     skills: [
-      { name: "Go (Golang)", level: "Primary", note: "Goroutines, channels, microservices" },
-      { name: "Java", level: "Primary", note: "Spring Boot, JVM tuning, multithreading" },
-      { name: "Python", level: "Proficient", note: "FastAPI, async workers, scripts" },
-      { name: "SQL", level: "Primary", note: "Complex queries, EXPLAIN ANALYZE, indexing" },
-      { name: "TypeScript", level: "Proficient", note: "Node.js, tooling & frontend APIs" },
+      { name: "Java", level: "Primary", note: "Spring Boot, multithreading, enterprise APIs" },
+      { name: "Kotlin", level: "Primary", note: "Coroutines, Spring WebFlux, concise reactive code" },
+      { name: "SQL", level: "Primary", note: "Complex indexing, query optimization, pagination" },
+      { name: "Python", level: "Proficient", note: "Scripting, data modeling, automation" },
+      { name: "JavaScript / TypeScript", level: "Proficient", note: "Node.js, React.JS, Next.JS full-stack interfaces" },
+      { name: "C++", level: "Familiar", note: "Data structures, algorithmic foundations" },
     ],
   },
   {
-    category: "Databases & Storage Engines",
-    description: "Relational, document, and key-value datastores tuned for high throughput and consistency.",
+    category: "Frameworks & Backend Architecture",
+    description: "Reactive and enterprise frameworks for high-throughput distributed microservices.",
     skills: [
-      { name: "PostgreSQL", level: "Primary", note: "B-Trees, partitioning, MVCC, replicas" },
-      { name: "Redis", level: "Primary", note: "Caching, Pub/Sub, sorted sets, Redlock" },
-      { name: "MySQL", level: "Proficient", note: "InnoDB engine, replication topologies" },
-      { name: "MongoDB", level: "Proficient", note: "Document models, aggregation pipelines" },
-      { name: "Elasticsearch", level: "Proficient", note: "Inverted indexes, log search" },
+      { name: "Spring Boot", level: "Primary", note: "Microservices, REST APIs, TMF standards" },
+      { name: "Spring WebFlux", level: "Primary", note: "Non-blocking reactive event loops, 96M+ req/mo" },
+      { name: "Spring Security", level: "Primary", note: "JWT, LDAP integration, RBAC" },
+      { name: "SAGA Step Framework", level: "Primary", note: "Distributed transaction orchestration & recovery" },
+      { name: "Hibernate / JPA", level: "Proficient", note: "ORM, transaction boundaries, caching" },
+      { name: "React.JS & Next.JS", level: "Proficient", note: "Administrative dashboards & modern UI" },
     ],
   },
   {
-    category: "Streaming & Messaging",
-    description: "Asynchronous communication, event backbones, and message broker architectures.",
+    category: "Databases & Event Streaming",
+    description: "Document, relational, cache, and messaging systems tuned for financial throughput.",
     skills: [
-      { name: "Apache Kafka", level: "Primary", note: "Partitions, consumer groups, exact-once" },
-      { name: "RabbitMQ", level: "Proficient", note: "Routing keys, dead-letter queues" },
-      { name: "Redis Streams", level: "Primary", note: "Consumer groups, lightweight streaming" },
-      { name: "gRPC & Protocol Buffers", level: "Primary", note: "High-performance RPC, HTTP/2" },
+      { name: "MongoDB", level: "Primary", note: "Document datastores for lending workflows" },
+      { name: "Redis", level: "Primary", note: "Low-latency distributed caching, sessions" },
+      { name: "Apache Kafka", level: "Primary", note: "Event-driven architecture & asynchronous messaging" },
+      { name: "MySQL", level: "Primary", note: "Relational modeling, transactions, InnoDB" },
+      { name: "Elasticsearch", level: "Proficient", note: "Distributed indexing & search queries" },
     ],
   },
   {
-    category: "Infrastructure & Cloud",
-    description: "Containerization, orchestration, and continuous deployment workflows.",
+    category: "DevOps, Cloud & Testing Tools",
+    description: "Automation, CI/CD, performance benchmarks, and code quality analysis.",
     skills: [
-      { name: "Docker", level: "Primary", note: "Multi-stage builds, container security" },
-      { name: "Kubernetes", level: "Proficient", note: "Deployments, services, configmaps" },
-      { name: "AWS", level: "Proficient", note: "ECS, EKS, RDS, SQS, S3, IAM, VPC" },
-      { name: "Linux / Shell", level: "Primary", note: "Bash, debugging, system diagnostics" },
-      { name: "CI / CD", level: "Proficient", note: "GitHub Actions, automated test pipelines" },
+      { name: "Docker", level: "Primary", note: "Containerization, microservices deployment" },
+      { name: "Git", level: "Primary", note: "Branching strategies, hotfixes, version control" },
+      { name: "Jenkins", level: "Proficient", note: "CI/CD build pipelines & automated releases" },
+      { name: "SonarQube", level: "Primary", note: "Static code analysis & vulnerability prevention" },
+      { name: "Postman", level: "Primary", note: "API testing, contract verification" },
+      { name: "Kibana", level: "Proficient", note: "Distributed log aggregation & incident triage" },
+      { name: "Apache JMeter", level: "Proficient", note: "Load testing & concurrency benchmarking" },
+      { name: "Mockito, Mockk & JUnit", level: "Primary", note: "Unit & integration test suites" },
     ],
   },
   {
-    category: "Observability & Reliability",
-    description: "Distributed tracing, telemetry, monitoring, and proactive error tracking.",
+    category: "Engineering Concepts & Methodologies",
+    description: "Architectural disciplines and industry compliance standards applied in production.",
     skills: [
-      { name: "Prometheus", level: "Primary", note: "Custom metrics, SLI/SLO alerts" },
-      { name: "Grafana", level: "Primary", note: "System dashboards, latency heatmaps" },
-      { name: "OpenTelemetry", level: "Proficient", note: "Distributed trace propagation" },
-      { name: "Sentry", level: "Proficient", note: "Exception capturing & triage" },
+      { name: "Distributed Systems & SAGA", level: "Primary", note: "Orchestration, compensating transactions" },
+      { name: "Reactive Programming", level: "Primary", note: "Project Reactor, non-blocking I/O backpressure" },
+      { name: "High-Level & Low-Level Design", level: "Primary", note: "HLD/LLD, SOLID, Gang of Four design patterns" },
+      { name: "RBI Security Compliance", level: "Primary", note: "AES-based API payload encryption filters" },
+      { name: "TMF-Compliant APIs", level: "Proficient", note: "Telecommunications open digital architecture" },
+      { name: "Microservices Decomposition", level: "Primary", note: "Monolith extraction, domain boundaries" },
     ],
   },
 ];
-

@@ -15,7 +15,7 @@ export default function ContactIndexPage() {
         <SectionArchBadge label="get in touch" />
         <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">contact</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
-          reach out for distributed systems design, backend architecture, or senior roles.
+          reach out for backend engineering, reactive distributed systems, or architecture consulting.
         </p>
       </div>
 
@@ -23,7 +23,7 @@ export default function ContactIndexPage() {
         <HaveliCornerBracket position="top-right" />
         <div className="nn-prose">
           <p>
-            i am based in india (ist, utc+05:30) and accustomed to asynchronous collaboration with globally distributed engineering teams.
+            i am based in {profile.location.toLowerCase()} (ist, utc+05:30) and available for backend engineering discussions, system design reviews, and senior development roles.
           </p>
         </div>
       </div>

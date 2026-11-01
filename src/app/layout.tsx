@@ -3,9 +3,9 @@ import { Sidebar } from "@/components/Sidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "siddhant bhanot: backend systems, concurrency, and architecture",
+  title: "siddhant bhanot: backend systems, reactive microservices, and saga architecture",
   description:
-    "Backend software engineer with 4+ years of production experience in high-throughput distributed systems, database internals, and concurrency control.",
+    "Backend software development engineer with 4+ years of production experience in high-throughput reactive microservices, SAGA architectures, and fintech platforms processing 96M+ requests/month.",
 };
 
 export default function RootLayout({

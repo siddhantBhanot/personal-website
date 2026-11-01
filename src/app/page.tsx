@@ -22,7 +22,7 @@ export default function HomePage() {
       <section id="about" className="flex flex-col gap-6 relative">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <SectionArchBadge label="architectural engineering" />
+            <SectionArchBadge label="backend software engineer" />
             <h1 className="text-[38px] sm:text-[44px] leading-[46px] sm:leading-[50px] font-light text-[var(--ink)] tracking-tight mt-1">
               about me
             </h1>
@@ -43,7 +43,7 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>leetcode (600+ solved)</span>
+              <span>leetcode</span>
               <span className="nn-arrow" aria-hidden="true">→</span>
             </a>
           </div>
@@ -53,29 +53,15 @@ export default function HomePage() {
         <div className="jharokha-alcove">
           <HaveliCornerBracket position="top-right" />
           <div className="nn-prose">
-            <p>
-              i am a backend software engineer with 4+ years of production experience based in india.
-            </p>
-            <p>
-              i specialize in high-concurrency distributed systems, event-driven pipelines, database internals and indexing optimizations, and resilient api infrastructure.
-            </p>
-            <p>
-              currently designing distributed transaction processing and ingestion platforms handling 150k+ events/sec with go, postgresql, kafka, and redis.
-            </p>
+            {profile.bio.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
           </div>
         </div>
 
+        {/* Focus Tags */}
         <div className="flex flex-wrap gap-2 pt-1">
-          {[
-            "distributed systems",
-            "high throughput (150k+ rps)",
-            "database internals",
-            "concurrency control",
-            "apache kafka",
-            "golang",
-            "postgresql",
-            "redis internals",
-          ].map((tag) => (
+          {profile.focusAreas.map((tag) => (
             <span key={tag} className="nn-tag">
               {tag}
             </span>
@@ -91,7 +77,7 @@ export default function HomePage() {
           <h2>
             <span className="text-[var(--accent)] font-serif font-light">॥</span> experience
           </h2>
-          <span className="nn-section-aside">4+ years · since 2021</span>
+          <span className="nn-section-aside">4+ years · freecharge (axis bank) & comviva</span>
         </div>
 
         <ol className="nn-timeline">
@@ -117,9 +103,32 @@ export default function HomePage() {
                   <li key={hIdx}>{h}</li>
                 ))}
               </ul>
+
+              <div className="flex flex-wrap gap-1.5 pt-3">
+                {exp.technologies.map((t) => (
+                  <span key={t} className="text-[11px] font-mono text-[var(--ink-faint)] bg-[var(--surface-sunk)] px-2 py-0.5 rounded">
+                    {t.toLowerCase()}
+                  </span>
+                ))}
+              </div>
             </li>
           ))}
         </ol>
+
+        {/* Education Highlight */}
+        <div className="mt-4 p-4 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-wrap items-baseline justify-between gap-2">
+          <div>
+            <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">education</span>
+            <span className="text-sm font-medium text-[var(--ink)]">{profile.education.degree}</span>
+            <span className="text-xs text-[var(--ink-soft)] block font-mono mt-0.5">
+              {profile.education.institution} • {profile.education.location}
+            </span>
+          </div>
+          <div className="text-right">
+            <span className="text-sm font-mono text-[var(--accent)] font-semibold">CGPA: {profile.education.cgpa}</span>
+            <span className="text-xs text-[var(--ink-faint)] block font-mono">{profile.education.period}</span>
+          </div>
+        </div>
       </section>
 
       <JaaliFriezeDivider />
@@ -128,7 +137,7 @@ export default function HomePage() {
       <section id="projects" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> projects
+            <span className="text-[var(--accent)] font-serif font-light">॥</span> projects & architectures
           </h2>
           <span className="nn-section-aside">{projects.length} systems</span>
         </div>
@@ -145,7 +154,7 @@ export default function HomePage() {
                 <span className="nn-link-desc">{proj.data.summary}</span>
                 {proj.data.metrics && (
                   <span className="nn-link-meta">
-                    scale: {proj.data.metrics}
+                    impact: {proj.data.metrics}
                   </span>
                 )}
               </Link>
@@ -256,11 +265,12 @@ export default function HomePage() {
           <h2>
             <span className="text-[var(--accent)] font-serif font-light">॥</span> contact
           </h2>
+          <span className="nn-section-aside">{profile.location.toLowerCase()}</span>
         </div>
 
         <div className="nn-prose">
           <p>
-            feel free to reach out for backend architecture discussions, distributed systems design, or senior engineering roles.
+            feel free to reach out for backend architecture discussions, high-throughput distributed systems, or senior software engineering roles.
           </p>
         </div>
 
