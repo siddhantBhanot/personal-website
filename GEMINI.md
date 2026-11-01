@@ -4,9 +4,13 @@
 - **Developer Identity**: Senior / Backend-heavy Software Engineer with 4+ years of production experience.
 - **Specialization**: High-throughput distributed systems, event-driven architectures, database internals & query optimization, resilient APIs, and concurrency control.
 - **UX Reference Model**: Inspired by [`cneuralnets.xyz`](https://cneuralnets.xyz/) — Split two-column layout with fixed desktop sidebar navigation, spacious single-column reading stage, clean editorial typography, and high information density without visual clutter.
-- **Aesthetic Direction**: **"Indic-Minimal"** — Sophisticated, grounded, clean, and quiet craftsmanship.
-  - **Dark Mode (Default)**: Deep Kohl / Mineral Umber Charcoal (`#111213`), Ivory Silk ink (`#ecefe9`), warm terracotta rust accent (`#e0683b`), and warm saffron/haldi gold (`#d97d26`).
-  - **Light Mode**: Warm handmade paper / kora linen (`#f6f4ee`), deep carbon ink (`#1b1d1c`), and earthy terracotta clay (`#b84724`).
+- **Aesthetic Direction**: **"Indic-Architectural Minimal"** — Deeply grounded in Indian architectural heritage (Rajasthan Havelis, Stepwells / Baolis, Stone Screen Jali Fretwork, and Cusped Arches):
+  - **Arches & Alcoves**: Cusped multi-foil Jharokha arch silhouette framing the profile mark; Jharokha stone alcove styling for key summaries and callouts (`.jharokha-alcove`).
+  - **Subtle Jaali Fretwork**: Geometric 8-pointed star & diamond jaali screen pattern (`JaaliBackgroundPattern`) at low opacity (`3.5%`) on background & sidebar; fine stone lintel frieze dividers (`JaaliFriezeDivider`) between major sections.
+  - **Stepped Baoli Geometry**: Stepped Chand Baori inverted diamond markers (`SteppedBaoliDot`) on timeline items; stepped stone bracket corners (`HaveliCornerBracket`) on project cards.
+  - **Palette**:
+    - **Dark Mode (Default)**: Deep Kohl / Mineral Umber Charcoal (`#0f1011`), Haveli Courtyard Stone (`#161819`), Ivory Silk ink (`#ecefe9`), warm terracotta rust accent (`#df683c`), and warm saffron/haldi gold (`#d48832`).
+    - **Light Mode**: Kora Linen & Dholpur Light Sandstone (`#f7f4ec`), Chhatri Marble White (`#fefcf7`), aged inscription carbon ink (`#1a1c1a`), and Red Fort Terracotta clay (`#b44422`).
   - **Typography**: Editorial Serif (`Spectral`) for headings (font-weight 300), Grotesk (`Hanken Grotesk`) for body, and Mono (`IBM Plex Mono`) for metadata, metrics, and dates.
 
 ---
@@ -29,7 +33,8 @@ personal-website/
 │   │   ├── layout.tsx           # Shell holding Sidebar + Main reading stage
 │   │   └── globals.css          # Design tokens, fonts, timeline, pill, and link styles
 │   ├── components/
-│   │   ├── Sidebar.tsx          # Fixed desktop sidebar with active section tracking, theme toggle, and links
+│   │   ├── Sidebar.tsx          # Fixed desktop sidebar with Jharokha arch avatar & active tracking
+│   │   ├── IndicMotif.tsx       # Architectural SVG elements (Jaali screens, Jharokha arch, Baoli dots)
 │   │   └── ContactEmail.tsx     # One-click email copy & compose button
 │   ├── data/
 │   │   ├── profile.ts           # Bio, social links, resume link
@@ -41,9 +46,10 @@ personal-website/
 
 ---
 
-## 3. UI/UX Rules from `cneuralnets.xyz`
-- Maintain the two-column structure: Fixed desktop sidebar (`~254px`) on the left, spacious main reading stage (`max-width: 620px`) on the right.
-- Timeline items have left-border indicators with dot markers (`.nn-tl-item`, `.nn-tl-dot`).
+## 3. UI/UX Rules from `cneuralnets.xyz` + Indic Architecture
+- Maintain the two-column structure: Fixed desktop sidebar (`~256px`) on the left, spacious main reading stage (`max-width: 620px`) on the right.
+- Timeline items use `.nn-tl-item` with architectural stepped Baoli diamond markers (`SteppedBaoliDot`).
+- Section transitions use delicate stone frieze dividers (`JaaliFriezeDivider`) without visual loudness.
 - Project, Note, and Blog listings use `.nn-links` and `.nn-link` with subtle title color transitions and animated directional arrows `→`.
 - Navigation tracks on-screen sections via `IntersectionObserver` to highlight the active section indicator.
-- Never add flashy SaaS gradient buttons, unnecessary popups, or noisy floating elements. Preserve the quiet, intellectual clarity of the design.
+- Never add noisy SaaS gradient buttons or intrusive popups. Preserve the quiet craftsmanship of Indian architectural geometry and editorial typography.
