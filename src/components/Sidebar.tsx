@@ -105,8 +105,22 @@ export function Sidebar() {
           </Link>
 
           <p className="nn-side-name mt-1">
-            <Link href="/" className="text-[var(--ink)] no-underline hover:text-[var(--accent)]">
-              {profile.name.toLowerCase()}
+            <Link
+              href="/"
+              className="text-[var(--ink)] no-underline group leading-snug block"
+            >
+              <span className="group-hover:text-[var(--accent)] transition-colors">
+                siddhant
+              </span>{" "}
+              <span
+                style={{ fontFamily: "var(--font-devanagari)" }}
+                className="text-[13px] font-normal text-[var(--accent)] tracking-wide opacity-90 inline-block align-baseline"
+              >
+                (सिद्धांत)
+              </span>{" "}
+              <span className="block sm:inline lg:block text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors">
+                bhanot
+              </span>
             </Link>
           </p>
           <span className="nn-side-role">backend engineer • 4+ yoe</span>

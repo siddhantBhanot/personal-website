@@ -72,6 +72,7 @@
   --hairline: 1px;
   --duration: 180ms;
   --font-serif: "Spectral", "Iowan Old Style", Georgia, serif;
+  --font-devanagari: "Martel", "Spectral", serif;
   --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
