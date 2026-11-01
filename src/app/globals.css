@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-primary: #0e0e11;
+    --bg-surface: #16161a;
+    --bg-surface-hover: #1f1f25;
+    --border-color: #27272f;
+    --border-subtle: #1e1e24;
+    --text-primary: #f5f4f0;
+    --text-secondary: #9da3af;
+    --text-muted: #6b7280;
+    --accent-terracotta: #ea580c;
+    --accent-terracotta-light: #fb923c;
+    --accent-amber: #d97706;
+    --accent-glow: rgba(234, 88, 12, 0.12);
+    --badge-bg: rgba(234, 88, 12, 0.1);
+    --badge-border: rgba(234, 88, 12, 0.25);
+    --code-bg: #131317;
+  }
+
+  html.light {
+    --bg-primary: #fbf9f4;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f5f2ea;
+    --border-color: #e5dfd5;
+    --border-subtle: #eeebe3;
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+    --accent-terracotta: #c2410c;
+    --accent-terracotta-light: #ea580c;
+    --accent-amber: #b45309;
+    --accent-glow: rgba(194, 65, 12, 0.08);
+    --badge-bg: rgba(194, 65, 12, 0.08);
+    --badge-border: rgba(194, 65, 12, 0.2);
+    --code-bg: #f4efe6;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 100vh;
+}
+
+/* Subtle Indic Jali Geometric Pattern for backgrounds or borders */
+.indic-grid-bg {
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.indic-border-top {
+  position: relative;
+}
+
+.indic-border-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-terracotta) 50%, transparent 100%);
+  opacity: 0.8;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-terracotta);
 }
