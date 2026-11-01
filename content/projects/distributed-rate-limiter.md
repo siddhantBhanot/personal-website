@@ -13,3 +13,4 @@ featured: true
 - Utilized Redis Lua scripting for atomic execution of sliding window logs, eliminating distributed race conditions.
 - Added a two-tier in-memory token bucket on local Go nodes with sync intervals to prevent Redis hot-key throttling.
 - Integrated circuit breaker fallbacks ensuring that even in case of full Redis cluster failover, traffic is gracefully degraded rather than dropped.
+

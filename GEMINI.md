@@ -3,11 +3,11 @@
 ## 1. Project Overview & Persona
 - **Developer Identity**: Senior / Backend-heavy Software Engineer with 4+ years of production experience.
 - **Specialization**: High-throughput distributed systems, event-driven architectures, database internals & query optimization, resilient APIs, and concurrency control.
-- **Aesthetic Direction**: **"Indic-Minimal"** — Sophisticated, grounded, clean, and professional.
-  - Not quirky or playful; avoids flashy SaaS animations or generic bootstrap templates.
-  - Grounded in warm, tasteful earth and mineral tones (deep kohl/charcoal, raw clay/terracotta, warm turmeric/saffron amber, and raw paper/kora linen).
-  - Default: **Dark Mode**, with a full **Light Mode** toggle.
-  - Engineering-first layout: Clean metrics, monospace data tables, architecture diagrams (Mermaid-ready), and crisp typography.
+- **UX Reference Model**: Inspired by [`cneuralnets.xyz`](https://cneuralnets.xyz/) — Split two-column layout with fixed desktop sidebar navigation, spacious single-column reading stage, clean editorial typography, and high information density without visual clutter.
+- **Aesthetic Direction**: **"Indic-Minimal"** — Sophisticated, grounded, clean, and quiet craftsmanship.
+  - **Dark Mode (Default)**: Deep Kohl / Mineral Umber Charcoal (`#111213`), Ivory Silk ink (`#ecefe9`), warm terracotta rust accent (`#e0683b`), and warm saffron/haldi gold (`#d97d26`).
+  - **Light Mode**: Warm handmade paper / kora linen (`#f6f4ee`), deep carbon ink (`#1b1d1c`), and earthy terracotta clay (`#b84724`).
+  - **Typography**: Editorial Serif (`Spectral`) for headings (font-weight 300), Grotesk (`Hanken Grotesk`) for body, and Mono (`IBM Plex Mono`) for metadata, metrics, and dates.
 
 ---
 
@@ -15,31 +15,23 @@
 
 ```
 personal-website/
-├── GEMINI.md                    # This file - Project conventions & Agent guidelines
-├── content/                     # Markdown / MDX storage for developer writing
-│   ├── notes/                   # Deep-dive engineering notes (System Design, DBs, Concurrency)
+├── GEMINI.md                    # Antigravity conventions & agent guidelines
+├── content/                     # Markdown storage for developer writing
+│   ├── notes/                   # Deep-dive engineering notes (DB internals, concurrency, locking)
 │   ├── blogs/                   # Thought leadership, essays, retrospectives
 │   └── projects/                # Technical case studies & architecture deep-dives
 ├── src/
-│   ├── app/                     # Next.js App Router pages
-│   │   ├── page.tsx             # Home: Hero, Experience highlights, Featured Projects, Notes
-│   │   ├── experience/page.tsx  # Dedicated Career Timeline & Impact
-│   │   ├── projects/page.tsx    # Technical Projects with metrics & architecture
-│   │   ├── notes/page.tsx       # Engineering Notes directory
-│   │   ├── notes/[slug]/page.tsx# Single note viewer
-│   │   ├── blogs/page.tsx       # Blog post directory
-│   │   ├── blogs/[slug]/page.tsx# Single blog post viewer
-│   │   ├── contact/page.tsx     # Contact & communication channels
-│   │   ├── layout.tsx           # Global shell (Header, Nav, Footer, ThemeProvider)
-│   │   └── globals.css          # CSS Variables for Dark & Light Indic themes
-│   ├── components/              # Modular UI components
-│   │   ├── Navbar.tsx           # Top navigation with links & theme toggle
-│   │   ├── Footer.tsx           # Footer with LeetCode, GitHub, LinkedIn, Resume
-│   │   ├── ThemeToggle.tsx      # Dark / Light mode switch
-│   │   ├── IndicMotif.tsx       # Subtle geometric decorative elements
-│   │   ├── TechStackGrid.tsx    # Grouped backend tech stack
-│   │   └── MetricCard.tsx       # Systems metrics cards (RPS, Latency, Scale)
-│   ├── data/                    # Structured data
+│   ├── app/                     # Next.js App Router
+│   │   ├── page.tsx             # Main canvas (about, experience, projects, notes, blogs, stack, contact)
+│   │   ├── notes/[slug]/page.tsx# Single note reader with clean serif/mono typography
+│   │   ├── blogs/[slug]/page.tsx# Single blog post reader
+│   │   ├── projects/page.tsx    # Dedicated systems & architecture index
+│   │   ├── layout.tsx           # Shell holding Sidebar + Main reading stage
+│   │   └── globals.css          # Design tokens, fonts, timeline, pill, and link styles
+│   ├── components/
+│   │   ├── Sidebar.tsx          # Fixed desktop sidebar with active section tracking, theme toggle, and links
+│   │   └── ContactEmail.tsx     # One-click email copy & compose button
+│   ├── data/
 │   │   ├── profile.ts           # Bio, social links, resume link
 │   │   ├── experience.ts        # Work history & accomplishments
 │   │   └── tech-stack.ts        # Categorized backend skills
@@ -49,69 +41,9 @@ personal-website/
 
 ---
 
-## 3. Theme & Styling Guidelines
-
-### Color Palette (Tailwind CSS Variables)
-- **Dark Mode (Default)**:
-  - Background: `#0f0f11` (Deep Kohl / Mineral Charcoal)
-  - Card / Surface: `#17171a` (Warm Slate Slate)
-  - Border: `#28282e` (Subtle boundary)
-  - Primary Text: `#f4f3ef` (Ivory Silk)
-  - Secondary Text: `#9ca3af` (Muted Zinc)
-  - Accent / Highlights: `#e06b3a` (Warm Terracotta / Sindoor Orange) and `#d97706` (Amber / Haldi)
-- **Light Mode**:
-  - Background: `#fbf9f5` (Kora / Handmade Cotton Paper)
-  - Card / Surface: `#ffffff` (Pure Crisp White)
-  - Border: `#e7e3da` (Warm Sandstone)
-  - Primary Text: `#1a1a1e` (Deep Carbon)
-  - Secondary Text: `#57534e` (Warm Stone)
-  - Accent: `#c2410c` (Earthy Rust / Terracotta)
-
----
-
-## 4. Content Frontmatter Standards
-
-### Engineering Notes (`content/notes/*.md`):
-```yaml
----
-title: "Distributed Locking Strategies with Redis & Etcd"
-summary: "Comparative analysis of Redlock vs Etcd consensus under network partitions."
-date: "2026-10-12"
-tags: ["Distributed Systems", "Redis", "Consensus"]
-readingTime: "6 min read"
-difficulty: "Advanced"
----
-```
-
-### Blog Posts (`content/blogs/*.md`):
-```yaml
----
-title: "Lessons Learned from 4 Years in High-Throughput Backend Systems"
-summary: "Reflections on microservices, database bottlenecks, and engineering rigor."
-date: "2026-09-20"
-tags: ["Career", "Architecture", "Backend"]
-readingTime: "8 min read"
----
-```
-
-### Projects (`content/projects/*.md`):
-```yaml
----
-title: "High-Throughput Distributed Rate Limiter"
-summary: "Token bucket & sliding window counter rate limiter handling 150k+ RPS with Redis clusters."
-period: "2025 - 2026"
-role: "Lead Backend Architect"
-metrics: "150k+ RPS, p99 < 1.8ms"
-stack: ["Go", "Redis", "gRPC", "Docker", "Prometheus"]
-github: "https://github.com/..."
-live: ""
-featured: true
----
-```
-
----
-
-## 5. Coding & Antigravity Rules
-- Maintain TypeScript strictness across all components and libraries.
-- Keep components modular and server-first where possible (`'use client'` only for interactive theme toggles, filters, and mobile drawer).
-- Always ensure all external links (Resume, LeetCode, LinkedIn, GitHub) have `rel="noopener noreferrer"` and appropriate accessibility labels.
+## 3. UI/UX Rules from `cneuralnets.xyz`
+- Maintain the two-column structure: Fixed desktop sidebar (`~254px`) on the left, spacious main reading stage (`max-width: 620px`) on the right.
+- Timeline items have left-border indicators with dot markers (`.nn-tl-item`, `.nn-tl-dot`).
+- Project, Note, and Blog listings use `.nn-links` and `.nn-link` with subtle title color transitions and animated directional arrows `→`.
+- Navigation tracks on-screen sections via `IntersectionObserver` to highlight the active section indicator.
+- Never add flashy SaaS gradient buttons, unnecessary popups, or noisy floating elements. Preserve the quiet, intellectual clarity of the design.

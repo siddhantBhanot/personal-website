@@ -38,3 +38,4 @@ Decouple the client reads from cache invalidation. A background worker periodica
 
 #### 4. Stale-While-Revalidate (SWR) Pattern
 Return the expired value immediately to 9,999 callers, while sending 1 background goroutine to refresh the cache.
+

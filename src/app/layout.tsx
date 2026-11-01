@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { Sidebar } from "@/components/Sidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Siddhant Bhanot | Backend Engineer (4+ YOE) — Distributed Systems",
+  title: "siddhant bhanot: backend systems, concurrency, and architecture",
   description:
-    "Portfolio, deep-dive engineering notes, and technical articles by a backend engineer with 4+ years of experience in distributed architectures, databases, and high-concurrency systems.",
+    "Backend software engineer with 4+ years of production experience in high-throughput distributed systems, database internals, and concurrency control.",
 };
 
 export default function RootLayout({
@@ -15,33 +14,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" data-theme="dark" className="dark" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+          rel="stylesheet"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
-                  const storedTheme = localStorage.getItem('theme');
-                  if (storedTheme === 'light') {
-                    document.documentElement.classList.remove('dark');
-                    document.documentElement.classList.add('light');
-                  } else {
-                    document.documentElement.classList.remove('light');
-                    document.documentElement.classList.add('dark');
-                  }
+                  const stored = localStorage.getItem('neuralnets-theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  const theme = stored || (prefersDark ? 'dark' : 'dark');
+                  document.documentElement.setAttribute('data-theme', theme);
+                  document.documentElement.classList.toggle('dark', theme === 'dark');
+                  document.documentElement.classList.toggle('light', theme === 'light');
                 } catch (e) {}
               })();
             `,
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased selection:bg-[var(--accent-terracotta)] selection:text-white">
-        <Navbar />
-        <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
-          {children}
-        </main>
-        <Footer />
+      <body className="nn-page">
+        <div className="nn-shell">
+          <Sidebar />
+          <main className="nn-main">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

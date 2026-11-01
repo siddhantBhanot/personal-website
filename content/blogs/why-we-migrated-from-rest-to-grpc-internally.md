@@ -24,3 +24,4 @@ By migrating critical inter-service paths to gRPC:
 
 ## When Should You Keep REST?
 If you are exposing public-facing APIs to third-party developers, standard REST over JSON remains unbeatable for developer ergonomics, browser debugging, and ecosystem tooling.
+

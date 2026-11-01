@@ -13,3 +13,4 @@ featured: true
 - Leveraged Debezium CDC on PostgreSQL WAL logs to stream data mutations directly into Kafka topics without dual-write inconsistency.
 - Implemented partition key hashing algorithms ensuring strict ordering per customer ID while maintaining even consumer group parallelization.
 - Created idempotent consumer patterns with deduplication tables in Redis for zero accidental double executions.
+

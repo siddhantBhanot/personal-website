@@ -33,3 +33,4 @@ Will save you more latency and compute cost than rewriting services in a faster 
 ## 4. Default to Boring Technology
 
 PostgreSQL, Redis, Linux, and standard reliable message brokers will take you to 99% of your product scale. Resist the urge to adopt brand-new, bleeding-edge distributed stores until you have exhausted the limits of proven foundations.
+

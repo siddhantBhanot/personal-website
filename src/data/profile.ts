@@ -56,3 +56,4 @@ export const profile: ProfileData = {
     email: "siddhant.bhanot@example.com",
   },
 };
+

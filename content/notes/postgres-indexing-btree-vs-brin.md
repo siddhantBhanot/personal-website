@@ -41,3 +41,4 @@ Use BRIN when:
 - The data is append-only and strictly ordered by timestamp or sequence ID.
 - The table size is in tens of gigabytes or larger.
 - The small difference in scan time (4ms vs 12ms) is worth saving multiple gigabytes of memory cache.
+

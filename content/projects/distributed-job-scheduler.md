@@ -13,3 +13,4 @@ featured: false
 - Replaced monolithic cron instances with a decentralized leader-follower model using Redis leases.
 - Leveraged Redis Streams consumer groups with acknowledge (`XACK`) and pending entries lists (`XPENDING`) to auto-reclaim orphan tasks from dead worker pods.
 - Exposed metrics into Prometheus with custom Grafana dashboards tracking execution jitter and retry queues.
+

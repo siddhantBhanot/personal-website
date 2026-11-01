@@ -54,3 +54,4 @@ When Client A finally attempts to write with Token 34 after its long pause, the 
 
 ### Key Takeaway for Production
 If a duplicate write creates a minor duplicate job that is idempotent, a lightweight Redis lock is appropriate. But if financial balances, unique ledger operations, or cluster leader elections are at stake, always default to Etcd leases with Raft consensus and fencing tokens.
+

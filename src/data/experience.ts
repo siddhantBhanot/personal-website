@@ -53,3 +53,4 @@ export const experiences: WorkExperience[] = [
     technologies: ["Python", "FastAPI", "MySQL", "Redis", "Docker", "Git", "Linux"],
   },
 ];
+
