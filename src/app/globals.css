@@ -1,54 +1,54 @@
 @import "tailwindcss";
 
-/* Indic-inspired Design Tokens matching cneuralnets.xyz UX */
+/* Indic Architectural Design Tokens & cneuralnets.xyz Minimalist UX */
 :root, [data-theme="light"] {
-  --bg: #f6f4ee;
-  --surface: #fdfbf7;
-  --surface-sunk: #eeebe3;
-  --line: #dfdacd;
-  --line-strong: #cdc7b8;
-  --ink: #1b1d1c;
-  --ink-soft: #484d4a;
-  --ink-faint: #737975;
-  --accent: #b84724;          /* Warm Earthy Terracotta */
-  --accent-soft: #f4ebe3;     /* Terracotta Tint */
-  --accent-gold: #b86818;     /* Warm Saffron / Haldi */
-  --on-accent: #fdfbf7;
+  --bg: #f7f4ec;              /* Kora Linen & Dholpur Light Sandstone */
+  --surface: #fefcf7;         /* Chhatri Marble White */
+  --surface-sunk: #eee9dd;    /* Aged Sandstone Sunk */
+  --line: #ded7c6;            /* Fine Stone Masonry Joints */
+  --line-strong: #c8bfae;     /* Carved Lintel Shadow */
+  --ink: #1a1c1a;             /* Aged Inscription Carbon */
+  --ink-soft: #4a4f4b;        /* Slate Umber */
+  --ink-faint: #757c77;       /* Weathered Stone Engraving */
+  --accent: #b44422;          /* Red Fort & Humayun Sandstone Terracotta */
+  --accent-soft: #f4eae2;     /* Terracotta Wash */
+  --accent-gold: #c2781d;     /* Jaipur Haldi / Saffron Ochre */
+  --on-accent: #fefcf7;
   --focus: var(--accent);
   color-scheme: light;
 }
 
 [data-theme="dark"] {
-  --bg: #111213;             /* Deep Kohl / Mineral Umber Charcoal */
-  --surface: #17181a;
-  --surface-sunk: #1e2022;
-  --line: #292c2e;
-  --line-strong: #3a3f42;
-  --ink: #ecefe9;             /* Ivory Silk */
-  --ink-soft: #a8ada6;
-  --ink-faint: #757b74;
-  --accent: #e0683b;          /* Warm Terracotta Rust */
-  --accent-soft: #2a1c17;     /* Sunk Terracotta */
-  --accent-gold: #d97d26;     /* Warm Saffron Gold */
-  --on-accent: #111213;
+  --bg: #0f1011;              /* Kohl Umber / Mineral Basalt */
+  --surface: #161819;         /* Haveli Courtyard Stone */
+  --surface-sunk: #1c1f20;    /* Sunken Baoli Alcove */
+  --line: #272b2d;            /* Night Masonry Seam */
+  --line-strong: #383e40;     /* Carved Bas-relief Boundary */
+  --ink: #ecefe9;             /* Ivory Silk Ink */
+  --ink-soft: #a8ada6;        /* Muted Sandstone */
+  --ink-faint: #727974;       /* Weathered Chiseled Glyph */
+  --accent: #df683c;          /* Warm Terracotta Clay & Sindoor */
+  --accent-soft: #2b1c17;     /* Terracotta Embers Sunk */
+  --accent-gold: #d48832;     /* Amber Gold Finial */
+  --on-accent: #0f1011;
   --focus: var(--accent);
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --bg: #111213;
-    --surface: #17181a;
-    --surface-sunk: #1e2022;
-    --line: #292c2e;
-    --line-strong: #3a3f42;
+    --bg: #0f1011;
+    --surface: #161819;
+    --surface-sunk: #1c1f20;
+    --line: #272b2d;
+    --line-strong: #383e40;
     --ink: #ecefe9;
     --ink-soft: #a8ada6;
-    --ink-faint: #757b74;
-    --accent: #e0683b;
-    --accent-soft: #2a1c17;
-    --accent-gold: #d97d26;
-    --on-accent: #111213;
+    --ink-faint: #727974;
+    --accent: #df683c;
+    --accent-soft: #2b1c17;
+    --accent-gold: #d48832;
+    --on-accent: #0f1011;
     --focus: var(--accent);
     color-scheme: dark;
   }
@@ -68,7 +68,7 @@
   --radius-md: 8px;
   --radius-pill: 999px;
   --measure: 620px;
-  --sidebar-width: 254px;
+  --sidebar-width: 256px;
   --hairline: 1px;
   --duration: 180ms;
   --font-serif: "Spectral", "Iowan Old Style", Georgia, serif;
@@ -93,12 +93,32 @@ body {
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  position: relative;
+}
+
+/* Subtle overall background jaali watermark */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 50% 50%, var(--accent-gold) 0.5px, transparent 0.5px),
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Transitions */
 :where(a, button) {
   transition: color var(--duration) ease-out, opacity var(--duration) ease-out,
-    border-color var(--duration) ease-out, background-color var(--duration) ease-out;
+    border-color var(--duration) ease-out, background-color var(--duration) ease-out,
+    transform var(--duration) ease-out;
 }
 
 :where(a, button):focus-visible {
@@ -120,6 +140,8 @@ h1, h2, h3, h4 {
   display: flex;
   min-height: 100vh;
   background: var(--bg);
+  position: relative;
+  z-index: 1;
 }
 
 .nn-sidebar-slot {
@@ -135,10 +157,10 @@ h1, h2, h3, h4 {
   width: var(--sidebar-width);
   height: 100vh;
   box-sizing: border-box;
-  padding: 48px 32px 36px;
+  padding: 44px 28px 32px;
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 32px;
   overflow-y: auto;
   border-right: var(--hairline) solid var(--line);
   background: var(--bg);
@@ -149,19 +171,6 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-}
-
-.nn-side-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-pill);
-  object-fit: cover;
-  margin-bottom: var(--space-2);
-  border: 1px solid var(--line-strong);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface);
 }
 
 .nn-side-name {
@@ -175,17 +184,17 @@ h1, h2, h3, h4 {
 }
 
 .nn-side-role {
-  font-size: 13px;
-  line-height: 19px;
+  font-size: 12.5px;
+  line-height: 18px;
   color: var(--ink-faint);
   font-family: var(--font-mono);
 }
 
-/* Sidebar Nav */
+/* Sidebar Nav with Architectural Arch Indicators */
 .nn-nav {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   margin: 0 -8px;
 }
 
@@ -199,21 +208,28 @@ h1, h2, h3, h4 {
   line-height: 20px;
   color: var(--ink-faint);
   text-decoration: none;
+  position: relative;
 }
 
+/* Architectural diamond marker */
 .nn-nav a::before {
   content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-pill);
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  border: 1px solid var(--line-strong);
   background: transparent;
   flex: none;
-  transition: background-color var(--duration) ease-out;
+  transition: all var(--duration) ease-out;
 }
 
 .nn-nav a:hover {
   color: var(--ink);
   background: var(--surface-sunk);
+}
+
+.nn-nav a:hover::before {
+  border-color: var(--accent);
 }
 
 .nn-nav a[aria-current="page"] {
@@ -223,6 +239,8 @@ h1, h2, h3, h4 {
 
 .nn-nav a[aria-current="page"]::before {
   background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
 }
 
 .nn-side-foot {
@@ -259,7 +277,7 @@ h1, h2, h3, h4 {
   color: var(--ink-faint);
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle Button with Architectural Finial Glyph */
 .nn-btn {
   font: inherit;
   background: none;
@@ -313,20 +331,26 @@ h1, h2, h3, h4 {
   gap: 96px;
 }
 
-/* Section Header */
+/* Section Header with Architectural Framing */
 .nn-section {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-4);
   margin: 0;
+  position: relative;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--line);
 }
 
 .nn-section h2 {
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 28px;
+  line-height: 36px;
   letter-spacing: -0.005em;
   color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nn-section-aside {
@@ -338,7 +362,7 @@ h1, h2, h3, h4 {
   white-space: nowrap;
 }
 
-/* Pill Links */
+/* Pill Links with Arch Curves */
 .nn-pill {
   display: inline-flex;
   align-self: flex-start;
@@ -353,6 +377,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-mono);
   color: var(--ink-soft);
   text-decoration: none;
+  background: var(--surface);
 }
 
 .nn-pill .nn-arrow {
@@ -371,7 +396,7 @@ h1, h2, h3, h4 {
   transform: translateX(2px);
 }
 
-/* Tags */
+/* Architectural Tags */
 .nn-tag {
   display: inline-flex;
   align-items: center;
@@ -383,7 +408,7 @@ h1, h2, h3, h4 {
   line-height: 18px;
   font-family: var(--font-mono);
   color: var(--ink-soft);
-  background: transparent;
+  background: var(--surface);
   white-space: nowrap;
 }
 
@@ -409,6 +434,7 @@ h1, h2, h3, h4 {
   column-gap: var(--space-4);
   padding: var(--space-4) 0;
   text-decoration: none;
+  position: relative;
 }
 
 .nn-link-title {
@@ -429,10 +455,10 @@ h1, h2, h3, h4 {
 .nn-link-meta {
   grid-column: 1;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 11.5px;
   line-height: 16px;
   color: var(--ink-faint);
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .nn-link .nn-arrow {
@@ -455,38 +481,23 @@ h1, h2, h3, h4 {
   transform: translateX(0);
 }
 
-/* Timeline (Experience) */
+/* Timeline (Experience) with Baoli Stepwell Aesthetics */
 .nn-timeline {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
 .nn-tl-item {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding-left: 20px;
+  padding-left: 22px;
   position: relative;
   border-left: var(--hairline) solid var(--line);
-}
-
-.nn-tl-dot {
-  position: absolute;
-  left: -4px;
-  top: 7px;
-  width: 7px;
-  height: 7px;
-  border-radius: var(--radius-pill);
-  background: var(--line-strong);
-}
-
-.nn-tl-item[data-current="true"] .nn-tl-dot {
-  background: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .nn-tl-header {
@@ -511,7 +522,7 @@ h1, h2, h3, h4 {
 }
 
 .nn-tl-org {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--accent);
   font-family: var(--font-mono);
 }
@@ -525,7 +536,7 @@ h1, h2, h3, h4 {
 
 .nn-tl-bullets {
   list-style: none;
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -534,18 +545,19 @@ h1, h2, h3, h4 {
 
 .nn-tl-bullets li {
   font-size: 13.5px;
-  line-height: 21px;
+  line-height: 22px;
   color: var(--ink-soft);
   position: relative;
-  padding-left: 14px;
+  padding-left: 16px;
 }
 
 .nn-tl-bullets li::before {
-  content: "▹";
+  content: "◈";
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 11px;
+  font-size: 10px;
+  top: 1px;
 }
 
 /* Post / Article View (.nn-post-layout) */
@@ -563,7 +575,7 @@ h1, h2, h3, h4 {
 .post h1 {
   margin: 0;
   color: var(--ink);
-  font: 300 40px/48px var(--font-serif);
+  font: 300 38px/46px var(--font-serif);
   letter-spacing: -0.01em;
 }
 
@@ -622,6 +634,25 @@ h1, h2, h3, h4 {
 .blog-body pre code {
   padding: 0;
   background: none;
+}
+
+/* Architectural Jharokha Alcove Box */
+.jharokha-alcove {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+}
+
+.jharokha-alcove::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
 }
 
 /* Prose formatting */

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getItemsFromDirectory, getItemBySlug, NoteMeta } from "@/lib/markdown";
+import { HaveliCornerBracket, SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
 
 export async function generateStaticParams() {
   const notes = getItemsFromDirectory<NoteMeta>("notes");
@@ -29,13 +30,17 @@ export default async function NoteDetailPage({
         </Link>
       </div>
 
-      <span className="font-mono text-xs text-[var(--accent)] uppercase tracking-wider block mb-2">
-        {note.data.difficulty || "engineering deep dive"}
-      </span>
+      <div className="mb-2">
+        <SectionArchBadge label={note.data.difficulty || "engineering deep dive"} />
+      </div>
 
       <h1>{note.data.title.toLowerCase()}</h1>
 
-      <p className="nn-post-subtitle">{note.data.summary}</p>
+      {/* Jharokha Alcove Summary */}
+      <div className="jharokha-alcove my-6">
+        <HaveliCornerBracket position="top-right" />
+        <p className="nn-post-subtitle my-0">{note.data.summary}</p>
+      </div>
 
       <div className="nn-post-meta">
         <span>{note.data.date}</span>
@@ -49,7 +54,9 @@ export default async function NoteDetailPage({
         {note.content}
       </div>
 
-      <div className="mt-12 pt-6 border-t border-[var(--line)]">
+      <JaaliFriezeDivider className="my-12" />
+
+      <div>
         <Link href="/#notes" className="nn-pill">
           <span>← back to all engineering notes</span>
         </Link>

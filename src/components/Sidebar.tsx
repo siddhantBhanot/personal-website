@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { profile } from "@/data/profile";
+import { JharokhaArchAvatar, JaaliBackgroundPattern } from "@/components/IndicMotif";
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -67,44 +68,43 @@ export function Sidebar() {
     { id: "about", label: "about", href: "/#about" },
     { id: "experience", label: "experience", href: "/#experience" },
     { id: "projects", label: "projects", href: "/#projects" },
-    { id: "notes", label: "notes", href: "/#notes" },
+    { id: "notes", label: "engineering notes", href: "/#notes" },
     { id: "blogs", label: "blogs", href: "/#blogs" },
-    { id: "stack", label: "stack", href: "/#stack" },
+    { id: "stack", label: "tech stack", href: "/#stack" },
     { id: "contact", label: "contact", href: "/#contact" },
   ];
 
   return (
     <div className="nn-sidebar-slot">
       <aside className={`nn-side ${mobileOpen ? "is-mobile-open" : ""}`}>
-        {/* Profile Info */}
-        <div className="nn-side-profile">
-          <Link href="/" className="nn-side-avatar group" aria-label="Home">
-            {/* Minimal Indic Sacred Geometry Bindu Emblem */}
-            <svg
-              viewBox="0 0 40 40"
-              fill="none"
-              className="w-7 h-7 text-[var(--accent)] group-hover:scale-105 transition-transform"
-            >
-              <circle cx="20" cy="20" r="16" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
-              <circle cx="20" cy="20" r="10" stroke="var(--line-strong)" strokeWidth="1" />
-              <polygon
-                points="20,12 26,24 14,24"
-                stroke="var(--accent-gold)"
-                strokeWidth="1"
-                fill="none"
-                opacity="0.8"
-              />
-              <polygon
-                points="20,28 14,16 26,16"
-                stroke="currentColor"
-                strokeWidth="1"
-                fill="none"
-                opacity="0.8"
-              />
-              <circle cx="20" cy="20" r="2.5" fill="var(--accent)" />
-            </svg>
+        {/* Subtle architectural Jaali background on sidebar */}
+        <JaaliBackgroundPattern className="opacity-[0.025] dark:opacity-[0.035]" />
+
+        {/* Profile Info with Cusped Jharokha Arch */}
+        <div className="nn-side-profile relative z-10">
+          <Link href="/" className="inline-block" aria-label="Home">
+            <JharokhaArchAvatar>
+              {/* Inner Sacred Geometry Emblem */}
+              <svg viewBox="0 0 28 28" fill="none" className="w-5 h-5 text-[var(--accent)]">
+                <circle cx="14" cy="14" r="11" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 2" opacity="0.6" />
+                <polygon
+                  points="14,6 21,18 7,18"
+                  stroke="var(--accent-gold)"
+                  strokeWidth="0.8"
+                  fill="none"
+                />
+                <polygon
+                  points="14,22 7,10 21,10"
+                  stroke="currentColor"
+                  strokeWidth="0.8"
+                  fill="none"
+                />
+                <circle cx="14" cy="14" r="2" fill="var(--accent)" />
+              </svg>
+            </JharokhaArchAvatar>
           </Link>
-          <p className="nn-side-name">
+
+          <p className="nn-side-name mt-1">
             <Link href="/" className="text-[var(--ink)] no-underline hover:text-[var(--accent)]">
               {profile.name.toLowerCase()}
             </Link>
@@ -114,7 +114,7 @@ export function Sidebar() {
 
         {/* Mobile menu toggle button */}
         <button
-          className="nn-mobile-menu"
+          className="nn-mobile-menu relative z-10"
           type="button"
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -123,7 +123,7 @@ export function Sidebar() {
         </button>
 
         {/* Navigation */}
-        <nav className="nn-nav" aria-label="sections">
+        <nav className="nn-nav relative z-10" aria-label="sections">
           {navItems.map((item) => {
             const isCurrent =
               pathname === "/"
@@ -144,7 +144,7 @@ export function Sidebar() {
         </nav>
 
         {/* Sidebar Footer */}
-        <div className="nn-side-foot">
+        <div className="nn-side-foot relative z-10">
           <button
             className="nn-btn nn-toggle"
             type="button"

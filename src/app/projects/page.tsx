@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getItemsFromDirectory, ProjectMeta } from "@/lib/markdown";
+import { HaveliCornerBracket, SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
 
 export default function ProjectsPage() {
   const projects = getItemsFromDirectory<ProjectMeta>("projects");
@@ -12,7 +13,8 @@ export default function ProjectsPage() {
             <span>← home</span>
           </Link>
         </div>
-        <h1 className="text-[36px] font-light text-[var(--ink)]">projects & systems</h1>
+        <SectionArchBadge label="systems architecture" />
+        <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">projects & systems</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           architectural write-ups, high-concurrency benchmarks, and infrastructure services.
         </p>
@@ -20,9 +22,15 @@ export default function ProjectsPage() {
 
       <div className="flex flex-col gap-12">
         {projects.map((proj) => (
-          <article key={proj.slug} id={proj.slug} className="flex flex-col gap-3 scroll-mt-12 pb-8 border-b border-[var(--line)]">
+          <article
+            key={proj.slug}
+            id={proj.slug}
+            className="relative flex flex-col gap-3 scroll-mt-12 p-6 rounded border border-[var(--line)] bg-[var(--surface)] group"
+          >
+            <HaveliCornerBracket position="top-right" />
             <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h2 className="text-xl font-medium text-[var(--ink)]">
+              <h2 className="text-xl font-medium text-[var(--ink)] flex items-center gap-2">
+                <span className="text-xs text-[var(--accent-gold)]">❖</span>
                 {proj.data.title.toLowerCase()}
               </h2>
               <span className="font-mono text-xs text-[var(--ink-faint)]">
@@ -49,13 +57,15 @@ export default function ProjectsPage() {
             </div>
 
             {proj.content && (
-              <div className="text-xs leading-relaxed text-[var(--ink-soft)] mt-2 whitespace-pre-line">
+              <div className="text-xs leading-relaxed text-[var(--ink-soft)] mt-2 whitespace-pre-line border-t border-[var(--line)] pt-3">
                 {proj.content}
               </div>
             )}
           </article>
         ))}
       </div>
+
+      <JaaliFriezeDivider />
     </div>
   );
 }

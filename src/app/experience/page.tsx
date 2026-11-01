@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { experiences } from "@/data/experience";
+import { SteppedBaoliDot, SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
 
 export default function ExperienceIndexPage() {
   return (
@@ -10,7 +11,8 @@ export default function ExperienceIndexPage() {
             <span>← home</span>
           </Link>
         </div>
-        <h1 className="text-[36px] font-light text-[var(--ink)]">experience</h1>
+        <SectionArchBadge label="production history" />
+        <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">experience</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           4+ years of designing and maintaining distributed systems in production.
         </p>
@@ -23,7 +25,7 @@ export default function ExperienceIndexPage() {
             className="nn-tl-item"
             data-current={idx === 0 ? "true" : "false"}
           >
-            <span className="nn-tl-dot" aria-hidden="true" />
+            <SteppedBaoliDot isCurrent={idx === 0} />
             <div className="nn-tl-header">
               <span className="nn-tl-role">{exp.role.toLowerCase()}</span>
               <span className="nn-tl-when">{exp.period.toLowerCase()}</span>
@@ -40,6 +42,8 @@ export default function ExperienceIndexPage() {
           </li>
         ))}
       </ol>
+
+      <JaaliFriezeDivider />
     </div>
   );
 }

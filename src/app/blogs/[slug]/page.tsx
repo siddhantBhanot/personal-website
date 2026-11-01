@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getItemsFromDirectory, getItemBySlug, BlogMeta } from "@/lib/markdown";
+import { HaveliCornerBracket, SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
 
 export async function generateStaticParams() {
   const blogs = getItemsFromDirectory<BlogMeta>("blogs");
@@ -29,13 +30,17 @@ export default async function BlogDetailPage({
         </Link>
       </div>
 
-      <span className="font-mono text-xs text-[var(--accent)] uppercase tracking-wider block mb-2">
-        essay
-      </span>
+      <div className="mb-2">
+        <SectionArchBadge label="technical essay" />
+      </div>
 
       <h1>{blog.data.title.toLowerCase()}</h1>
 
-      <p className="nn-post-subtitle">{blog.data.summary}</p>
+      {/* Jharokha Alcove Summary */}
+      <div className="jharokha-alcove my-6">
+        <HaveliCornerBracket position="top-right" />
+        <p className="nn-post-subtitle my-0">{blog.data.summary}</p>
+      </div>
 
       <div className="nn-post-meta">
         <span>{blog.data.date}</span>
@@ -49,7 +54,9 @@ export default async function BlogDetailPage({
         {blog.content}
       </div>
 
-      <div className="mt-12 pt-6 border-t border-[var(--line)]">
+      <JaaliFriezeDivider className="my-12" />
+
+      <div>
         <Link href="/#blogs" className="nn-pill">
           <span>← back to all essays</span>
         </Link>

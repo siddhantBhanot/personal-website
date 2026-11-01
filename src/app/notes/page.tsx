@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getItemsFromDirectory, NoteMeta } from "@/lib/markdown";
+import { SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
 
 export default function NotesIndexPage() {
   const notes = getItemsFromDirectory<NoteMeta>("notes");
@@ -12,7 +13,8 @@ export default function NotesIndexPage() {
             <span>← home</span>
           </Link>
         </div>
-        <h1 className="text-[36px] font-light text-[var(--ink)]">engineering notes</h1>
+        <SectionArchBadge label="technical knowledge base" />
+        <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">engineering notes</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           deep dives into database engines, concurrency primitives, and distributed systems design.
         </p>
@@ -21,8 +23,11 @@ export default function NotesIndexPage() {
       <ul className="nn-links">
         {notes.map((note) => (
           <li key={note.slug}>
-            <Link className="nn-link" href={`/notes/${note.slug}`}>
-              <span className="nn-link-title">{note.data.title.toLowerCase()}</span>
+            <Link className="nn-link group" href={`/notes/${note.slug}`}>
+              <span className="nn-link-title flex items-center gap-2">
+                <span className="text-xs text-[var(--accent-gold)] opacity-70 group-hover:opacity-100 transition-opacity">❖</span>
+                {note.data.title.toLowerCase()}
+              </span>
               <span className="nn-arrow" aria-hidden="true">→</span>
               <span className="nn-link-desc">{note.data.summary}</span>
               <span className="nn-link-meta">
@@ -32,6 +37,8 @@ export default function NotesIndexPage() {
           </li>
         ))}
       </ul>
+
+      <JaaliFriezeDivider />
     </div>
   );
 }

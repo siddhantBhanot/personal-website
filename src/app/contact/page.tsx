@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { profile } from "@/data/profile";
 import { ContactEmail } from "@/components/ContactEmail";
+import { SectionArchBadge, HaveliCornerBracket } from "@/components/IndicMotif";
 
 export default function ContactIndexPage() {
   return (
@@ -11,16 +12,20 @@ export default function ContactIndexPage() {
             <span>← home</span>
           </Link>
         </div>
-        <h1 className="text-[36px] font-light text-[var(--ink)]">contact</h1>
+        <SectionArchBadge label="get in touch" />
+        <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">contact</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
-          get in touch for distributed systems, backend engineering, or consulting.
+          reach out for distributed systems design, backend architecture, or senior roles.
         </p>
       </div>
 
-      <div className="nn-prose">
-        <p>
-          i am based in india (ist, utc+05:30) and experienced working asynchronously with globally distributed teams.
-        </p>
+      <div className="jharokha-alcove">
+        <HaveliCornerBracket position="top-right" />
+        <div className="nn-prose">
+          <p>
+            i am based in india (ist, utc+05:30) and accustomed to asynchronous collaboration with globally distributed engineering teams.
+          </p>
+        </div>
       </div>
 
       <ContactEmail />
