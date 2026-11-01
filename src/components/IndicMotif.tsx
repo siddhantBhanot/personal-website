@@ -5,8 +5,8 @@ import React from "react";
  * Creates an authentic stone fretwork screen.
  */
 export function JaaliBackgroundPattern({
-  className = "opacity-[0.08] dark:opacity-[0.10] text-[var(--line-strong)]",
-  strokeWidth = 0.75,
+  className = "opacity-[0.16] dark:opacity-[0.20] text-[var(--jaali-color)]",
+  strokeWidth = 0.85,
   patternId = "indic-jaali",
 }: {
   className?: string;
@@ -26,22 +26,24 @@ export function JaaliBackgroundPattern({
             height="56"
             patternUnits="userSpaceOnUse"
           >
-            {/* Center 8-pointed star */}
+            {/* Center 8-pointed star shape with delicate light orange fill */}
             <polygon
               points="28,4 34,18 48,18 38,28 48,38 34,38 28,52 22,38 8,38 18,28 8,18 22,18"
-              fill="none"
+              fill="currentColor"
+              fillOpacity="0.08"
               stroke="currentColor"
               strokeWidth={strokeWidth}
             />
             {/* Central Bindu Octagram */}
-            <circle cx="28" cy="28" r="4.5" fill="none" stroke="currentColor" strokeWidth={strokeWidth * 0.8} />
-            <circle cx="28" cy="28" r="1.5" fill="currentColor" />
+            <circle cx="28" cy="28" r="4.5" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth={strokeWidth * 0.8} />
+            <circle cx="28" cy="28" r="1.5" fill="currentColor" fillOpacity="0.9" />
 
-            {/* Corner 8-pointed star fragments creating interlocking grid */}
+            {/* Corner 8-pointed star fragments with light orange fill */}
             {/* Top-left */}
             <polygon
               points="0,0 6,0 10,10 0,6"
-              fill="none"
+              fill="currentColor"
+              fillOpacity="0.08"
               stroke="currentColor"
               strokeWidth={strokeWidth * 0.75}
             />
@@ -50,7 +52,8 @@ export function JaaliBackgroundPattern({
             {/* Top-right */}
             <polygon
               points="56,0 50,0 46,10 56,6"
-              fill="none"
+              fill="currentColor"
+              fillOpacity="0.08"
               stroke="currentColor"
               strokeWidth={strokeWidth * 0.75}
             />
@@ -59,7 +62,8 @@ export function JaaliBackgroundPattern({
             {/* Bottom-left */}
             <polygon
               points="0,56 6,56 10,46 0,50"
-              fill="none"
+              fill="currentColor"
+              fillOpacity="0.08"
               stroke="currentColor"
               strokeWidth={strokeWidth * 0.75}
             />
@@ -68,7 +72,8 @@ export function JaaliBackgroundPattern({
             {/* Bottom-right */}
             <polygon
               points="56,56 50,56 46,46 56,50"
-              fill="none"
+              fill="currentColor"
+              fillOpacity="0.08"
               stroke="currentColor"
               strokeWidth={strokeWidth * 0.75}
             />
@@ -80,20 +85,20 @@ export function JaaliBackgroundPattern({
             <line x1="28" y1="18" x2="28" y2="0" stroke="currentColor" strokeWidth={strokeWidth * 0.7} />
             <line x1="28" y1="38" x2="28" y2="56" stroke="currentColor" strokeWidth={strokeWidth * 0.7} />
 
-            {/* Diamond facets */}
+            {/* Diamond facets with light orange fill */}
             <polygon
               points="28,10 32,18 28,26 24,18"
-              fill="none"
+              fill="currentColor"
+              fillOpacity="0.05"
               stroke="currentColor"
               strokeWidth={strokeWidth * 0.5}
-              strokeDasharray="2 2"
             />
             <polygon
               points="28,30 32,38 28,46 24,38"
-              fill="none"
+              fill="currentColor"
+              fillOpacity="0.05"
               stroke="currentColor"
               strokeWidth={strokeWidth * 0.5}
-              strokeDasharray="2 2"
             />
           </pattern>
         </defs>

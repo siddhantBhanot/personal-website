@@ -13,6 +13,7 @@
   --accent: #b44422;          /* Red Fort & Humayun Sandstone Terracotta */
   --accent-soft: #f4eae2;     /* Terracotta Wash */
   --accent-gold: #c2781d;     /* Jaipur Haldi / Saffron Ochre */
+  --jaali-color: #ea7a38;     /* Light Warm Terracotta Orange */
   --on-accent: #fefcf7;
   --focus: var(--accent);
   color-scheme: light;
@@ -30,6 +31,7 @@
   --accent: #df683c;          /* Warm Terracotta Clay & Sindoor */
   --accent-soft: #2b1c17;     /* Terracotta Embers Sunk */
   --accent-gold: #d48832;     /* Amber Gold Finial */
+  --jaali-color: #f99b58;     /* Luminous Light Orange Jaali */
   --on-accent: #0f1011;
   --focus: var(--accent);
   color-scheme: dark;
@@ -48,6 +50,7 @@
     --accent: #df683c;
     --accent-soft: #2b1c17;
     --accent-gold: #d48832;
+    --jaali-color: #f99b58;
     --on-accent: #0f1011;
     --focus: var(--accent);
     color-scheme: dark;
@@ -105,11 +108,11 @@ body::before {
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 50% 50%, var(--accent-gold) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 50% 50%, var(--jaali-color) 0.6px, transparent 0.6px),
     linear-gradient(to right, var(--line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--line) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.035;
+  opacity: 0.04;
   pointer-events: none;
   z-index: 0;
 }

@@ -77,10 +77,10 @@ export function Sidebar() {
   return (
     <div className="nn-sidebar-slot">
       <aside className={`nn-side ${mobileOpen ? "is-mobile-open" : ""}`}>
-        {/* Architectural Jaali Background - tuned for clear visibility and clean text contrast */}
+        {/* Architectural Jaali Background - light orange shapes with subtle presence */}
         <JaaliBackgroundPattern
           patternId="sidebar-jaali"
-          className="opacity-[0.16] dark:opacity-[0.18] text-[var(--line-strong)]"
+          className="opacity-[0.16] dark:opacity-[0.20] text-[var(--jaali-color)]"
           strokeWidth={0.85}
         />
 
