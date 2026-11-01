@@ -77,16 +77,11 @@ export function Sidebar() {
   return (
     <div className="nn-sidebar-slot">
       <aside className={`nn-side ${mobileOpen ? "is-mobile-open" : ""}`}>
-        {/* Prominent Architectural Jaali Background on Sidebar */}
+        {/* Architectural Jaali Background - prominent yet subtle and non-intrusive */}
         <JaaliBackgroundPattern
           patternId="sidebar-jaali"
-          className="opacity-[0.22] dark:opacity-[0.28] text-[var(--accent-gold)]"
-          strokeWidth={1.1}
-        />
-        {/* Subtle stone wash gradient over jaali */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[var(--bg)]/30 via-transparent to-[var(--bg)]/50"
-          aria-hidden="true"
+          className="opacity-[0.09] dark:opacity-[0.11] text-[var(--line-strong)]"
+          strokeWidth={0.75}
         />
 
         {/* Profile Info with Cusped Jharokha Arch */}
