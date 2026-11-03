@@ -50,3 +50,4 @@ class AesPayloadEncryptionWebFilter(
 ### Key Security Considerations
 - **Authenticated Encryption (AES-GCM)**: Always prefer AES-GCM over AES-CBC to guarantee both data confidentiality and cryptographic authenticity without requiring a separate HMAC.
 - **Dynamic IV (Initialization Vector)**: Generate a cryptographically secure random 12-byte IV for every single HTTP request to prevent replay attacks and pattern leakage.
+

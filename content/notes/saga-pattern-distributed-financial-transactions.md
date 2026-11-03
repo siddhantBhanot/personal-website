@@ -37,3 +37,4 @@ In digital credit platforms with strict auditability and dozens of potential bra
 - **Centralized State Tracking**: A centralized orchestrator persists the state machine in a resilient datastore (MongoDB / Redis). If an orchestrator pod crashes midway, a peer pod recovers the exact step execution state from the database.
 - **Idempotency Guarantees**: Every step consumer must be idempotent. If network instability causes duplicate step triggers, an idempotency key ensures the operation executes exactly once.
 - **Dynamic Version Resolution**: Decoupling step execution definitions allows dynamic runtime version routing—enabling Home Loan workflows to upgrade business validation rules without breaking Personal Loan pipelines running on the same cluster.
+

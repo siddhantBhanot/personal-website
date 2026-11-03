@@ -46,3 +46,4 @@ class IncomeAssessmentController(
 ### Production Rules of Thumb
 1. **Never Block the Event Loop**: Even a single `Thread.sleep()` or blocking JDBC call on a Netty worker thread stalls all concurrent requests assigned to that event loop. Use reactive drivers (`r2dbc`, reactive MongoDB).
 2. **Backpressure Handling**: Ensure downstream consumer pipelines utilize reactive backpressure operators (`onBackpressureBuffer`, `limitRate`) to prevent fast producers from overwhelming downstream storage engines.
+

@@ -1,3 +1,11 @@
+export interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+  cgpa: string;
+  location: string;
+}
+
 export interface ProfileData {
   name: string;
   title: string;
@@ -5,19 +13,16 @@ export interface ProfileData {
   yearsOfExperience: string;
   location: string;
   phone: string;
-  education: {
-    institution: string;
-    degree: string;
-    period: string;
-    cgpa: string;
-    location: string;
+  education: Education;
+  about: {
+    headline: string;
+    summary: string[];
+    corePillars: {
+      title: string;
+      description: string;
+    }[];
   };
-  bio: string[];
-  metrics: {
-    label: string;
-    value: string;
-    detail: string;
-  }[];
+  highlights: string[];
   links: {
     resume: string;
     leetcode: string;
@@ -26,13 +31,12 @@ export interface ProfileData {
     email: string;
     website: string;
   };
-  focusAreas: string[];
 }
 
 export const profile: ProfileData = {
   name: "Siddhant Bhanot",
   title: "Backend Software Development Engineer",
-  tagline: "Engineering reactive distributed systems, SAGA-based transaction pipelines, and resilient fintech platforms.",
+  tagline: "4+ years engineering scalable, reactive microservices, distributed transaction pipelines, and enterprise-grade platforms.",
   yearsOfExperience: "4+ Years",
   location: "Gurugram, India",
   phone: "+91 7838332124",
@@ -43,33 +47,35 @@ export const profile: ProfileData = {
     cgpa: "8.89 / 10.0",
     location: "Jaipur, India",
   },
-  bio: [
-    "i am a backend software development engineer with 4+ years of production experience building high-scale distributed systems and resilient microservices.",
-    "currently at freecharge (axis bank), engineering backend services for the maximus digital acquisition and credit platform—powering high-throughput income assessment processing over 96m+ requests/month across 8+ lending products.",
-    "previously at comviva, led the architectural migration of telecom mobile billing and subscription management (mbas) platforms from legacy monoliths to tmf-compliant spring boot microservices for vodafone india.",
-    "specialized in kotlin, java, spring webflux, reactive programming, distributed saga patterns, apache kafka, redis, mongodb, and secure api architectures compliant with rbi guidelines.",
-  ],
-  metrics: [
-    {
-      label: "Monthly Scale",
-      value: "96M+",
-      detail: "Requests/month on shared Income Assessment service",
-    },
-    {
-      label: "Applications Served",
-      value: "137K+",
-      detail: "Customer applications supported across 8+ lending products",
-    },
-    {
-      label: "Experience",
-      value: "4+ Years",
-      detail: "High-scale fintech & telecom backend engineering",
-    },
-    {
-      label: "Academic Excellence",
-      value: "8.89",
-      detail: "CGPA at Manipal University Jaipur (B.Tech IT)",
-    },
+  about: {
+    headline: "Backend Engineer • 4+ Years Experience • Enterprise Scale",
+    summary: [
+      "Backend Software Engineer with 4+ years of professional production experience architecting high-throughput, fault-tolerant distributed systems and reactive microservices.",
+      "Currently at FreechargeBiz (Axis Bank), I engineer backend services for the Maximus digital acquisition platform. My work powers a shared Income Assessment service processing 96M+ requests/month and supporting 137K+ borrower applications across 8+ lending products (Home Loan, Business Loan, Auto Loan, Personal Loan, Credit Card).",
+      "Previously at Comviva, I led the decomposition of legacy billing monoliths (mBAS for Vodafone India) into modern TMF-compliant Spring Boot microservices, cutting API latency by 30%–50%.",
+    ],
+    corePillars: [
+      {
+        title: "Distributed Systems & SAGA",
+        description: "Orchestrating multi-step financial transaction pipelines with automated rollbacks and eventual consistency.",
+      },
+      {
+        title: "High-Throughput Reactive APIs",
+        description: "Leveraging Kotlin and Spring WebFlux event loops for non-blocking I/O handling tens of millions of monthly requests.",
+      },
+      {
+        title: "Security & Regulatory Compliance",
+        description: "Authoring enterprise-wide AES encryption WebFilters enforcing RBI guidelines across production lending microservices.",
+      },
+    ],
+  },
+  highlights: [
+    "4+ Years Production Backend Experience",
+    "96M+ Requests / Month Scale",
+    "Axis Bank Digital Acquisition Platform",
+    "SAGA Distributed Transaction Architecture",
+    "Reactive Microservices (Kotlin + WebFlux)",
+    "B.Tech. IT (Manipal University Jaipur, CGPA 8.89)",
   ],
   links: {
     resume: "/resume.pdf",
@@ -79,14 +85,4 @@ export const profile: ProfileData = {
     email: "siddhantbhanot@gmail.com",
     website: "https://siddhantbhanot.github.io/",
   },
-  focusAreas: [
-    "reactive microservices",
-    "spring webflux & kotlin",
-    "distributed saga pattern",
-    "apache kafka streaming",
-    "mongodb & redis caching",
-    "96m+ req/month scale",
-    "rbi security compliance (aes)",
-    "monolith to microservices",
-  ],
 };

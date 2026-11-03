@@ -2,7 +2,8 @@ import Link from "next/link";
 import { profile } from "@/data/profile";
 import { experiences } from "@/data/experience";
 import { techStackData } from "@/data/tech-stack";
-import { getItemsFromDirectory, NoteMeta, ProjectMeta, BlogMeta } from "@/lib/markdown";
+import { achievementsData } from "@/data/achievements";
+import { getItemsFromDirectory, ProjectMeta } from "@/lib/markdown";
 import { ContactEmail } from "@/components/ContactEmail";
 import {
   SteppedBaoliDot,
@@ -10,11 +11,10 @@ import {
   HaveliCornerBracket,
   SectionArchBadge,
 } from "@/components/IndicMotif";
+import { GithubIcon, ExternalLinkIcon, LeetCodeIcon, LinkedinIcon } from "@/components/Icons";
 
 export default function HomePage() {
-  const notes = getItemsFromDirectory<NoteMeta>("notes");
   const projects = getItemsFromDirectory<ProjectMeta>("projects");
-  const blogs = getItemsFromDirectory<BlogMeta>("blogs");
 
   return (
     <div className="nn-main-inner">
@@ -23,11 +23,14 @@ export default function HomePage() {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <SectionArchBadge label="backend software engineer" />
-            <h1 className="text-[38px] sm:text-[44px] leading-[46px] sm:leading-[50px] font-light text-[var(--ink)] tracking-tight mt-1">
-              about me
+            <h1 className="text-[38px] sm:text-[44px] leading-[46px] sm:leading-[50px] font-light text-[var(--ink)] tracking-tight mt-1 font-serif">
+              siddhant bhanot
             </h1>
+            <p className="text-xs font-mono text-[var(--accent)] mt-1 tracking-wide">
+              {profile.about.headline.toLowerCase()}
+            </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-2">
+          <div className="flex flex-wrap gap-2 pt-1">
             <a
               className="nn-pill"
               href={profile.links.resume}
@@ -35,6 +38,15 @@ export default function HomePage() {
               rel="noopener noreferrer"
             >
               <span>resume (pdf)</span>
+              <span className="nn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a
+              className="nn-pill"
+              href={profile.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>linkedin</span>
               <span className="nn-arrow" aria-hidden="true">→</span>
             </a>
             <a
@@ -49,21 +61,34 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Jharokha Alcove Style for Introduction */}
+        {/* Jharokha Alcove Style for Crisp Recruiter Summary */}
         <div className="jharokha-alcove">
           <HaveliCornerBracket position="top-right" />
           <div className="nn-prose">
-            {profile.bio.map((paragraph, idx) => (
+            {profile.about.summary.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-4 border-t border-[var(--line)] mt-4">
+            {profile.about.corePillars.map((pillar) => (
+              <div key={pillar.title} className="flex flex-col gap-1">
+                <span className="text-xs font-mono font-semibold text-[var(--accent-gold)] flex items-center gap-1">
+                  <span>❖</span> {pillar.title}
+                </span>
+                <span className="text-[11px] text-[var(--ink-soft)] leading-relaxed">
+                  {pillar.description}
+                </span>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Focus Tags */}
+        {/* Recruiter Quick Highlights */}
         <div className="flex flex-wrap gap-2 pt-1">
-          {profile.focusAreas.map((tag) => (
-            <span key={tag} className="nn-tag">
-              {tag}
+          {profile.highlights.map((highlight) => (
+            <span key={highlight} className="nn-tag text-xs font-mono">
+              {highlight.toLowerCase()}
             </span>
           ))}
         </div>
@@ -97,29 +122,21 @@ export default function HomePage() {
               <span className="nn-tl-org">
                 {exp.company.toLowerCase()} • {exp.location.toLowerCase()}
               </span>
-              <p className="nn-tl-desc">{exp.description}</p>
-              <ul className="nn-tl-bullets">
-                {exp.highlights.map((h, hIdx) => (
-                  <li key={hIdx}>{h}</li>
+
+              <ul className="nn-tl-bullets mt-3">
+                {exp.bullets.map((bullet, bIdx) => (
+                  <li key={bIdx}>{bullet}</li>
                 ))}
               </ul>
-
-              <div className="flex flex-wrap gap-1.5 pt-3">
-                {exp.technologies.map((t) => (
-                  <span key={t} className="text-[11px] font-mono text-[var(--ink-faint)] bg-[var(--surface-sunk)] px-2 py-0.5 rounded">
-                    {t.toLowerCase()}
-                  </span>
-                ))}
-              </div>
             </li>
           ))}
         </ol>
 
-        {/* Education Highlight */}
-        <div className="mt-4 p-4 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-wrap items-baseline justify-between gap-2">
+        {/* Education Card */}
+        <div className="mt-2 p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-wrap items-baseline justify-between gap-3">
           <div>
             <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">education</span>
-            <span className="text-sm font-medium text-[var(--ink)]">{profile.education.degree}</span>
+            <span className="text-base font-medium text-[var(--ink)]">{profile.education.degree}</span>
             <span className="text-xs text-[var(--ink-soft)] block font-mono mt-0.5">
               {profile.education.institution} • {profile.education.location}
             </span>
@@ -133,122 +150,40 @@ export default function HomePage() {
 
       <JaaliFriezeDivider />
 
-      {/* 3. Projects Section */}
-      <section id="projects" className="flex flex-col gap-6">
-        <div className="nn-section">
-          <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> projects & architectures
-          </h2>
-          <span className="nn-section-aside">{projects.length} systems</span>
-        </div>
-
-        <ul className="nn-links">
-          {projects.map((proj) => (
-            <li key={proj.slug}>
-              <Link className="nn-link group" href={`/projects#${proj.slug}`}>
-                <span className="nn-link-title flex items-center gap-2">
-                  <span className="text-xs text-[var(--accent-gold)] opacity-70 group-hover:opacity-100 transition-opacity">❖</span>
-                  {proj.data.title.toLowerCase()}
-                </span>
-                <span className="nn-arrow" aria-hidden="true">→</span>
-                <span className="nn-link-desc">{proj.data.summary}</span>
-                {proj.data.metrics && (
-                  <span className="nn-link-meta">
-                    impact: {proj.data.metrics}
-                  </span>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <JaaliFriezeDivider />
-
-      {/* 4. Engineering Notes Section */}
-      <section id="notes" className="flex flex-col gap-6">
-        <div className="nn-section">
-          <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> engineering notes
-          </h2>
-          <span className="nn-section-aside">{notes.length} deep dives</span>
-        </div>
-
-        <ul className="nn-links">
-          {notes.map((note) => (
-            <li key={note.slug}>
-              <Link className="nn-link group" href={`/notes/${note.slug}`}>
-                <span className="nn-link-title flex items-center gap-2">
-                  <span className="text-xs text-[var(--accent-gold)] opacity-70 group-hover:opacity-100 transition-opacity">❖</span>
-                  {note.data.title.toLowerCase()}
-                </span>
-                <span className="nn-arrow" aria-hidden="true">→</span>
-                <span className="nn-link-desc">{note.data.summary}</span>
-                <span className="nn-link-meta">
-                  {note.data.readingTime} • {note.data.tags?.join(", ").toLowerCase()}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <JaaliFriezeDivider />
-
-      {/* 5. Blogs Section */}
-      <section id="blogs" className="flex flex-col gap-6">
-        <div className="nn-section">
-          <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> blogs & essays
-          </h2>
-          <span className="nn-section-aside">reflections</span>
-        </div>
-
-        <ul className="nn-links">
-          {blogs.map((blog) => (
-            <li key={blog.slug}>
-              <Link className="nn-link group" href={`/blogs/${blog.slug}`}>
-                <span className="nn-link-title flex items-center gap-2">
-                  <span className="text-xs text-[var(--accent-gold)] opacity-70 group-hover:opacity-100 transition-opacity">❖</span>
-                  {blog.data.title.toLowerCase()}
-                </span>
-                <span className="nn-arrow" aria-hidden="true">→</span>
-                <span className="nn-link-desc">{blog.data.summary}</span>
-                <span className="nn-link-meta">
-                  {blog.data.date} • {blog.data.readingTime}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <JaaliFriezeDivider />
-
-      {/* 6. Tech Stack Section */}
+      {/* 3. Tech Stack Section */}
       <section id="stack" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
             <span className="text-[var(--accent)] font-serif font-light">॥</span> tech stack
           </h2>
-          <span className="nn-section-aside">production arsenal</span>
+          <span className="nn-section-aside">languages • frameworks • distributed systems</span>
         </div>
 
         <div className="flex flex-col gap-6">
           {techStackData.map((category) => (
-            <div key={category.category} className="flex flex-col gap-2">
-              <span className="font-mono text-xs text-[var(--accent)] font-medium flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rotate-45 border border-[var(--accent-gold)] bg-[var(--surface-sunk)]" />
-                {category.category.toLowerCase()}
-              </span>
+            <div key={category.category} className="flex flex-col gap-2.5">
+              <div className="flex items-baseline justify-between gap-2 border-b border-[var(--line)] pb-1">
+                <span className="font-mono text-xs text-[var(--accent)] font-medium flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rotate-45 border border-[var(--accent-gold)] bg-[var(--surface-sunk)]" />
+                  {category.category.toLowerCase()}
+                </span>
+                <span className="text-[11px] font-mono text-[var(--ink-faint)]">
+                  {category.description.toLowerCase()}
+                </span>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill.name}
-                    className="nn-tag"
-                    title={skill.note ? `${skill.name} (${skill.note})` : skill.name}
+                    className="nn-tag group relative"
+                    title={skill.note ? `${skill.name} — ${skill.note}` : skill.name}
                   >
-                    {skill.name.toLowerCase()}
+                    <span>{skill.name.toLowerCase()}</span>
+                    {skill.note && (
+                      <span className="text-[10px] text-[var(--ink-faint)] ml-1 opacity-75 group-hover:opacity-100 group-hover:text-[var(--accent-gold)] transition-opacity">
+                        • {skill.note}
+                      </span>
+                    )}
                   </span>
                 ))}
               </div>
@@ -259,7 +194,157 @@ export default function HomePage() {
 
       <JaaliFriezeDivider />
 
-      {/* 7. Contact Section */}
+      {/* 4. Projects Section */}
+      <section id="projects" className="flex flex-col gap-6">
+        <div className="nn-section">
+          <h2>
+            <span className="text-[var(--accent)] font-serif font-light">॥</span> projects
+          </h2>
+          <span className="nn-section-aside">{projects.length} featured systems</span>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          {projects.map((proj) => (
+            <div
+              key={proj.slug}
+              className="relative p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-3 group"
+            >
+              <HaveliCornerBracket position="top-right" />
+
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <div>
+                  <h3 className="text-lg font-serif font-medium text-[var(--ink)] flex items-center gap-2">
+                    <span className="text-xs text-[var(--accent-gold)]">❖</span>
+                    <Link
+                      href={`/projects#${proj.slug}`}
+                      className="hover:text-[var(--accent)] transition-colors"
+                    >
+                      {proj.data.title.toLowerCase()}
+                    </Link>
+                  </h3>
+                  <span className="font-mono text-xs text-[var(--accent)] mt-0.5 block">
+                    {proj.data.period}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  {proj.data.github && (
+                    <a
+                      href={proj.data.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="nn-pill text-xs py-1 px-2.5 flex items-center gap-1"
+                      aria-label={`GitHub repo for ${proj.data.title}`}
+                    >
+                      <GithubIcon className="w-3.5 h-3.5 fill-current" />
+                      <span>code</span>
+                    </a>
+                  )}
+                  {proj.data.live && (
+                    <a
+                      href={proj.data.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="nn-pill text-xs py-1 px-2.5 flex items-center gap-1"
+                      aria-label={`Live demo for ${proj.data.title}`}
+                    >
+                      <ExternalLinkIcon className="w-3.5 h-3.5" />
+                      <span>live demo</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <p className="text-xs leading-relaxed text-[var(--ink-soft)] font-sans">
+                {proj.data.summary}
+              </p>
+
+              {proj.data.metrics && (
+                <div className="font-mono text-xs text-[var(--accent)] bg-[var(--surface-sunk)] px-2.5 py-1.5 rounded border border-[var(--line)]">
+                  <span className="text-[var(--accent-gold)] font-medium">scale / metric:</span> {proj.data.metrics}
+                </div>
+              )}
+
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {proj.data.stack?.map((tech) => (
+                  <span key={tech} className="nn-tag text-[11px] font-mono">
+                    {tech.toLowerCase()}
+                  </span>
+                ))}
+              </div>
+
+              <div className="pt-2 border-t border-[var(--line)] flex justify-between items-center text-xs font-mono">
+                <span className="text-[var(--ink-faint)]">6-part architecture breakdown</span>
+                <Link
+                  href={`/projects#${proj.slug}`}
+                  className="text-[var(--accent)] hover:underline flex items-center gap-1"
+                >
+                  <span>read architecture</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <JaaliFriezeDivider />
+
+      {/* 5. Achievements Section */}
+      <section id="achievements" className="flex flex-col gap-6">
+        <div className="nn-section">
+          <h2>
+            <span className="text-[var(--accent)] font-serif font-light">॥</span> achievements & awards
+          </h2>
+          <span className="nn-section-aside">verified recognitions</span>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          {achievementsData.map((item) => (
+            <div
+              key={item.id}
+              className="p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-2 relative"
+            >
+              <HaveliCornerBracket position="top-right" />
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="text-base font-serif font-medium text-[var(--ink)] flex items-center gap-2">
+                  <span className="text-xs text-[var(--accent-gold)]">❖</span>
+                  {item.title}
+                </h3>
+                {item.metrics && (
+                  <span className="font-mono text-xs text-[var(--accent)] bg-[var(--surface-sunk)] px-2.5 py-1 rounded border border-[var(--line)]">
+                    {item.metrics}
+                  </span>
+                )}
+              </div>
+
+              <span className="text-xs font-mono text-[var(--ink-faint)]">
+                {item.organization} • {item.category}
+              </span>
+
+              <ul className="nn-tl-bullets mt-1 text-xs">
+                {item.description.map((desc, dIdx) => (
+                  <li key={dIdx} className="text-xs text-[var(--ink-soft)] leading-relaxed">
+                    {desc}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-1.5 pt-2">
+                {item.tags.map((tag) => (
+                  <span key={tag} className="text-[11px] font-mono text-[var(--ink-faint)] bg-[var(--surface-sunk)] px-2 py-0.5 rounded">
+                    {tag.toLowerCase()}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <JaaliFriezeDivider />
+
+      {/* 8. Contact Section (Notes & Blogs hidden per user request) */}
       <section id="contact" className="flex flex-col gap-6 relative">
         <div className="nn-section">
           <h2>
@@ -270,50 +355,73 @@ export default function HomePage() {
 
         <div className="nn-prose">
           <p>
-            feel free to reach out for backend architecture discussions, high-throughput distributed systems, or senior software engineering roles.
+            I am always open to exploring high-impact backend engineering opportunities, distributed systems architecture challenges, and collaborative technical projects. Feel free to connect directly via email or phone.
           </p>
         </div>
 
-        <ContactEmail />
-
-        <div className="flex flex-wrap gap-2 pt-2">
-          <a
-            className="nn-pill"
-            href={profile.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>linkedin</span>
-            <span className="nn-arrow" aria-hidden="true">→</span>
-          </a>
-          <a
-            className="nn-pill"
-            href={profile.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>github</span>
-            <span className="nn-arrow" aria-hidden="true">→</span>
-          </a>
-          <a
-            className="nn-pill"
-            href={profile.links.leetcode}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>leetcode</span>
-            <span className="nn-arrow" aria-hidden="true">→</span>
-          </a>
-          <a
-            className="nn-pill"
-            href={profile.links.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>resume</span>
-            <span className="nn-arrow" aria-hidden="true">→</span>
-          </a>
+        {/* Contact Information & Action Card */}
+        <div className="p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">email</span>
+              <a
+                href={`mailto:${profile.links.email}`}
+                className="text-sm font-mono text-[var(--ink)] hover:text-[var(--accent)] transition-colors mt-0.5 block"
+              >
+                {profile.links.email}
+              </a>
+            </div>
+            <div>
+              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">phone</span>
+              <a
+                href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+                className="text-sm font-mono text-[var(--ink)] hover:text-[var(--accent)] transition-colors mt-0.5 block"
+              >
+                {profile.phone}
+              </a>
+            </div>
+            <div>
+              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">location</span>
+              <span className="text-sm font-mono text-[var(--ink-soft)] mt-0.5 block">
+                {profile.location}
+              </span>
+            </div>
+            <div>
+              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">profiles</span>
+              <div className="flex items-center gap-3 mt-1">
+                <a
+                  href={profile.links.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--ink-soft)] hover:text-[var(--accent)] transition-colors"
+                  aria-label="LinkedIn Profile"
+                >
+                  <LinkedinIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={profile.links.leetcode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--ink-soft)] hover:text-[var(--accent)] transition-colors"
+                  aria-label="LeetCode Profile"
+                >
+                  <LeetCodeIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={profile.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--ink-soft)] hover:text-[var(--accent)] transition-colors"
+                  aria-label="GitHub Profile"
+                >
+                  <GithubIcon className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <ContactEmail />
       </section>
     </div>
   );

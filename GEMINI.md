@@ -38,3 +38,25 @@
     - **Dark Mode (Default)**: Deep Kohl / Mineral Umber Charcoal (`#0f1011`), Haveli Courtyard Stone (`#161819`), Ivory Silk ink (`#ecefe9`), warm terracotta rust accent (`#df683c`), and warm saffron/haldi gold (`#d48832`).
     - **Light Mode**: Kora Linen & Dholpur Light Sandstone (`#f7f4ec`), Chhatri Marble White (`#fefcf7`), aged inscription carbon ink (`#1a1c1a`), and Red Fort Terracotta clay (`#b44422`).
   - **Typography**: Editorial Serif (`Spectral`) for headings (font-weight 300), Grotesk (`Hanken Grotesk`) for body, and Mono (`IBM Plex Mono`) for metadata, metrics, and dates.
+
+---
+
+## 4. Restructured Portfolio Architecture (Strict Alignment)
+1. **About**: Short, crisp, recruiter-focused summary in Jharokha alcove with 3 core pillars (Distributed Systems & SAGA, High-Throughput Reactive APIs, Security & Compliance), highlighting 4+ YOE and 96M+ req/mo scale.
+2. **Experience**: Verbatim resume timeline (FreechargeBiz, Comviva Sr PDE, Comviva PDE/Intern) with Stepped Baoli indicators and Education card (MUJ B.Tech IT, CGPA 8.89/10).
+3. **Tech Stack**: Strict 5-category taxonomy:
+   - Languages: Java, Kotlin, JavaScript, Python, C++, SQL
+   - Frameworks & Libraries: Spring Boot, Spring WebFlux, Spring Security, Hibernate, React.js, Next.js
+   - Databases & Messaging: MySQL, Redis, Apache Kafka, Elasticsearch, MongoDB
+   - Tools & Technologies: Git, Docker, Jenkins, Kibana, Postman, Mockito, MockK, JUnit, SonarQube, Apache JMeter
+   - Concepts: LLD, HLD, Microservices, REST APIs, Reactive Programming, Distributed Systems, Event-Driven Architecture, SAGA Pattern, SOLID Principles, Object-Oriented Design, Design Patterns, System Design
+4. **Projects**: Strictly the 3 standalone projects from `siddhantbhanot.github.io/`, each featuring an in-depth 6-part architectural breakdown (*Problem Statement*, *Why It Was Interesting*, *Approach*, *Architecture*, *Engineering Challenges*, *Potential Improvements*):
+   - Hinglish Tweet Sentiment Classification
+   - Finding Ideal House
+   - Covid Q&A Chatbot
+5. **Achievements**: Sourced verbatim from `siddhantbhanot.github.io/`:
+   - Ranked Among Top 5 Submissions in Company-Wide Hackathon (ComHub AI search & gamification)
+   - ACE (Appreciation for Commitment & Effort) Cards (6 leadership awards from Comviva)
+6. **Engineering Notes**: Hidden from navigation and homepage (retained for future release).
+7. **Blogs**: Hidden from navigation and homepage (retained for future release).
+8. **Contact**: Recruiter & collaborator card with direct email, phone, location, and social profile links.

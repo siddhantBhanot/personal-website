@@ -34,20 +34,11 @@ export default function ExperienceIndexPage() {
             <span className="nn-tl-org">
               {exp.company.toLowerCase()} • {exp.location.toLowerCase()}
             </span>
-            <p className="nn-tl-desc">{exp.description}</p>
-            <ul className="nn-tl-bullets">
-              {exp.highlights.map((h, hIdx) => (
-                <li key={hIdx}>{h}</li>
+            <ul className="nn-tl-bullets mt-3">
+              {exp.bullets.map((bullet, bIdx) => (
+                <li key={bIdx}>{bullet}</li>
               ))}
             </ul>
-
-            <div className="flex flex-wrap gap-1.5 pt-3">
-              {exp.technologies.map((t) => (
-                <span key={t} className="text-[11px] font-mono text-[var(--ink-faint)] bg-[var(--surface-sunk)] px-2 py-0.5 rounded">
-                  {t.toLowerCase()}
-                </span>
-              ))}
-            </div>
           </li>
         ))}
       </ol>

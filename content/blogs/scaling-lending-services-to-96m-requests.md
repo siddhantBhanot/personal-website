@@ -35,3 +35,4 @@ Always implement:
 - Aggressive socket and connect timeouts.
 - Circuit breakers to fast-fail rather than accumulate connection backlogs.
 - Idempotent fallback queues to safely reconcile asynchronous webhook callbacks.
+

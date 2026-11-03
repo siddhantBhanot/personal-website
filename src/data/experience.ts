@@ -3,39 +3,22 @@ export interface WorkExperience {
   company: string;
   location: string;
   period: string;
-  type: string;
-  description: string;
-  highlights: string[];
-  technologies: string[];
+  bullets: string[];
 }
 
 export const experiences: WorkExperience[] = [
   {
     role: "Backend Software Development Engineer",
-    company: "FreechargeBiz (Axis Bank)",
+    company: "FreechargeBiz",
     location: "Gurugram, India",
     period: "Sep 2025 – Present",
-    type: "Full-time",
-    description: "Engineering core backend services for the Maximus platform powering Axis Bank’s digital customer acquisition and pre-approved credit offerings, primarily within the Business Loan and shared Income Assessment microservices.",
-    highlights: [
-      "Engineered shared Income Assessment services processing over 96M+ requests/month and supporting 137K+ customer applications across 8+ lending products.",
-      "Developed reactive, non-blocking microservices using Kotlin, Spring WebFlux, MongoDB, Redis, and Apache Kafka in a distributed architecture leveraging an internal SAGA-based Step Framework.",
-      "Architected dynamic runtime version resolution for 8+ credit products (Home Loan, Business Loan, Auto Loan, Personal Loan, Credit Card), unlocking product-isolated hotfix deployments, cutting regression test cycles, and accelerating releases.",
-      "Designed and implemented a reusable Spring WebFilter for AES-based request/response payload encryption and decryption, satisfying RBI security compliance across 8+ microservices.",
-      "Delivered production incident resolution and SLA stability for mission-critical income workflows and third-party integrations including Perfios Anumati account aggregators.",
-      "Authored Markdown technical schemas for the Step Framework and Income Assessment service, enabling custom GitHub Copilot MCP servers and internal enterprise RAG knowledge pipelines.",
-    ],
-    technologies: [
-      "Kotlin",
-      "Spring WebFlux",
-      "Java",
-      "MongoDB",
-      "Redis",
-      "Apache Kafka",
-      "SAGA Pattern",
-      "Reactive Streams",
-      "AES Encryption",
-      "Docker",
+    bullets: [
+      "Engineer backend services for the Maximus platform powering Axis Bank’s digital customer acquisition and pre-approved credit offerings, primarily within the Business Loan and Income Assessment microservices. The shared Income Assessment Service processes over 96M+ requests/month and supports 137K+ customer applications across 8+ lending products.",
+      "Develop and maintain reactive microservices using Kotlin, Spring WebFlux, MongoDB, Redis, and Kafka in a distributed architecture leveraging an internal SAGA-based Step Framework.",
+      "Led the refactoring of the shared Income Assessment Service to support dynamic runtime version resolution for 8+ lending products including Home Loan, Business Loan, Auto Loan, Personal Loan, and Credit Card, enabling product-specific hotfix deployments, reducing regression testing scope, and accelerating release cycles.",
+      "Designed and implemented a reusable Spring WebFilter for AES-based request/response encryption and decryption of exposed APIs, ensuring compliance with RBI security guidelines; adopted across 8+ lending microservices.",
+      "Provided production support and incident resolution for critical income assessment workflows and third-party integrations including Perfios Anumati, ensuring reliable customer onboarding experiences.",
+      "Created Markdown-based technical documentation for the Step Framework and Income Assessment Service, enabling AI-assisted development through custom GitHub Copilot MCP servers; the same artifacts are being extended for internal RAG-based knowledge pipelines.",
     ],
   },
   {
@@ -43,25 +26,11 @@ export const experiences: WorkExperience[] = [
     company: "Comviva",
     location: "Gurugram, India",
     period: "Jan 2024 – Jul 2025",
-    type: "Full-time",
-    description: "Delivered enterprise backend functionalities and architectural refactoring for Comviva’s flagship Mobile Billing and Subscription (mBAS) platform for Vodafone India.",
-    highlights: [
-      "Led the architectural migration of legacy monolithic billing platforms to a decoupled microservices-based ecosystem with TMF-compliant open APIs.",
-      "Engineered Spring Boot microservices and automated subscription reporting pipelines utilizing Docker and Cron job scheduling.",
-      "Mentored junior engineers (ComCubs) via structured technical knowledge transfer, deep code reviews, and distributed design principles.",
-      "Recognized with multiple ACE (Appreciation for Commitment & Effort) cards by engineering leadership for dependable execution and system reliability.",
-    ],
-    technologies: [
-      "Java",
-      "Spring Boot",
-      "Microservices",
-      "MySQL",
-      "Docker",
-      "Cron",
-      "Swagger",
-      "SonarQube",
-      "Jenkins",
-      "Kibana",
+    bullets: [
+      "Delivered client-specific functionalities for Comviva’s Mobile Billing and Subscription (mBAS) platform for Vodafone India.",
+      "Led the migration of a legacy monolithic platform to a microservices-based architecture with TMF-compliant APIs.",
+      "Developed Spring Boot microservices and client-specific APIs for subscription reporting, leveraging Docker and Cron for automation.",
+      "Mentored new hires (ComCubs) through knowledge transfer, code reviews, and engineering best practices.",
     ],
   },
   {
@@ -69,26 +38,10 @@ export const experiences: WorkExperience[] = [
     company: "Comviva",
     location: "Gurugram, India",
     period: "Feb 2022 – Dec 2023",
-    type: "Full-time",
-    description: "Developed secure backend authentication pipelines and administrative portals for telecom billing and subscriber lifecycle operations.",
-    highlights: [
-      "Built centralized backend authentication and authorization subsystems using Spring Security, JWT tokens, and enterprise LDAP directory integration.",
-      "Engineered a React.JS administrative portal interfacing with backend subscription services.",
-      "Reduced API response latencies by 30%–50% across high-traffic endpoints by implementing payload compression (gzip) and database pagination.",
-      "Authored standardized API specifications with Swagger/Confluence, led unit/integration testing with Mockito and JUnit, and eliminated technical debt with SonarQube static analysis.",
-    ],
-    technologies: [
-      "Java",
-      "Spring Boot",
-      "Spring Security",
-      "JWT",
-      "LDAP",
-      "MySQL",
-      "Hibernate",
-      "React.JS",
-      "Mockito",
-      "JUnit",
-      "SonarQube",
+    bullets: [
+      "Developed a React.JS based GUI application for the Mobile Billing and Subscription Management platform with backend authentication and authorization using Spring Security, JWT, and LDAP.",
+      "Improved API response time by 30%–50% through payload compression and pagination.",
+      "Contributed to backend integration and unit testing, authored API documentation using Swagger and Confluence, improved code quality through SonarQube driven analysis and refactoring.",
     ],
   },
 ];

@@ -40,7 +40,7 @@ export function Sidebar() {
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const sectionIds = ["about", "experience", "projects", "notes", "blogs", "stack", "contact"];
+    const sectionIds = ["about", "experience", "stack", "projects", "achievements", "contact"];
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -67,10 +67,9 @@ export function Sidebar() {
   const navItems = [
     { id: "about", label: "about", href: "/#about" },
     { id: "experience", label: "experience", href: "/#experience" },
-    { id: "projects", label: "projects", href: "/#projects" },
-    { id: "notes", label: "engineering notes", href: "/#notes" },
-    { id: "blogs", label: "blogs", href: "/#blogs" },
     { id: "stack", label: "tech stack", href: "/#stack" },
+    { id: "projects", label: "projects", href: "/#projects" },
+    { id: "achievements", label: "achievements", href: "/#achievements" },
     { id: "contact", label: "contact", href: "/#contact" },
   ];
 
