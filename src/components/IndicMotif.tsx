@@ -5,7 +5,7 @@ import React from "react";
  * Creates an authentic stone fretwork screen.
  */
 export function JaaliBackgroundPattern({
-  className = "opacity-[0.16] dark:opacity-[0.20] text-[var(--jaali-color)]",
+  className = "opacity-[0.128] dark:opacity-[0.16] text-[var(--jaali-color)]",
   strokeWidth = 0.85,
   patternId = "indic-jaali",
 }: {

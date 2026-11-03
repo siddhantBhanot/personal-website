@@ -80,7 +80,7 @@ export function Sidebar() {
         {/* Architectural Jaali Background - light orange shapes with subtle presence */}
         <JaaliBackgroundPattern
           patternId="sidebar-jaali"
-          className="opacity-[0.16] dark:opacity-[0.20] text-[var(--jaali-color)]"
+          className="opacity-[0.128] dark:opacity-[0.16] text-[var(--jaali-color)]"
           strokeWidth={0.85}
         />
 

@@ -32,7 +32,7 @@
 - **UX Reference Model**: Inspired by [`cneuralnets.xyz`](https://cneuralnets.xyz/) — Split two-column layout with fixed desktop sidebar navigation, spacious single-column reading stage, clean editorial typography, and high information density without visual clutter.
 - **Aesthetic Direction**: **"Indic-Architectural Minimal"**:
   - **Arches & Alcoves**: Cusped multi-foil Jharokha arch silhouette framing the profile mark; Jharokha stone alcove styling for key summaries and callouts (`.jharokha-alcove`).
-  - **Subtle Jaali Fretwork**: Geometric 8-pointed star & diamond jaali screen pattern (`JaaliBackgroundPattern`) at calibrated subtle opacity (`16% - 20%`) with light orange stone tint (`var(--jaali-color)`).
+  - **Subtle Jaali Fretwork**: Geometric 8-pointed star & diamond jaali screen pattern (`JaaliBackgroundPattern`) at calibrated subtle opacity (`12.8% - 16%`) with light orange stone tint (`var(--jaali-color)`).
   - **Stepped Baoli Geometry**: Stepped Chand Baori inverted diamond markers (`SteppedBaoliDot`) on timeline items; stepped stone bracket corners (`HaveliCornerBracket`) on project cards.
   - **Palette**:
     - **Dark Mode (Default)**: Deep Kohl / Mineral Umber Charcoal (`#0f1011`), Haveli Courtyard Stone (`#161819`), Ivory Silk ink (`#ecefe9`), warm terracotta rust accent (`#df683c`), and warm saffron/haldi gold (`#d48832`).
