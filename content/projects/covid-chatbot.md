@@ -77,3 +77,4 @@ The architecture decouples the static knowledge base embedding phase from the re
 - **Vector Database Integration (FAISS / Milvus)**: For larger knowledge bases containing tens of thousands of medical articles, replacing in-memory NumPy matrix multiplication with Facebook AI Similarity Search (FAISS) or Milvus to support sub-millisecond Approximate Nearest Neighbor (ANN) search with HNSW indexes.
 - **Bi-Encoder + Cross-Encoder Re-Ranking Pipeline**: Implementing a two-stage retrieval pipeline where a dense bi-encoder retrieves top-20 candidates, followed by a fine-tuned cross-encoder that re-scores pairs for even higher semantic precision.
 - **Reactive Microservice Architecture**: Migrating the Python Flask backend to a high-concurrency Spring WebFlux or FastAPI service leveraging ONNX Runtime for hardware-accelerated, non-blocking model execution.
+

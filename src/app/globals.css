@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --font-mono: "Monaco", "SF Mono", Menlo, "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --font-sans: "Monaco", "SF Mono", Menlo, "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --font-serif: "Monaco", "SF Mono", Menlo, "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+
 /* Indic Architectural Design Tokens & cneuralnets.xyz Minimalist UX */
 :root, [data-theme="light"] {
   --bg: #f7f4ec;              /* Kora Linen & Dholpur Light Sandstone */
@@ -74,9 +80,9 @@
   --sidebar-width: 256px;
   --hairline: 1px;
   --duration: 180ms;
-  --font-serif: "Spectral", "Iowan Old Style", Georgia, serif;
-  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-serif: "Monaco", "SF Mono", Menlo, "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --font-sans: "Monaco", "SF Mono", Menlo, "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --font-mono: "Monaco", "SF Mono", Menlo, "IBM Plex Mono", Consolas, "Courier New", monospace;
 }
 
 * {
@@ -91,9 +97,10 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink-soft);
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 28px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   position: relative;
@@ -132,8 +139,9 @@ body::before {
 /* Headings & typography */
 h1, h2, h3, h4 {
   color: var(--ink);
-  font-family: var(--font-serif);
-  font-weight: 300;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.01em;
   text-wrap: balance;
   margin: 0;
 }
@@ -178,16 +186,16 @@ h1, h2, h3, h4 {
 
 .nn-side-name {
   margin: 0;
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 26px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
   color: var(--ink);
   letter-spacing: -0.01em;
 }
 
 .nn-side-role {
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 18px;
   color: var(--ink-faint);
   font-family: var(--font-mono);
@@ -207,8 +215,9 @@ h1, h2, h3, h4 {
   gap: var(--space-3);
   padding: 6px var(--space-3);
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
+  font-family: var(--font-mono);
   color: var(--ink-faint);
   text-decoration: none;
   position: relative;
@@ -348,9 +357,11 @@ h1, h2, h3, h4 {
 }
 
 .nn-section h2 {
-  font-size: 28px;
-  line-height: 36px;
-  letter-spacing: -0.005em;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--ink);
   display: flex;
   align-items: center;
@@ -572,21 +583,21 @@ h1, h2, h3, h4 {
 
 .post {
   max-width: var(--measure);
-  font: 400 16px/28px var(--font-sans);
+  font: 400 14px/24px var(--font-mono);
   color: var(--ink-soft);
 }
 
 .post h1 {
   margin: 0;
   color: var(--ink);
-  font: 300 38px/46px var(--font-serif);
+  font: 500 28px/36px var(--font-mono);
   letter-spacing: -0.01em;
 }
 
 .nn-post-subtitle {
   margin: 14px 0;
   color: var(--ink-soft);
-  font: italic 300 18px/28px var(--font-serif);
+  font: 400 15px/24px var(--font-mono);
 }
 
 .nn-post-meta {
@@ -610,8 +621,9 @@ h1, h2, h3, h4 {
 
 .blog-body h2, .blog-body h3 {
   color: var(--ink);
-  font-family: var(--font-serif);
-  font-weight: 300;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.01em;
   margin-top: 48px;
   font-size: 24px;
   line-height: 32px;

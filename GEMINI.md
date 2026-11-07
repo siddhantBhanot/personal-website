@@ -37,7 +37,7 @@
   - **Palette**:
     - **Dark Mode (Default)**: Deep Kohl / Mineral Umber Charcoal (`#0f1011`), Haveli Courtyard Stone (`#161819`), Ivory Silk ink (`#ecefe9`), warm terracotta rust accent (`#df683c`), and warm saffron/haldi gold (`#d48832`).
     - **Light Mode**: Kora Linen & Dholpur Light Sandstone (`#f7f4ec`), Chhatri Marble White (`#fefcf7`), aged inscription carbon ink (`#1a1c1a`), and Red Fort Terracotta clay (`#b44422`).
-  - **Typography**: Editorial Serif (`Spectral`) for headings (font-weight 300), Grotesk (`Hanken Grotesk`) for body, and Mono (`IBM Plex Mono`) for metadata, metrics, and dates.
+  - **Typography**: Unified Developer Terminal Monospace (`Monaco`, fallback `SF Mono`, `Menlo`, `IBM Plex Mono`, `Consolas`, `monospace`) applied across the entire website (headings, body text, sidebar navigation, code, and metadata) for a crisp, high-density engineering aesthetic.
 
 ---
 

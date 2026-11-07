@@ -16,7 +16,7 @@ export default function ProjectsPage() {
           </Link>
         </div>
         <SectionArchBadge label="engineering deep dives" />
-        <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">projects</h1>
+        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">projects</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           Technical architecture, engineering decisions, and implementation breakdowns for featured projects.
         </p>
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
 
             <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-[var(--line)] pb-3">
               <div>
-                <h2 className="text-2xl font-serif font-medium text-[var(--ink)] flex items-center gap-2">
+                <h2 className="text-xl font-mono font-medium text-[var(--ink)] flex items-center gap-2">
                   <span className="text-xs text-[var(--accent-gold)]">❖</span>
                   {proj.data.title}
                 </h2>
@@ -70,7 +70,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            <p className="text-sm leading-relaxed text-[var(--ink-soft)] font-sans">
+            <p className="text-sm leading-relaxed text-[var(--ink-soft)] font-mono">
               {proj.data.summary}
             </p>
 
@@ -99,13 +99,13 @@ export default function ProjectsPage() {
                       </h3>
                     ),
                     p: ({ children }) => (
-                      <p className="text-xs leading-6 text-[var(--ink-soft)] font-sans">{children}</p>
+                      <p className="text-xs leading-6 text-[var(--ink-soft)] font-mono">{children}</p>
                     ),
                     ul: ({ children }) => (
-                      <ul className="list-disc list-outside pl-4 space-y-1 text-xs text-[var(--ink-soft)] font-sans">{children}</ul>
+                      <ul className="list-disc list-outside pl-4 space-y-1 text-xs text-[var(--ink-soft)] font-mono">{children}</ul>
                     ),
                     ol: ({ children }) => (
-                      <ol className="list-decimal list-outside pl-4 space-y-1 text-xs text-[var(--ink-soft)] font-sans">{children}</ol>
+                      <ol className="list-decimal list-outside pl-4 space-y-1 text-xs text-[var(--ink-soft)] font-mono">{children}</ol>
                     ),
                     li: ({ children }) => (
                       <li className="leading-5">{children}</li>

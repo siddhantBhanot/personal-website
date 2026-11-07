@@ -78,3 +78,4 @@ The pipeline was architected to separate the data extraction/clustering computat
 - **Spatial Database Backing**: Migrating the static dataset into a PostgreSQL database with PostGIS extensions to perform spatial indexing (R-Tree / GiST indexing), coordinate transformations, and spatial queries natively in SQL.
 - **Transit Accessibility Vectors**: Incorporating Delhi Metro telemetry (proximity to metro stations, average commute times, and multimodal connectivity indices) into the neighborhood feature space.
 - **Density-Based Clustering (HDBSCAN)**: Replacing standard K-Means with HDBSCAN to eliminate the need for pre-specifying $K$ and to naturally identify outlier or transitional localities as noise rather than forcing them into unnatural clusters.
+

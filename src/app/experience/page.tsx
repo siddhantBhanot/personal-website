@@ -13,7 +13,7 @@ export default function ExperienceIndexPage() {
           </Link>
         </div>
         <SectionArchBadge label="production history" />
-        <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">experience</h1>
+        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">experience</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           4+ years of designing and maintaining distributed fintech and telecom systems in production.
         </p>

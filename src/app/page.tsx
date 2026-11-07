@@ -23,7 +23,7 @@ export default function HomePage() {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <SectionArchBadge label="backend software engineer" />
-            <h1 className="text-[38px] sm:text-[44px] leading-[46px] sm:leading-[50px] font-light text-[var(--ink)] tracking-tight mt-1 font-serif">
+            <h1 className="text-[30px] sm:text-[36px] leading-[38px] sm:leading-[42px] font-medium text-[var(--ink)] tracking-tight mt-1 font-mono">
               siddhant bhanot
             </h1>
             <p className="text-xs font-mono text-[var(--accent)] mt-1 tracking-wide">
@@ -100,7 +100,7 @@ export default function HomePage() {
       <section id="experience" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> experience
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> experience
           </h2>
           <span className="nn-section-aside">4+ years · freecharge (axis bank) & comviva</span>
         </div>
@@ -154,7 +154,7 @@ export default function HomePage() {
       <section id="stack" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> tech stack
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> tech stack
           </h2>
           <span className="nn-section-aside">languages • frameworks • distributed systems</span>
         </div>
@@ -198,7 +198,7 @@ export default function HomePage() {
       <section id="projects" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> projects
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> projects
           </h2>
           <span className="nn-section-aside">{projects.length} featured systems</span>
         </div>
@@ -213,7 +213,7 @@ export default function HomePage() {
 
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <div>
-                  <h3 className="text-lg font-serif font-medium text-[var(--ink)] flex items-center gap-2">
+                  <h3 className="text-base font-mono font-medium text-[var(--ink)] flex items-center gap-2">
                     <span className="text-xs text-[var(--accent-gold)]">❖</span>
                     <Link
                       href={`/projects#${proj.slug}`}
@@ -255,7 +255,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <p className="text-xs leading-relaxed text-[var(--ink-soft)] font-sans">
+              <p className="text-xs leading-relaxed text-[var(--ink-soft)] font-mono">
                 {proj.data.summary}
               </p>
 
@@ -294,7 +294,7 @@ export default function HomePage() {
       <section id="achievements" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> achievements & awards
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> achievements & awards
           </h2>
           <span className="nn-section-aside">verified recognitions</span>
         </div>
@@ -307,7 +307,7 @@ export default function HomePage() {
             >
               <HaveliCornerBracket position="top-right" />
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-base font-serif font-medium text-[var(--ink)] flex items-center gap-2">
+                <h3 className="text-sm sm:text-base font-mono font-medium text-[var(--ink)] flex items-center gap-2">
                   <span className="text-xs text-[var(--accent-gold)]">❖</span>
                   {item.title}
                 </h3>
@@ -348,7 +348,7 @@ export default function HomePage() {
       <section id="contact" className="flex flex-col gap-6 relative">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-serif font-light">॥</span> contact
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> contact
           </h2>
           <span className="nn-section-aside">{profile.location.toLowerCase()}</span>
         </div>
