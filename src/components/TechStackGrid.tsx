@@ -1,4 +1,5 @@
 import { techStackData } from "@/data/tech-stack";
+import { TechIcon, hasTechIcon } from "@/components/TechIcon";
 
 export function TechStackGrid() {
   return (
@@ -20,12 +21,16 @@ export function TechStackGrid() {
 
           <div className="flex flex-wrap gap-2 pt-1">
             {category.skills.map((skill) => (
-              <div
+              <span
                 key={skill.name}
-                className="inline-flex items-center px-3 py-1.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-xs font-mono text-[var(--text-primary)] hover:border-[var(--accent-amber)]/60 transition-colors"
+                className={`nn-tech-pill${hasTechIcon(skill.name) ? " has-icon" : ""}`}
               >
-                <span className="font-medium">{skill.name}</span>
-              </div>
+                <TechIcon
+                  name={skill.name}
+                  className="w-4 h-4 shrink-0 text-[var(--accent)] transition-colors nn-tech-icon"
+                />
+                <span>{skill.name}</span>
+              </span>
             ))}
           </div>
         </div>
