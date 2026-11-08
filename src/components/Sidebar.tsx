@@ -65,12 +65,12 @@ export function Sidebar() {
   }, [pathname]);
 
   const navItems = [
-    { id: "about", label: "about", href: "/#about" },
-    { id: "experience", label: "experience", href: "/#experience" },
-    { id: "stack", label: "tech stack", href: "/#stack" },
-    { id: "projects", label: "projects", href: "/#projects" },
-    { id: "achievements", label: "achievements", href: "/#achievements" },
-    { id: "contact", label: "contact", href: "/#contact" },
+    { id: "about", label: "About", href: "/#about" },
+    { id: "experience", label: "Experience", href: "/#experience" },
+    { id: "stack", label: "Tech Stack", href: "/#stack" },
+    { id: "projects", label: "Projects", href: "/#projects" },
+    { id: "achievements", label: "Achievements", href: "/#achievements" },
+    { id: "contact", label: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -109,10 +109,10 @@ export function Sidebar() {
 
           <p className="nn-side-name mt-1">
             <Link href="/" className="text-[var(--ink)] no-underline hover:text-[var(--accent)]">
-              {profile.name.toLowerCase()}
+              {profile.name}
             </Link>
           </p>
-          <span className="nn-side-role">backend engineer • 4+ yoe</span>
+          <span className="nn-side-role">Backend Engineer • 4+ YOE</span>
         </div>
 
         {/* Mobile menu toggle button */}
@@ -122,7 +122,7 @@ export function Sidebar() {
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? "close" : "menu"}
+          {mobileOpen ? "Close" : "Menu"}
         </button>
 
         {/* Navigation */}
@@ -152,31 +152,31 @@ export function Sidebar() {
             className="nn-btn nn-toggle"
             type="button"
             onClick={toggleTheme}
-            aria-label={`switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            aria-label={`Switch to ${theme === "dark" ? "Light" : "Dark"} theme`}
           >
             <span className="nn-toggle-glyph" aria-hidden="true" />
-            <span className="nn-toggle-label">{theme === "dark" ? "light" : "dark"}</span>
+            <span className="nn-toggle-label">{theme === "dark" ? "Light" : "Dark"}</span>
           </button>
 
           <nav aria-label="external links">
             <a href={profile.links.resume} target="_blank" rel="noopener noreferrer">
-              resume
+              Resume
             </a>
             <a href={profile.links.leetcode} target="_blank" rel="noopener noreferrer">
-              leetcode
+              LeetCode
             </a>
             <a href={profile.links.github} target="_blank" rel="noopener noreferrer">
-              github
+              GitHub
             </a>
             <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">
-              linkedin
+              LinkedIn
             </a>
             <a href={`mailto:${profile.links.email}`}>
-              email
+              Email
             </a>
           </nav>
 
-          <span className="nn-side-copy">© 2026 {profile.name.toLowerCase()}</span>
+          <span className="nn-side-copy">© 2026 {profile.name}</span>
         </div>
       </aside>
     </div>

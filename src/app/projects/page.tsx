@@ -12,11 +12,11 @@ export default function ProjectsPage() {
       <div>
         <div className="mb-4">
           <Link href="/#projects" className="nn-pill">
-            <span>← home</span>
+            <span>← Home</span>
           </Link>
         </div>
-        <SectionArchBadge label="engineering deep dives" />
-        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">projects</h1>
+        <SectionArchBadge label="Engineering Deep Dives" />
+        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Projects</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           Technical architecture, engineering decisions, and implementation breakdowns for featured projects.
         </p>
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
                     aria-label={`GitHub repository for ${proj.data.title}`}
                   >
                     <GithubIcon className="w-3.5 h-3.5 fill-current" />
-                    <span>code</span>
+                    <span>Code</span>
                   </a>
                 )}
                 {proj.data.live && (
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
                     aria-label={`Live demo for ${proj.data.title}`}
                   >
                     <ExternalLinkIcon className="w-3.5 h-3.5" />
-                    <span>live demo</span>
+                    <span>Live Demo</span>
                   </a>
                 )}
               </div>
@@ -76,14 +76,14 @@ export default function ProjectsPage() {
 
             {proj.data.metrics && (
               <div className="font-mono text-xs text-[var(--accent)] bg-[var(--surface-sunk)] px-3 py-2 rounded border border-[var(--line)]">
-                <span className="text-[var(--accent-gold)] font-semibold">key metric:</span> {proj.data.metrics}
+                <span className="text-[var(--accent-gold)] font-semibold">Key Metric:</span> {proj.data.metrics}
               </div>
             )}
 
             <div className="flex flex-wrap gap-1.5 pt-1">
               {proj.data.stack?.map((tech) => (
                 <span key={tech} className="nn-tag text-xs font-mono">
-                  {tech.toLowerCase()}
+                  {tech}
                 </span>
               ))}
             </div>

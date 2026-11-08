@@ -9,13 +9,13 @@ export default function ContactIndexPage() {
       <div>
         <div className="mb-4">
           <Link href="/#contact" className="nn-pill">
-            <span>← home</span>
+            <span>← Home</span>
           </Link>
         </div>
-        <SectionArchBadge label="get in touch" />
-        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">contact</h1>
+        <SectionArchBadge label="Get in Touch" />
+        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Contact</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
-          reach out for backend engineering, reactive distributed systems, or architecture consulting.
+          Reach out for backend engineering, reactive distributed systems, or architecture consulting.
         </p>
       </div>
 
@@ -23,7 +23,7 @@ export default function ContactIndexPage() {
         <HaveliCornerBracket position="top-right" />
         <div className="nn-prose">
           <p>
-            i am based in {profile.location.toLowerCase()} (ist, utc+05:30) and available for backend engineering discussions, system design reviews, and senior development roles.
+            I am based in {profile.location} (IST, UTC+05:30) and available for backend engineering discussions, system design reviews, and senior development roles.
           </p>
         </div>
       </div>
@@ -37,7 +37,7 @@ export default function ContactIndexPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>linkedin</span>
+          <span>LinkedIn</span>
           <span className="nn-arrow" aria-hidden="true">→</span>
         </a>
         <a
@@ -46,7 +46,7 @@ export default function ContactIndexPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>github</span>
+          <span>GitHub</span>
           <span className="nn-arrow" aria-hidden="true">→</span>
         </a>
         <a
@@ -55,7 +55,7 @@ export default function ContactIndexPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>leetcode</span>
+          <span>LeetCode</span>
           <span className="nn-arrow" aria-hidden="true">→</span>
         </a>
         <a
@@ -64,7 +64,7 @@ export default function ContactIndexPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>resume</span>
+          <span>Resume</span>
           <span className="nn-arrow" aria-hidden="true">→</span>
         </a>
       </div>

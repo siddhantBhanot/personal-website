@@ -26,15 +26,15 @@ export default async function BlogDetailPage({
     <article className="post">
       <div className="mb-6">
         <Link href="/#blogs" className="nn-pill">
-          <span>← writing</span>
+          <span>← Writing</span>
         </Link>
       </div>
 
       <div className="mb-2">
-        <SectionArchBadge label="technical essay" />
+        <SectionArchBadge label="Technical Essay" />
       </div>
 
-      <h1>{blog.data.title.toLowerCase()}</h1>
+      <h1>{blog.data.title}</h1>
 
       {/* Jharokha Alcove Summary */}
       <div className="jharokha-alcove my-6">
@@ -47,7 +47,7 @@ export default async function BlogDetailPage({
         <span>•</span>
         <span>{blog.data.readingTime}</span>
         <span>•</span>
-        <span>{blog.data.tags?.join(", ").toLowerCase()}</span>
+        <span>{blog.data.tags?.join(", ")}</span>
       </div>
 
       <div className="blog-body whitespace-pre-line leading-7 text-[var(--ink-soft)]">
@@ -58,7 +58,7 @@ export default async function BlogDetailPage({
 
       <div>
         <Link href="/#blogs" className="nn-pill">
-          <span>← back to all essays</span>
+          <span>← Back to all Essays</span>
         </Link>
       </div>
     </article>

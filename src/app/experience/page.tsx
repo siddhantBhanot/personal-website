@@ -9,13 +9,13 @@ export default function ExperienceIndexPage() {
       <div>
         <div className="mb-4">
           <Link href="/#experience" className="nn-pill">
-            <span>← home</span>
+            <span>← Home</span>
           </Link>
         </div>
-        <SectionArchBadge label="production history" />
-        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">experience</h1>
+        <SectionArchBadge label="Production History" />
+        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Experience</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
-          4+ years of designing and maintaining distributed fintech and telecom systems in production.
+          4+ Years of designing and maintaining distributed fintech and telecom systems in production.
         </p>
       </div>
 
@@ -28,11 +28,11 @@ export default function ExperienceIndexPage() {
           >
             <SteppedBaoliDot isCurrent={idx === 0} />
             <div className="nn-tl-header">
-              <span className="nn-tl-role">{exp.role.toLowerCase()}</span>
-              <span className="nn-tl-when">{exp.period.toLowerCase()}</span>
+              <span className="nn-tl-role">{exp.role}</span>
+              <span className="nn-tl-when">{exp.period}</span>
             </div>
             <span className="nn-tl-org">
-              {exp.company.toLowerCase()} • {exp.location.toLowerCase()}
+              {exp.company} • {exp.location}
             </span>
             <ul className="nn-tl-bullets mt-3">
               {exp.bullets.map((bullet, bIdx) => (
@@ -46,7 +46,7 @@ export default function ExperienceIndexPage() {
       {/* Education Block */}
       <div className="p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-wrap items-baseline justify-between gap-2">
         <div>
-          <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">education</span>
+          <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Education</span>
           <span className="text-base font-medium text-[var(--ink)]">{profile.education.degree}</span>
           <span className="text-xs text-[var(--ink-soft)] block font-mono mt-0.5">
             {profile.education.institution} • {profile.education.location}

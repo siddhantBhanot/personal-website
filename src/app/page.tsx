@@ -22,12 +22,12 @@ export default function HomePage() {
       <section id="about" className="flex flex-col gap-6 relative">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <SectionArchBadge label="backend software engineer" />
+            <SectionArchBadge label="Backend Software Engineer" />
             <h1 className="text-[30px] sm:text-[36px] leading-[38px] sm:leading-[42px] font-medium text-[var(--ink)] tracking-tight mt-1 font-mono">
-              siddhant bhanot
+              Siddhant Bhanot
             </h1>
             <p className="text-xs font-mono text-[var(--accent)] mt-1 tracking-wide">
-              {profile.about.headline.toLowerCase()}
+              {profile.about.headline}
             </p>
           </div>
           <div className="flex flex-wrap gap-2 pt-1">
@@ -37,7 +37,7 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>resume (pdf)</span>
+              <span>Resume (PDF)</span>
               <span className="nn-arrow" aria-hidden="true">→</span>
             </a>
             <a
@@ -46,7 +46,7 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>linkedin</span>
+              <span>LinkedIn</span>
               <span className="nn-arrow" aria-hidden="true">→</span>
             </a>
             <a
@@ -55,7 +55,7 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>leetcode</span>
+              <span>LeetCode</span>
               <span className="nn-arrow" aria-hidden="true">→</span>
             </a>
           </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-2 pt-1">
           {profile.highlights.map((highlight) => (
             <span key={highlight} className="nn-tag text-xs font-mono">
-              {highlight.toLowerCase()}
+              {highlight}
             </span>
           ))}
         </div>
@@ -100,9 +100,9 @@ export default function HomePage() {
       <section id="experience" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-mono font-normal">॥</span> experience
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> Experience
           </h2>
-          <span className="nn-section-aside">4+ years · freecharge (axis bank) & comviva</span>
+          <span className="nn-section-aside">4+ Years · Freecharge (Axis Bank) & Comviva</span>
         </div>
 
         <ol className="nn-timeline">
@@ -116,11 +116,11 @@ export default function HomePage() {
               <SteppedBaoliDot isCurrent={idx === 0} />
 
               <div className="nn-tl-header">
-                <span className="nn-tl-role">{exp.role.toLowerCase()}</span>
-                <span className="nn-tl-when">{exp.period.toLowerCase()}</span>
+                <span className="nn-tl-role">{exp.role}</span>
+                <span className="nn-tl-when">{exp.period}</span>
               </div>
               <span className="nn-tl-org">
-                {exp.company.toLowerCase()} • {exp.location.toLowerCase()}
+                {exp.company} • {exp.location}
               </span>
 
               <ul className="nn-tl-bullets mt-3">
@@ -135,7 +135,7 @@ export default function HomePage() {
         {/* Education Card */}
         <div className="mt-2 p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-wrap items-baseline justify-between gap-3">
           <div>
-            <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">education</span>
+            <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Education</span>
             <span className="text-base font-medium text-[var(--ink)]">{profile.education.degree}</span>
             <span className="text-xs text-[var(--ink-soft)] block font-mono mt-0.5">
               {profile.education.institution} • {profile.education.location}
@@ -154,9 +154,9 @@ export default function HomePage() {
       <section id="stack" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-mono font-normal">॥</span> tech stack
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> Tech Stack
           </h2>
-          <span className="nn-section-aside">languages • frameworks • distributed systems</span>
+          <span className="nn-section-aside">Languages • Frameworks • Distributed Systems</span>
         </div>
 
         <div className="flex flex-col gap-6">
@@ -165,10 +165,10 @@ export default function HomePage() {
               <div className="flex items-baseline justify-between gap-2 border-b border-[var(--line)] pb-1">
                 <span className="font-mono text-xs text-[var(--accent)] font-medium flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rotate-45 border border-[var(--accent-gold)] bg-[var(--surface-sunk)]" />
-                  {category.category.toLowerCase()}
+                  {category.category}
                 </span>
                 <span className="text-[11px] font-mono text-[var(--ink-faint)]">
-                  {category.description.toLowerCase()}
+                  {category.description}
                 </span>
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
@@ -177,7 +177,7 @@ export default function HomePage() {
                     key={skill.name}
                     className="nn-tag"
                   >
-                    {skill.name.toLowerCase()}
+                    {skill.name}
                   </span>
                 ))}
               </div>
@@ -192,9 +192,9 @@ export default function HomePage() {
       <section id="projects" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-mono font-normal">॥</span> projects
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> Projects
           </h2>
-          <span className="nn-section-aside">{projects.length} featured systems</span>
+          <span className="nn-section-aside">{projects.length} Featured Systems</span>
         </div>
 
         <div className="flex flex-col gap-6">
@@ -213,7 +213,7 @@ export default function HomePage() {
                       href={`/projects#${proj.slug}`}
                       className="hover:text-[var(--accent)] transition-colors"
                     >
-                      {proj.data.title.toLowerCase()}
+                      {proj.data.title}
                     </Link>
                   </h3>
                   <span className="font-mono text-xs text-[var(--accent)] mt-0.5 block">
@@ -231,7 +231,7 @@ export default function HomePage() {
                       aria-label={`GitHub repo for ${proj.data.title}`}
                     >
                       <GithubIcon className="w-3.5 h-3.5 fill-current" />
-                      <span>code</span>
+                      <span>Code</span>
                     </a>
                   )}
                   {proj.data.live && (
@@ -243,7 +243,7 @@ export default function HomePage() {
                       aria-label={`Live demo for ${proj.data.title}`}
                     >
                       <ExternalLinkIcon className="w-3.5 h-3.5" />
-                      <span>live demo</span>
+                      <span>Live Demo</span>
                     </a>
                   )}
                 </div>
@@ -255,25 +255,25 @@ export default function HomePage() {
 
               {proj.data.metrics && (
                 <div className="font-mono text-xs text-[var(--accent)] bg-[var(--surface-sunk)] px-2.5 py-1.5 rounded border border-[var(--line)]">
-                  <span className="text-[var(--accent-gold)] font-medium">scale / metric:</span> {proj.data.metrics}
+                  <span className="text-[var(--accent-gold)] font-medium">Scale / Metric:</span> {proj.data.metrics}
                 </div>
               )}
 
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {proj.data.stack?.map((tech) => (
                   <span key={tech} className="nn-tag text-[11px] font-mono">
-                    {tech.toLowerCase()}
+                    {tech}
                   </span>
                 ))}
               </div>
 
               <div className="pt-2 border-t border-[var(--line)] flex justify-between items-center text-xs font-mono">
-                <span className="text-[var(--ink-faint)]">6-part architecture breakdown</span>
+                <span className="text-[var(--ink-faint)]">6-Part Architecture Breakdown</span>
                 <Link
                   href={`/projects#${proj.slug}`}
                   className="text-[var(--accent)] hover:underline flex items-center gap-1"
                 >
-                  <span>read architecture</span>
+                  <span>Read Architecture</span>
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -288,9 +288,9 @@ export default function HomePage() {
       <section id="achievements" className="flex flex-col gap-6">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-mono font-normal">॥</span> achievements & awards
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> Achievements & Awards
           </h2>
-          <span className="nn-section-aside">verified recognitions</span>
+          <span className="nn-section-aside">Verified Recognitions</span>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -327,7 +327,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-1.5 pt-2">
                 {item.tags.map((tag) => (
                   <span key={tag} className="text-[11px] font-mono text-[var(--ink-faint)] bg-[var(--surface-sunk)] px-2 py-0.5 rounded">
-                    {tag.toLowerCase()}
+                    {tag}
                   </span>
                 ))}
               </div>
@@ -342,9 +342,9 @@ export default function HomePage() {
       <section id="contact" className="flex flex-col gap-6 relative">
         <div className="nn-section">
           <h2>
-            <span className="text-[var(--accent)] font-mono font-normal">॥</span> contact
+            <span className="text-[var(--accent)] font-mono font-normal">॥</span> Contact
           </h2>
-          <span className="nn-section-aside">{profile.location.toLowerCase()}</span>
+          <span className="nn-section-aside">{profile.location}</span>
         </div>
 
         <div className="nn-prose">
@@ -357,7 +357,7 @@ export default function HomePage() {
         <div className="p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">email</span>
+              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Email</span>
               <a
                 href={`mailto:${profile.links.email}`}
                 className="text-sm font-mono text-[var(--ink)] hover:text-[var(--accent)] transition-colors mt-0.5 block"
@@ -366,7 +366,7 @@ export default function HomePage() {
               </a>
             </div>
             <div>
-              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">phone</span>
+              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Phone</span>
               <a
                 href={`tel:${profile.phone.replace(/\s+/g, "")}`}
                 className="text-sm font-mono text-[var(--ink)] hover:text-[var(--accent)] transition-colors mt-0.5 block"
@@ -375,13 +375,13 @@ export default function HomePage() {
               </a>
             </div>
             <div>
-              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">location</span>
+              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Location</span>
               <span className="text-sm font-mono text-[var(--ink-soft)] mt-0.5 block">
                 {profile.location}
               </span>
             </div>
             <div>
-              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">profiles</span>
+              <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Profiles</span>
               <div className="flex items-center gap-3 mt-1">
                 <a
                   href={profile.links.linkedin}

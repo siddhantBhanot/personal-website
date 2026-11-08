@@ -10,13 +10,13 @@ export default function BlogsIndexPage() {
       <div>
         <div className="mb-4">
           <Link href="/#blogs" className="nn-pill">
-            <span>← home</span>
+            <span>← Home</span>
           </Link>
         </div>
-        <SectionArchBadge label="essays & retrospectives" />
-        <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">writing & essays</h1>
+        <SectionArchBadge label="Essays & Retrospectives" />
+        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Writing & Essays</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
-          reflections on microservices, database bottlenecks, and engineering rigor.
+          Reflections on microservices, database bottlenecks, and engineering rigor.
         </p>
       </div>
 
@@ -26,7 +26,7 @@ export default function BlogsIndexPage() {
             <Link className="nn-link group" href={`/blogs/${blog.slug}`}>
               <span className="nn-link-title flex items-center gap-2">
                 <span className="text-xs text-[var(--accent-gold)] opacity-70 group-hover:opacity-100 transition-opacity">❖</span>
-                {blog.data.title.toLowerCase()}
+                {blog.data.title}
               </span>
               <span className="nn-arrow" aria-hidden="true">→</span>
               <span className="nn-link-desc">{blog.data.summary}</span>

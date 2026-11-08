@@ -26,15 +26,15 @@ export default async function NoteDetailPage({
     <article className="post">
       <div className="mb-6">
         <Link href="/#notes" className="nn-pill">
-          <span>← engineering notes</span>
+          <span>← Engineering Notes</span>
         </Link>
       </div>
 
       <div className="mb-2">
-        <SectionArchBadge label={note.data.difficulty || "engineering deep dive"} />
+        <SectionArchBadge label={note.data.difficulty || "Engineering Deep Dive"} />
       </div>
 
-      <h1>{note.data.title.toLowerCase()}</h1>
+      <h1>{note.data.title}</h1>
 
       {/* Jharokha Alcove Summary */}
       <div className="jharokha-alcove my-6">
@@ -47,7 +47,7 @@ export default async function NoteDetailPage({
         <span>•</span>
         <span>{note.data.readingTime}</span>
         <span>•</span>
-        <span>{note.data.tags?.join(", ").toLowerCase()}</span>
+        <span>{note.data.tags?.join(", ")}</span>
       </div>
 
       <div className="blog-body whitespace-pre-line leading-7 text-[var(--ink-soft)]">
@@ -58,7 +58,7 @@ export default async function NoteDetailPage({
 
       <div>
         <Link href="/#notes" className="nn-pill">
-          <span>← back to all engineering notes</span>
+          <span>← Back to all Engineering Notes</span>
         </Link>
       </div>
     </article>

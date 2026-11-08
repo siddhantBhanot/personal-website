@@ -10,13 +10,13 @@ export default function NotesIndexPage() {
       <div>
         <div className="mb-4">
           <Link href="/#notes" className="nn-pill">
-            <span>← home</span>
+            <span>← Home</span>
           </Link>
         </div>
-        <SectionArchBadge label="technical knowledge base" />
-        <h1 className="text-[36px] font-light text-[var(--ink)] mt-1">engineering notes</h1>
+        <SectionArchBadge label="Technical Knowledge Base" />
+        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Engineering Notes</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
-          deep dives into database engines, concurrency primitives, and distributed systems design.
+          Deep dives into database engines, concurrency primitives, and distributed systems design.
         </p>
       </div>
 
@@ -26,12 +26,12 @@ export default function NotesIndexPage() {
             <Link className="nn-link group" href={`/notes/${note.slug}`}>
               <span className="nn-link-title flex items-center gap-2">
                 <span className="text-xs text-[var(--accent-gold)] opacity-70 group-hover:opacity-100 transition-opacity">❖</span>
-                {note.data.title.toLowerCase()}
+                {note.data.title}
               </span>
               <span className="nn-arrow" aria-hidden="true">→</span>
               <span className="nn-link-desc">{note.data.summary}</span>
               <span className="nn-link-meta">
-                {note.data.readingTime} • {note.data.tags?.join(", ").toLowerCase()}
+                {note.data.readingTime} • {note.data.tags?.join(", ")}
               </span>
             </Link>
           </li>

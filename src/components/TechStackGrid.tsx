@@ -24,7 +24,7 @@ export function TechStackGrid() {
                 key={skill.name}
                 className="inline-flex items-center px-3 py-1.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-xs font-mono text-[var(--text-primary)] hover:border-[var(--accent-amber)]/60 transition-colors"
               >
-                <span className="font-medium">{skill.name.toLowerCase()}</span>
+                <span className="font-medium">{skill.name}</span>
               </div>
             ))}
           </div>
