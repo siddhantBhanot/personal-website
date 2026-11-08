@@ -171,19 +171,13 @@ export default function HomePage() {
                   {category.description.toLowerCase()}
                 </span>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 pt-1">
                 {category.skills.map((skill) => (
                   <span
                     key={skill.name}
-                    className="nn-tag group relative"
-                    title={skill.note ? `${skill.name} — ${skill.note}` : skill.name}
+                    className="nn-tag"
                   >
-                    <span>{skill.name.toLowerCase()}</span>
-                    {skill.note && (
-                      <span className="text-[10px] text-[var(--ink-faint)] ml-1 opacity-75 group-hover:opacity-100 group-hover:text-[var(--accent-gold)] transition-opacity">
-                        • {skill.note}
-                      </span>
-                    )}
+                    {skill.name.toLowerCase()}
                   </span>
                 ))}
               </div>

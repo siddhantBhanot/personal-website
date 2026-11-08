@@ -22,14 +22,9 @@ export function TechStackGrid() {
             {category.skills.map((skill) => (
               <div
                 key={skill.name}
-                className="group relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-xs font-mono text-[var(--text-primary)] hover:border-[var(--accent-amber)]/60 transition-colors"
+                className="inline-flex items-center px-3 py-1.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-xs font-mono text-[var(--text-primary)] hover:border-[var(--accent-amber)]/60 transition-colors"
               >
-                <span className="font-medium">{skill.name}</span>
-                {skill.note && (
-                  <span className="text-[10px] text-[var(--text-muted)] group-hover:text-[var(--accent-amber)] transition-colors">
-                    • {skill.note}
-                  </span>
-                )}
+                <span className="font-medium">{skill.name.toLowerCase()}</span>
               </div>
             ))}
           </div>
