@@ -16,6 +16,7 @@ stack:
   - "SSE Streaming"
   - "Mermaid.js"
 github: "https://github.com/siddhantBhanot/context-foundry/tree/development"
+live: "https://contextfoundry-frontend.onrender.com/"
 featured: true
 order: 1
 ---
@@ -85,3 +86,4 @@ The system strictly enforces clean separation of concerns: the Presentation laye
 - **Tree-Sitter Cross-Repository Call Graph**: Integrate Tree-Sitter to generate deterministic symbol dependency graphs (caller/callee hierarchies, interface implementations) stored in a graph database (e.g., Neo4j), combining graph traversal with vector similarity for multi-hop architectural reasoning.
 - **Agentic Code Modification & PR Generation**: Expand the platform into an autonomous coding agent using MCP (Model Context Protocol) tool execution, enabling it to write unit tests, scaffold API controllers, and open verified GitHub Pull Requests directly from chat.
 - **Local On-Premises SLM Inference**: Support quantized local small language models (e.g., DeepSeek-Coder, CodeLlama via vLLM) for strictly air-gapped corporate environments requiring zero external API transmission.
+
