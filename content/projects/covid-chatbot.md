@@ -18,64 +18,42 @@ order: 2
 
 ### Problem Statement
 
-During the peak of the COVID-19 pandemic, healthcare advisories, quarantine guidelines, testing methodologies, and symptom guidance evolved rapidly. Public health portals hosted extensive FAQ repositories, but traditional lexical keyword search tools frequently failed to assist users.
-
-Citizens seeking urgent advice phrased their questions colloquially (e.g., *"My throat tickles and I have chills, should I isolate?"* or *"Can I get infected again if I already had it?"*). Because these natural queries rarely matched the exact formal terminology found in official documentation (e.g., *"COVID-19 symptomatic transmission protocols"*), users received empty search results or irrelevant articles. The objective was to build a semantic question-answering retrieval engine that understands conversational intent, measures semantic vector similarity, and delivers accurate, verified health guidance in real time.
+During the COVID-19 pandemic, public health guidelines evolved rapidly across large FAQ repositories. Keyword search engines failed because colloquial citizen queries (*"throat tickles and chills, should I isolate?"*) rarely matched formal medical terminology (*"symptomatic transmission protocols"*), resulting in empty search results. The goal was to build a semantic question-answering retrieval engine that maps conversational intent to verified healthcare guidance in real time.
 
 ### Why It Was Interesting
 
-This project was developed before the advent of ubiquitous generative LLMs, focusing on dense semantic representation and vector similarity search. The technical core required embedding unstructured text into continuous high-dimensional vector spaces and computing mathematical proximity in real time.
-
-The primary engineering intrigue lay in:
-- Overcoming the lexical gap where queries and FAQ entries share zero keywords yet convey identical semantic meaning.
-- Executing dense vector embeddings and cosine similarity comparisons within a lightweight web framework under interactive latency requirements.
-- Establishing rigorous confidence thresholding to prevent dangerous false-positive answers to critical healthcare inquiries.
+- **Lexical Gap**: Bridging queries and FAQ entries that share zero common keywords yet convey identical semantic meaning.
+- **Dense Vector Search**: Executing 512D embeddings and cosine similarity comparison under sub-20ms latency constraints on a lightweight web service.
+- **High-Stakes Safety**: Implementing strict confidence thresholds to prevent false positives on critical medical guidance.
 
 ### Approach
 
-1. **Knowledge Corpus Preparation**: Curated and structured a comprehensive dataset of verified COVID-19 Q&A entries sourced from credible health organizations (WHO, CDC, Ministry of Health), standardizing question-answer pairs and metadata.
-2. **Dense Vector Representation via USE**: Leveraged Google's Universal Sentence Encoder (USE) via TensorFlow Hub, which encodes natural language sentences into 512-dimensional dense embedding vectors trained on diverse conversational corpora.
-3. **Offline Embedding Pre-computation**: Generated and saved the 512D embedding vectors for all knowledge base questions in memory during startup, eliminating redundant matrix calculations during live inference.
-4. **Real-Time Similarity Matching**: Implemented a lightweight Python Flask HTTP service. When a user submits an arbitrary natural language query, the backend encodes the input into a 512D vector and computes cosine similarity against the pre-indexed FAQ vector matrix using optimized vector dot products.
-5. **Confidence Scoring & Safety Fallbacks**: Evaluated the top-$K$ similarity scores against a strict confidence threshold. If the highest score exceeds the cutoff, the corresponding verified answer is returned; otherwise, the engine safely triggers a fallback response directing the user to official medical hotlines.
+- **Corpus Standardization**: Structured verified COVID-19 Q&A entries from WHO, CDC, and health ministries into clean question-answer pairs.
+- **512D Dense Embeddings**: Utilized Google's Universal Sentence Encoder (USE) via TensorFlow Hub to map conversational text to 512-dimensional continuous vectors.
+- **Pre-Computed Vector Indexing**: Embedded knowledge base entries in-memory at startup to eliminate redundant matrix transformations during inference.
+- **Real-Time Similarity & Fallback**: Exposed a Flask REST API that computes cosine similarity via NumPy vector dot products, returning top verified answers when confidence exceeds 0.65 or triggering official medical hotlines.
 
 ### Architecture
 
 ```
-[User Natural Language Query]
-              │
-              ▼
-[Flask REST API Endpoint]
-              │
-              ▼
-[Google Universal Sentence Encoder (USE)]
-  • Maps query string to 512D dense vector
-              │
-              ▼
-[Vector Similarity Engine (NumPy Linear Algebra)]
-  • Broadcast dot-product against pre-computed FAQ vectors
-  • Cosine similarity calculation
-              │
-              ▼
-[Confidence Evaluator & Ranker]
-  ├─► [Score >= Threshold]: Returns top-ranked verified FAQ answer
-  └─► [Score < Threshold]: Triggers safety fallback with emergency contacts
-              │
-              ▼
-[Interactive Web Chat Client]
+[User Query] ──► [Flask REST API] ──► [Google USE (512D Vector)]
+                                              │
+                                              ▼
+[Interactive Chat] ◄── [Confidence Gate] ◄── [NumPy Cosine Similarity Engine]
+                       (Score >= 0.65: FAQ Answer | < 0.65: Emergency Fallback)
 ```
 
-The architecture decouples the static knowledge base embedding phase from the real-time inference path, ensuring sub-millisecond similarity computation once the query vector is generated.
+Decoupled offline knowledge embedding from the real-time inference path for sub-20ms response times.
 
 ### Engineering Challenges
 
-- **Inference Latency & Cold-Start Memory Overhead**: Google's Universal Sentence Encoder TensorFlow computational graph has a non-trivial memory footprint and takes several seconds to initialize. Initializing the model per HTTP request resulted in unacceptable latency. Solved by architecting the model loader as an application singleton that boots once during server initialization and resides in memory.
-- **Minimizing False Positives on Medical Inquiries**: In healthcare applications, a confident but incorrect answer is significantly worse than admitting lack of knowledge. Tuned the cosine similarity threshold empirically ($> 0.65$) to ensure the chatbot only asserts answers when semantic confidence is rigorous.
-- **Handling Out-of-Domain and Ambiguous Inputs**: Users frequently submitted one-word questions or topics unrelated to COVID-19. Implemented input validation and graceful fallback handling to guide users back to relevant healthcare queries.
+- **Model Cold-Start & Memory**: The TensorFlow USE graph has high initialization overhead; resolved by architecting the loader as a persistent in-memory singleton.
+- **False Positive Mitigation**: Calibrated empirical similarity cutoffs ($> 0.65$) to ensure the engine only asserts answers when confidence is statistically rigorous.
+- **Out-of-Domain Inputs**: Handled ambiguous or off-topic queries with input validation and graceful fallback handling to guide users back to verified healthcare topics.
 
 ### Potential Improvements
 
-- **Vector Database Integration (FAISS / Milvus)**: For larger knowledge bases containing tens of thousands of medical articles, replacing in-memory NumPy matrix multiplication with Facebook AI Similarity Search (FAISS) or Milvus to support sub-millisecond Approximate Nearest Neighbor (ANN) search with HNSW indexes.
-- **Bi-Encoder + Cross-Encoder Re-Ranking Pipeline**: Implementing a two-stage retrieval pipeline where a dense bi-encoder retrieves top-20 candidates, followed by a fine-tuned cross-encoder that re-scores pairs for even higher semantic precision.
-- **Reactive Microservice Architecture**: Migrating the Python Flask backend to a high-concurrency Spring WebFlux or FastAPI service leveraging ONNX Runtime for hardware-accelerated, non-blocking model execution.
+- **HNSW Vector Indexing**: Migrate in-memory NumPy dot-products to FAISS or Qdrant for scalable sub-millisecond Approximate Nearest Neighbor (ANN) search.
+- **Bi-Encoder + Cross-Encoder Pipeline**: Add a lightweight cross-encoder re-ranking stage to evaluate the top candidates for higher semantic precision.
+- **Reactive Runtime Migration**: Re-platform from Flask to Spring WebFlux or FastAPI with ONNX Runtime for hardware-accelerated non-blocking execution.
 
