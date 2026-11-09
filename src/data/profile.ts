@@ -16,7 +16,7 @@ export interface ProfileData {
   education: Education;
   about: {
     summary: string[];
-    corePillars: {
+    corePillars?: {
       title: string;
       description: string;
     }[];
@@ -48,33 +48,10 @@ export const profile: ProfileData = {
   },
   about: {
     summary: [
-      "Backend Software Engineer with 4+ years of professional production experience architecting high-throughput, fault-tolerant distributed systems and reactive microservices.",
-      "Currently at FreechargeBiz (Axis Bank), I engineer backend services for the Maximus digital acquisition platform. My work powers a shared Income Assessment service processing 96M+ requests/month and supporting 137K+ borrower applications across 8+ lending products (Home Loan, Business Loan, Auto Loan, Personal Loan, Credit Card).",
-      "Previously at Comviva, I led the decomposition of legacy billing monoliths (mBAS for Vodafone India) into modern TMF-compliant Spring Boot microservices, cutting API latency by 30%–50%.",
-    ],
-    corePillars: [
-      {
-        title: "Distributed Systems & SAGA",
-        description: "Orchestrating multi-step financial transaction pipelines with automated rollbacks and eventual consistency.",
-      },
-      {
-        title: "High-Throughput Reactive APIs",
-        description: "Leveraging Kotlin and Spring WebFlux event loops for non-blocking I/O handling tens of millions of monthly requests.",
-      },
-      {
-        title: "Security & Regulatory Compliance",
-        description: "Authoring enterprise-wide AES encryption WebFilters enforcing RBI guidelines across production lending microservices.",
-      },
+      "Software Engineer with a strong foundation in backend engineering and distributed systems, complemented by experience in frontend development and AI-powered applications. Interested in building scalable software and exploring how AI can transform the way we build and interact with technology.",
     ],
   },
-  highlights: [
-    "4+ Years Production Backend Experience",
-    "96M+ Requests / Month Scale",
-    "Axis Bank Digital Acquisition Platform",
-    "SAGA Distributed Transaction Architecture",
-    "Reactive Microservices (Kotlin + WebFlux)",
-    "B.Tech. IT (Manipal University Jaipur, CGPA 8.89)",
-  ],
+  highlights: [],
   links: {
     resume: "/resume.pdf",
     leetcode: "https://leetcode.com/siddhantBhanot/",

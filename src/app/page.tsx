@@ -59,7 +59,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Jharokha Alcove Style for Crisp Recruiter Summary */}
+        {/* Jharokha Alcove Style for Concise Summary */}
         <div className="jharokha-alcove">
           <HaveliCornerBracket position="top-right" />
           <div className="nn-prose">
@@ -67,29 +67,18 @@ export default function HomePage() {
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-4 border-t border-[var(--line)] mt-4">
-            {profile.about.corePillars.map((pillar) => (
-              <div key={pillar.title} className="flex flex-col gap-1">
-                <span className="text-xs font-mono font-semibold text-[var(--accent-gold)] flex items-center gap-1">
-                  <span>❖</span> {pillar.title}
-                </span>
-                <span className="text-[11px] text-[var(--ink-soft)] leading-relaxed">
-                  {pillar.description}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Recruiter Quick Highlights */}
-        <div className="flex flex-wrap gap-2 pt-1">
-          {profile.highlights.map((highlight) => (
-            <span key={highlight} className="nn-tag text-xs font-mono">
-              {highlight}
-            </span>
-          ))}
-        </div>
+        {profile.highlights.length > 0 && (
+          <div className="flex flex-wrap gap-2 pt-1">
+            {profile.highlights.map((highlight) => (
+              <span key={highlight} className="nn-tag text-xs font-mono">
+                {highlight}
+              </span>
+            ))}
+          </div>
+        )}
       </section>
 
       <JaaliFriezeDivider />
