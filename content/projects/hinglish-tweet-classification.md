@@ -15,6 +15,7 @@ github: "https://github.com/siddhantBhanot/Hinglish-tweet-classification/tree/ma
 live: "https://hinglish-tweet-classification.streamlit.app/"
 featured: true
 order: 4
+image: "/images/projects/hinglish-tweet.webp"
 ---
 
 ### Problem Statement

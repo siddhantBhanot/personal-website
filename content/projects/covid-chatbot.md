@@ -14,6 +14,7 @@ stack:
 github: "https://github.com/siddhantBhanot/Covid-Chatbot"
 featured: true
 order: 2
+image: "/images/projects/covid-chatbot.jpeg"
 ---
 
 ### Problem Statement

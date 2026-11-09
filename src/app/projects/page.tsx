@@ -70,6 +70,17 @@ export default function ProjectsPage() {
               </div>
             </div>
 
+            {proj.data.image && (
+              <div className="relative w-full overflow-hidden rounded border border-[var(--line)] bg-[var(--surface-sunk)] aspect-video sm:aspect-[2/1] my-2">
+                <img
+                  src={proj.data.image}
+                  alt={`${proj.data.title} application screenshot`}
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+            )}
+
             <p className="text-sm leading-relaxed text-[var(--ink-soft)] font-mono">
               {proj.data.summary}
             </p>

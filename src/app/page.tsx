@@ -232,6 +232,20 @@ export default function HomePage() {
                 </div>
               </div>
 
+              {proj.data.image && (
+                <Link
+                  href={`/projects#${proj.slug}`}
+                  className="relative w-full overflow-hidden rounded border border-[var(--line)] bg-[var(--surface-sunk)] aspect-video sm:aspect-[2/1] my-1 group/img block"
+                >
+                  <img
+                    src={proj.data.image}
+                    alt={`${proj.data.title} preview`}
+                    className="w-full h-full object-cover object-top transition-transform duration-300 group-hover/img:scale-[1.02]"
+                    loading="lazy"
+                  />
+                </Link>
+              )}
+
               <p className="text-xs leading-relaxed text-[var(--ink-soft)] font-mono">
                 {proj.data.summary}
               </p>

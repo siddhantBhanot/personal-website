@@ -16,6 +16,7 @@ github: "https://github.com/siddhantBhanot/Coursera_Capstone"
 live: "https://courseracapstone-wh4aihzgahbjp2wpdysjae.streamlit.app/"
 featured: true
 order: 3
+image: "/images/projects/searching-house.jpg"
 ---
 
 ### Problem Statement

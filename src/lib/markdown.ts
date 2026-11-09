@@ -38,6 +38,7 @@ export interface ProjectMeta {
   live?: string;
   featured?: boolean;
   order?: number;
+  image?: string;
 }
 
 export function getItemsFromDirectory<T>(subdir: string): MarkdownItem<T>[] {

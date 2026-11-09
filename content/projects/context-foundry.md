@@ -19,6 +19,7 @@ github: "https://github.com/siddhantBhanot/context-foundry/tree/development"
 live: "https://contextfoundry-frontend.onrender.com/"
 featured: true
 order: 1
+image: "/images/projects/context-foundry.png"
 ---
 
 ### Problem Statement
