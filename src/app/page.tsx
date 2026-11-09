@@ -235,12 +235,12 @@ export default function HomePage() {
               {proj.data.image && (
                 <Link
                   href={`/projects#${proj.slug}`}
-                  className="relative w-full overflow-hidden rounded border border-[var(--line)] bg-[var(--surface-sunk)] aspect-video sm:aspect-[2/1] my-1 group/img block"
+                  className="relative w-full overflow-hidden rounded border border-[var(--line)] bg-[var(--surface-sunk)] aspect-[16/9] my-1 group/img block"
                 >
                   <img
                     src={proj.data.image}
                     alt={`${proj.data.title} preview`}
-                    className="w-full h-full object-cover object-top transition-transform duration-300 group-hover/img:scale-[1.02]"
+                    className="w-full h-full object-cover object-center transition-transform duration-300 group-hover/img:scale-[1.02]"
                     loading="lazy"
                   />
                 </Link>
@@ -287,7 +287,6 @@ export default function HomePage() {
           <h2>
             <span className="text-[var(--accent)] font-mono font-normal">॥</span> Achievements & Awards
           </h2>
-          <span className="nn-section-aside">Verified Recognitions</span>
         </div>
 
         <div className="flex flex-col gap-4">

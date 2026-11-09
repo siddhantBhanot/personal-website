@@ -71,11 +71,11 @@ export default function ProjectsPage() {
             </div>
 
             {proj.data.image && (
-              <div className="relative w-full overflow-hidden rounded border border-[var(--line)] bg-[var(--surface-sunk)] aspect-video sm:aspect-[2/1] my-2">
+              <div className="relative w-full overflow-hidden rounded border border-[var(--line)] bg-[var(--surface-sunk)] aspect-[16/9] my-2">
                 <img
                   src={proj.data.image}
                   alt={`${proj.data.title} application screenshot`}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                   loading="lazy"
                 />
               </div>
