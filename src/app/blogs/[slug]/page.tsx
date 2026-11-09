@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getItemsFromDirectory, getItemBySlug, BlogMeta } from "@/lib/markdown";
@@ -8,6 +9,35 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({
     slug: blog.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = getItemBySlug<BlogMeta>("blogs", slug);
+  if (!blog) {
+    return { title: "Essay Not Found" };
+  }
+
+  return {
+    title: `${blog.data.title}`,
+    description: blog.data.summary,
+    alternates: {
+      canonical: `/blogs/${slug}`,
+    },
+    openGraph: {
+      title: `${blog.data.title} | Siddhant Bhanot`,
+      description: blog.data.summary,
+      url: `/blogs/${slug}`,
+      type: "article",
+      publishedTime: blog.data.date,
+      authors: ["Siddhant Bhanot"],
+      tags: blog.data.tags,
+    },
+  };
 }
 
 export default async function BlogDetailPage({

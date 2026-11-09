@@ -1,8 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { profile } from "@/data/profile";
 import { experiences } from "@/data/experience";
 import { SteppedBaoliDot, SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
 import { FormattedText } from "@/components/FormattedText";
+
+export const metadata: Metadata = {
+  title: "Work Experience",
+  description:
+    "Professional backend engineering history of Siddhant Bhanot across FreechargeBiz (Axis Bank) and Comviva. 4+ years architecting reactive microservices, SAGA transaction pipelines, and high-throughput systems.",
+  alternates: {
+    canonical: "/experience",
+  },
+  openGraph: {
+    title: "Work Experience | Siddhant Bhanot — Backend Software Engineer",
+    description:
+      "4+ years of backend engineering: scaling shared Income Assessment services to 96M+ req/mo at FreechargeBiz (Axis Bank) and monolithic decomposition at Comviva.",
+    url: "/experience",
+  },
+};
 
 export default function ExperienceIndexPage() {
   return (
@@ -29,7 +45,7 @@ export default function ExperienceIndexPage() {
           >
             <SteppedBaoliDot isCurrent={idx === 0} />
             <div className="nn-tl-header">
-              <span className="nn-tl-role">{exp.role}</span>
+              <h2 className="nn-tl-role">{exp.role}</h2>
               <span className="nn-tl-when">{exp.period}</span>
             </div>
             <span className="nn-tl-org">

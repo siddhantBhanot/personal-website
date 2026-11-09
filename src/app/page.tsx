@@ -103,7 +103,7 @@ export default function HomePage() {
               <SteppedBaoliDot isCurrent={idx === 0} />
 
               <div className="nn-tl-header">
-                <span className="nn-tl-role">{exp.role}</span>
+                <h3 className="nn-tl-role">{exp.role}</h3>
                 <span className="nn-tl-when">{exp.period}</span>
               </div>
               <span className="nn-tl-org">
@@ -152,10 +152,10 @@ export default function HomePage() {
           {techStackData.map((category) => (
             <div key={category.category} className="flex flex-col gap-2.5">
               <div className="flex items-baseline justify-between gap-2 border-b border-[var(--line)] pb-1">
-                <span className="font-mono text-xs text-[var(--accent)] font-medium flex items-center gap-1.5">
+                <h3 className="font-mono text-xs text-[var(--accent)] font-medium flex items-center gap-1.5 m-0">
                   <span className="w-1.5 h-1.5 rotate-45 border border-[var(--accent-gold)] bg-[var(--surface-sunk)]" />
                   {category.category}
-                </span>
+                </h3>
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
                 {category.skills.map((skill) => (
@@ -242,7 +242,7 @@ export default function HomePage() {
                 >
                   <img
                     src={proj.data.image}
-                    alt={`${proj.data.title} preview`}
+                    alt={`${proj.data.title} - Software Engineering Case Study by Siddhant Bhanot`}
                     className="w-full h-full object-cover object-center transition-transform duration-300 group-hover/img:scale-[1.02]"
                     loading="lazy"
                   />
@@ -343,7 +343,7 @@ export default function HomePage() {
                         <div className="w-16 h-16 sm:w-20 sm:h-20 overflow-hidden rounded bg-[var(--surface)] flex items-center justify-center border border-[var(--line)] group-hover/att:border-[var(--accent)]/50">
                           <img
                             src={att.url}
-                            alt={att.name}
+                            alt={`${att.name} - Siddhant Bhanot Engineering Recognition`}
                             className="w-full h-full object-cover object-center transition-transform duration-200 group-hover/att:scale-105"
                             loading="lazy"
                           />

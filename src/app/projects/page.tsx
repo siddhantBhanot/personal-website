@@ -1,8 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { getItemsFromDirectory, ProjectMeta } from "@/lib/markdown";
 import { HaveliCornerBracket, SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
 import { GithubIcon, ExternalLinkIcon } from "@/components/Icons";
+
+export const metadata: Metadata = {
+  title: "Projects & Technical Architecture",
+  description:
+    "Engineering breakdowns and architectural deep dives by Siddhant Bhanot: ContextFoundry (Autonomous RAG & AI Platform), Hinglish Sentiment Classifier, Geospatial Clustering, and Covid Q&A Chatbot.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Projects & Technical Architecture | Siddhant Bhanot",
+    description:
+      "Architectural case studies, distributed systems design, and engineering deep dives by Siddhant Bhanot.",
+    url: "/projects",
+  },
+};
 
 export default function ProjectsPage() {
   const projects = getItemsFromDirectory<ProjectMeta>("projects");
@@ -74,7 +90,7 @@ export default function ProjectsPage() {
               <div className="relative w-full overflow-hidden rounded border border-[var(--line)] bg-[var(--surface-sunk)] aspect-[16/9] my-2">
                 <img
                   src={proj.data.image}
-                  alt={`${proj.data.title} application screenshot`}
+                  alt={`${proj.data.title} - System Architecture and Application Interface by Siddhant Bhanot`}
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
                 />

@@ -85,7 +85,7 @@ export function Sidebar() {
 
         {/* Profile Info with Cusped Jharokha Arch */}
         <div className="nn-side-profile relative z-10">
-          <Link href="/" className="inline-block" aria-label="Home">
+          <Link href="/" className="inline-block" aria-label="Siddhant Bhanot - Portfolio Home">
             <JharokhaArchAvatar>
               {/* Inner Sacred Geometry Emblem */}
               <svg viewBox="0 0 28 28" fill="none" className="w-5 h-5 text-[var(--accent)]">

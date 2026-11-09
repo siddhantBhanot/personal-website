@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getItemsFromDirectory, NoteMeta } from "@/lib/markdown";
 import { SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
+
+export const metadata: Metadata = {
+  title: "Engineering Notes & System Design",
+  description:
+    "Technical knowledge base and engineering notes by Siddhant Bhanot on distributed locking (Redis vs etcd), Postgres indexing, AES encryption WebFilters, and SAGA patterns.",
+  alternates: {
+    canonical: "/notes",
+  },
+  openGraph: {
+    title: "Engineering Notes & System Design | Siddhant Bhanot",
+    description:
+      "Deep dives into database indexing, distributed concurrency primitives, and microservice resilience patterns.",
+    url: "/notes",
+  },
+};
 
 export default function NotesIndexPage() {
   const notes = getItemsFromDirectory<NoteMeta>("notes");

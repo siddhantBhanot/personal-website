@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getItemsFromDirectory, getItemBySlug, NoteMeta } from "@/lib/markdown";
@@ -8,6 +9,35 @@ export async function generateStaticParams() {
   return notes.map((note) => ({
     slug: note.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const note = getItemBySlug<NoteMeta>("notes", slug);
+  if (!note) {
+    return { title: "Note Not Found" };
+  }
+
+  return {
+    title: `${note.data.title}`,
+    description: note.data.summary,
+    alternates: {
+      canonical: `/notes/${slug}`,
+    },
+    openGraph: {
+      title: `${note.data.title} | Siddhant Bhanot`,
+      description: note.data.summary,
+      url: `/notes/${slug}`,
+      type: "article",
+      publishedTime: note.data.date,
+      authors: ["Siddhant Bhanot"],
+      tags: note.data.tags,
+    },
+  };
 }
 
 export default async function NoteDetailPage({

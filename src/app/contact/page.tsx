@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { profile } from "@/data/profile";
 import { ContactEmail } from "@/components/ContactEmail";
 import { SectionArchBadge, HaveliCornerBracket } from "@/components/IndicMotif";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Siddhant Bhanot for backend engineering roles, distributed systems consulting, and technical collaborations. Located in Gurugram, India.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Siddhant Bhanot | Backend Software Engineer",
+    description:
+      "Direct contact details and professional profiles for Siddhant Bhanot (email, LinkedIn, GitHub, LeetCode).",
+    url: "/contact",
+  },
+};
 
 export default function ContactIndexPage() {
   return (

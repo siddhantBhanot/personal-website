@@ -1,0 +1,11 @@
+User-Agent: *
+Allow: /
+
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+
+Host: https://siddhantbhanot.github.io
+Sitemap: https://siddhantbhanot.github.io/sitemap.xml

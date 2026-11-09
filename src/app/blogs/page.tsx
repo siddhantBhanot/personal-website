@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getItemsFromDirectory, BlogMeta } from "@/lib/markdown";
 import { SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
+
+export const metadata: Metadata = {
+  title: "Writing & Technical Essays",
+  description:
+    "Engineering essays and retrospectives by Siddhant Bhanot on scaling distributed microservices, database bottlenecks, and production backend architecture.",
+  alternates: {
+    canonical: "/blogs",
+  },
+  openGraph: {
+    title: "Writing & Technical Essays | Siddhant Bhanot",
+    description:
+      "Deep dives into production engineering, distributed transactions, and reactive microservices.",
+    url: "/blogs",
+  },
+};
 
 export default function BlogsIndexPage() {
   const blogs = getItemsFromDirectory<BlogMeta>("blogs");
