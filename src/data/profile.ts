@@ -15,7 +15,6 @@ export interface ProfileData {
   phone: string;
   education: Education;
   about: {
-    headline: string;
     summary: string[];
     corePillars: {
       title: string;
@@ -48,7 +47,6 @@ export const profile: ProfileData = {
     location: "Jaipur, India",
   },
   about: {
-    headline: "Backend Engineer • 4+ Years Experience • Enterprise Scale",
     summary: [
       "Backend Software Engineer with 4+ years of professional production experience architecting high-throughput, fault-tolerant distributed systems and reactive microservices.",
       "Currently at FreechargeBiz (Axis Bank), I engineer backend services for the Maximus digital acquisition platform. My work powers a shared Income Assessment service processing 96M+ requests/month and supporting 137K+ borrower applications across 8+ lending products (Home Loan, Business Loan, Auto Loan, Personal Loan, Credit Card).",

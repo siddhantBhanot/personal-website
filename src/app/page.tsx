@@ -27,9 +27,6 @@ export default function HomePage() {
             <h1 className="text-[30px] sm:text-[36px] leading-[38px] sm:leading-[42px] font-medium text-[var(--ink)] tracking-tight mt-1 font-mono">
               Siddhant Bhanot
             </h1>
-            <p className="text-xs font-mono text-[var(--accent)] mt-1 tracking-wide">
-              {profile.about.headline}
-            </p>
           </div>
           <div className="flex flex-wrap gap-2 pt-1">
             <a
