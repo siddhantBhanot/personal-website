@@ -209,7 +209,7 @@ export function SteppedBaoliDot({ isCurrent = false }: { isCurrent?: boolean }) 
  */
 export function JaaliFriezeDivider({ className = "" }: { className?: string }) {
   return (
-    <div className={`relative flex items-center justify-center my-8 ${className}`}>
+    <div className={`relative flex items-center justify-center my-0 ${className}`}>
       {/* Stone cornice left bracket */}
       <div className="flex items-center gap-1 opacity-70">
         <span className="h-[1px] w-8 sm:w-16 bg-gradient-to-r from-transparent to-[var(--line-strong)]" />
