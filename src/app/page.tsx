@@ -253,12 +253,6 @@ export default function HomePage() {
                 {proj.data.summary}
               </p>
 
-              {proj.data.metrics && (
-                <div className="font-mono text-xs text-[var(--accent)] bg-[var(--surface-sunk)] px-2.5 py-1.5 rounded border border-[var(--line)]">
-                  <span className="text-[var(--accent-gold)] font-medium">Scale / Metric:</span> {proj.data.metrics}
-                </div>
-              )}
-
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {proj.data.stack?.map((tech) => (
                   <span key={tech} className="nn-tag text-[11px] font-mono">
