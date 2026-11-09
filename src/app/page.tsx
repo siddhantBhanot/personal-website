@@ -320,6 +320,41 @@ export default function HomePage() {
                 ))}
               </ul>
 
+              {item.attachments && item.attachments.length > 0 && (
+                <div className="mt-2 pt-3 border-t border-[var(--line)] flex flex-col gap-2">
+                  <div className="flex items-center justify-between text-[11px] font-mono text-[var(--ink-faint)]">
+                    <span className="flex items-center gap-1.5 text-[var(--accent)] font-medium">
+                      <span>❖</span> Verified Attachments & Documents
+                    </span>
+                    <span className="text-[10px] hidden sm:inline">Click to open full document ↗</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2.5">
+                    {item.attachments.map((att, aIdx) => (
+                      <a
+                        key={aIdx}
+                        href={att.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/att flex flex-col items-center gap-1.5 p-1 rounded border border-[var(--line)] bg-[var(--surface-sunk)] hover:border-[var(--accent)] transition-all hover:-translate-y-0.5"
+                        title={`View ${att.name}`}
+                      >
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 overflow-hidden rounded bg-[var(--surface)] flex items-center justify-center border border-[var(--line)] group-hover/att:border-[var(--accent)]/50">
+                          <img
+                            src={att.url}
+                            alt={att.name}
+                            className="w-full h-full object-cover object-center transition-transform duration-200 group-hover/att:scale-105"
+                            loading="lazy"
+                          />
+                        </div>
+                        <span className="text-[10px] font-mono text-[var(--ink-faint)] group-hover/att:text-[var(--ink)] max-w-[68px] sm:max-w-[80px] text-center truncate">
+                          {att.name}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="flex flex-wrap gap-1.5 pt-2">
                 {item.tags.map((tag) => (
                   <span key={tag} className="text-[11px] font-mono text-[var(--ink-faint)] bg-[var(--surface-sunk)] px-2 py-0.5 rounded">

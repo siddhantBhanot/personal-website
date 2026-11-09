@@ -1,3 +1,8 @@
+export interface AchievementAttachment {
+  name: string;
+  url: string;
+}
+
 export interface Achievement {
   id: string;
   title: string;
@@ -6,6 +11,7 @@ export interface Achievement {
   description: string[];
   metrics?: string;
   tags: string[];
+  attachments?: AchievementAttachment[];
 }
 
 export const achievementsData: Achievement[] = [
@@ -21,6 +27,13 @@ export const achievementsData: Achievement[] = [
     ],
     metrics: "Top 5 Company-Wide",
     tags: ["Azure AI Search", "Vector Indexing", "RAG", "Knowledge Base"],
+    attachments: [
+      { name: "Award Certificate", url: "/images/achievements/hackathon/hack1.jpeg" },
+      { name: "System Architecture", url: "/images/achievements/hackathon/about.png" },
+      { name: "Search Interface", url: "/images/achievements/hackathon/search-page.png" },
+      { name: "User Profile", url: "/images/achievements/hackathon/profile.png" },
+      { name: "Azure Dashboard", url: "/images/achievements/hackathon/azure-dashboard.png" },
+    ],
   },
   {
     id: "ace-cards",
@@ -33,6 +46,14 @@ export const achievementsData: Achievement[] = [
     ],
     metrics: "6 ACE Awards",
     tags: ["Leadership Recognition", "Production Excellence", "Engineering Impact"],
+    attachments: [
+      { name: "ACE Award #1", url: "/images/achievements/ace-cards/A1.jpeg" },
+      { name: "ACE Award #2", url: "/images/achievements/ace-cards/A2.jpeg" },
+      { name: "ACE Award #3", url: "/images/achievements/ace-cards/A3.jpeg" },
+      { name: "ACE Award #4", url: "/images/achievements/ace-cards/A4.jpeg" },
+      { name: "ACE Award #5", url: "/images/achievements/ace-cards/A5.jpeg" },
+      { name: "ACE Award #6", url: "/images/achievements/ace-cards/A6.jpeg" },
+    ],
   },
 ];
 
