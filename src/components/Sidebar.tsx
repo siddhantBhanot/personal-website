@@ -33,7 +33,7 @@ export function Sidebar() {
     root.classList.toggle("light", next === "light");
     try {
       localStorage.setItem("neuralnets-theme", next);
-    } catch {}
+    } catch { }
   };
 
   // Track active section via IntersectionObserver on homepage
@@ -90,7 +90,6 @@ export function Sidebar() {
               {profile.name}
             </Link>
           </p>
-          <span className="nn-side-role">Backend Engineer • 4+ YOE</span>
         </div>
 
         {/* Mobile menu toggle button */}
