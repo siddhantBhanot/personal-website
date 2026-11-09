@@ -37,6 +37,7 @@ export interface ProjectMeta {
   github?: string;
   live?: string;
   featured?: boolean;
+  order?: number;
 }
 
 export function getItemsFromDirectory<T>(subdir: string): MarkdownItem<T>[] {
@@ -61,8 +62,12 @@ export function getItemsFromDirectory<T>(subdir: string): MarkdownItem<T>[] {
       };
     });
 
-  // Sort by date descending if available
+  // Sort by order ascending if available, then date descending
   return items.sort((a, b) => {
+    const orderA = (a.data as { order?: number }).order ?? 999;
+    const orderB = (b.data as { order?: number }).order ?? 999;
+    if (orderA !== orderB) return orderA - orderB;
+
     const dateA = (a.data as { date?: string }).date || "";
     const dateB = (b.data as { date?: string }).date || "";
     return dateB.localeCompare(dateA);

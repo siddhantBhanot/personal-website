@@ -14,6 +14,7 @@ stack:
 github: "https://github.com/siddhantBhanot/Hinglish-tweet-classification/tree/master"
 live: "https://hinglish-tweet-classification.streamlit.app/"
 featured: true
+order: 4
 ---
 
 ### Problem Statement
