@@ -1,6 +1,6 @@
 export interface TechCategory {
   category: string;
-  description: string;
+  description?: string;
   skills: {
     name: string;
     level?: "Primary" | "Proficient" | "Familiar";
@@ -11,7 +11,6 @@ export interface TechCategory {
 export const techStackData: TechCategory[] = [
   {
     category: "Languages",
-    description: "Core programming and query languages.",
     skills: [
       { name: "Java", level: "Primary", note: "Spring Boot, multithreading, enterprise backend" },
       { name: "Kotlin", level: "Primary", note: "Spring WebFlux, coroutines, reactive microservices" },
@@ -23,7 +22,6 @@ export const techStackData: TechCategory[] = [
   },
   {
     category: "Frameworks & Libraries",
-    description: "Application frameworks, security runtimes & UI libraries.",
     skills: [
       { name: "Spring Boot", level: "Primary", note: "Enterprise microservices & REST APIs" },
       { name: "Spring WebFlux", level: "Primary", note: "Reactive non-blocking event-driven services" },
@@ -35,7 +33,6 @@ export const techStackData: TechCategory[] = [
   },
   {
     category: "Databases & Messaging",
-    description: "Distributed datastores, caching & message brokers.",
     skills: [
       { name: "MySQL", level: "Primary", note: "Relational schema design, transactions & indexing" },
       { name: "Redis", level: "Primary", note: "In-memory caching, distributed locks & session store" },
@@ -46,7 +43,6 @@ export const techStackData: TechCategory[] = [
   },
   {
     category: "Tools & Technologies",
-    description: "CI/CD, containerization, observability & test suites.",
     skills: [
       { name: "Git", level: "Primary", note: "Version control, branching & release workflows" },
       { name: "Docker", level: "Primary", note: "Container packaging & microservice deployment" },
@@ -62,7 +58,6 @@ export const techStackData: TechCategory[] = [
   },
   {
     category: "Concepts",
-    description: "Architectural patterns, design disciplines & distributed system principles.",
     skills: [
       { name: "LLD", level: "Primary", note: "Low-Level Design & object-oriented decomposition" },
       { name: "HLD", level: "Primary", note: "High-Level Design & distributed architecture" },

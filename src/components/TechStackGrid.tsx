@@ -13,9 +13,6 @@ export function TechStackGrid() {
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-terracotta)]" />
               {category.category}
             </h3>
-            <span className="text-xs text-[var(--text-muted)] font-mono">
-              {category.description}
-            </span>
           </div>
 
           <div className="flex flex-wrap gap-2 pt-1">

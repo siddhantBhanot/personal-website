@@ -153,9 +153,6 @@ export default function HomePage() {
                   <span className="w-1.5 h-1.5 rotate-45 border border-[var(--accent-gold)] bg-[var(--surface-sunk)]" />
                   {category.category}
                 </span>
-                <span className="text-[11px] font-mono text-[var(--ink-faint)]">
-                  {category.description}
-                </span>
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
                 {category.skills.map((skill) => (
