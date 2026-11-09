@@ -48,7 +48,7 @@ export const profile: ProfileData = {
   },
   about: {
     summary: [
-      "Software Engineer with a strong foundation in backend engineering and distributed systems, complemented by experience in frontend development and AI-powered applications. Interested in building scalable software and exploring how AI can transform the way we build and interact with technology.",
+      "Software Engineer with a strong foundation in backend engineering and distributed systems, complemented by experience in frontend development and AI-powered applications.",
     ],
   },
   highlights: [],

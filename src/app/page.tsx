@@ -12,7 +12,6 @@ import {
   SectionArchBadge,
 } from "@/components/IndicMotif";
 import { GithubIcon, ExternalLinkIcon, LeetCodeIcon, LinkedinIcon } from "@/components/Icons";
-import { TechIcon, hasTechIcon } from "@/components/TechIcon";
 
 export default function HomePage() {
   const projects = getItemsFromDirectory<ProjectMeta>("projects");
@@ -162,13 +161,9 @@ export default function HomePage() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill.name}
-                    className={`nn-tech-pill${hasTechIcon(skill.name) ? " has-icon" : ""}`}
+                    className="nn-tech-pill"
                   >
-                    <TechIcon
-                      name={skill.name}
-                      className="w-4 h-4 shrink-0 text-[var(--accent)] transition-colors nn-tech-icon"
-                    />
-                    <span>{skill.name}</span>
+                    {skill.name}
                   </span>
                 ))}
               </div>

@@ -1,5 +1,4 @@
 import { techStackData } from "@/data/tech-stack";
-import { TechIcon, hasTechIcon } from "@/components/TechIcon";
 
 export function TechStackGrid() {
   return (
@@ -23,13 +22,9 @@ export function TechStackGrid() {
             {category.skills.map((skill) => (
               <span
                 key={skill.name}
-                className={`nn-tech-pill${hasTechIcon(skill.name) ? " has-icon" : ""}`}
+                className="nn-tech-pill"
               >
-                <TechIcon
-                  name={skill.name}
-                  className="w-4 h-4 shrink-0 text-[var(--accent)] transition-colors nn-tech-icon"
-                />
-                <span>{skill.name}</span>
+                {skill.name}
               </span>
             ))}
           </div>

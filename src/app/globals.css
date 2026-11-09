@@ -432,16 +432,16 @@ h1, h2, h3, h4 {
   color: var(--ink);
 }
 
-/* Tech Stack Pills with Icons */
+/* Tech Stack Pills */
 .nn-tech-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  height: 32px;
+  justify-content: center;
+  height: 30px;
   padding: 0 14px;
-  border: var(--hairline) solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-pill);
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1;
   font-family: var(--font-mono);
   font-weight: 500;
@@ -452,19 +452,10 @@ h1, h2, h3, h4 {
   user-select: none;
 }
 
-.nn-tech-pill.has-icon {
-  padding-left: 10px;
-  padding-right: 13px;
-}
-
 .nn-tech-pill:hover {
   border-color: var(--accent);
   background: var(--surface-sunk);
-  color: var(--ink);
-}
-
-.nn-tech-pill:hover .nn-tech-icon {
-  color: var(--accent-gold);
+  color: var(--accent);
 }
 
 /* Clean Links List (.nn-links) */
