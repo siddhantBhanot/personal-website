@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { profile } from "@/data/profile";
-import { JharokhaArchAvatar, JaaliBackgroundPattern } from "@/components/IndicMotif";
+import { JaaliBackgroundPattern } from "@/components/IndicMotif";
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -83,28 +83,28 @@ export function Sidebar() {
           strokeWidth={0.85}
         />
 
-        {/* Profile Info with Cusped Jharokha Arch */}
+        {/* Profile Info with DP */}
         <div className="nn-side-profile relative z-10">
           <Link href="/" className="inline-block" aria-label="Siddhant Bhanot - Portfolio Home">
-            <JharokhaArchAvatar>
-              {/* Inner Sacred Geometry Emblem */}
-              <svg viewBox="0 0 28 28" fill="none" className="w-5 h-5 text-[var(--accent)]">
-                <circle cx="14" cy="14" r="11" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 2" opacity="0.6" />
-                <polygon
-                  points="14,6 21,18 7,18"
-                  stroke="var(--accent-gold)"
-                  strokeWidth="0.8"
-                  fill="none"
-                />
-                <polygon
-                  points="14,22 7,10 21,10"
-                  stroke="currentColor"
-                  strokeWidth="0.8"
-                  fill="none"
-                />
-                <circle cx="14" cy="14" r="2" fill="var(--accent)" />
-              </svg>
-            </JharokhaArchAvatar>
+            <div className="relative inline-flex items-center justify-center group">
+              {/* Outer decorative ring with Indic terracotta accent */}
+              <div className="w-[58px] h-[58px] sm:w-[66px] sm:h-[66px] rounded-full p-[2px] border border-[var(--line-strong)] group-hover:border-[var(--accent)] transition-all duration-300 bg-[var(--surface-sunk)] shadow-sm">
+                <div className="w-full h-full rounded-full overflow-hidden border border-[var(--line)] bg-[var(--surface)]">
+                  <img
+                    src="/images/profile-img.png"
+                    alt="Siddhant Bhanot"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    width={66}
+                    height={66}
+                    loading="eager"
+                  />
+                </div>
+              </div>
+              {/* Architectural Stepped Baoli diamond indicator */}
+              <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[var(--surface)] border border-[var(--line)] flex items-center justify-center shadow-xs">
+                <span className="w-2 h-2 rotate-45 bg-[var(--accent)]" />
+              </span>
+            </div>
           </Link>
 
           <p className="nn-side-name mt-1">
