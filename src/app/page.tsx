@@ -5,6 +5,7 @@ import { techStackData } from "@/data/tech-stack";
 import { achievementsData } from "@/data/achievements";
 import { getItemsFromDirectory, ProjectMeta } from "@/lib/markdown";
 import { ContactEmail } from "@/components/ContactEmail";
+import { FormattedText } from "@/components/FormattedText";
 import {
   SteppedBaoliDot,
   JaaliFriezeDivider,
@@ -111,7 +112,9 @@ export default function HomePage() {
 
               <ul className="nn-tl-bullets mt-3">
                 {exp.bullets.map((bullet, bIdx) => (
-                  <li key={bIdx}>{bullet}</li>
+                  <li key={bIdx}>
+                    <FormattedText text={bullet} />
+                  </li>
                 ))}
               </ul>
             </li>
@@ -324,7 +327,6 @@ export default function HomePage() {
                 <div className="mt-2 pt-3 border-t border-[var(--line)] flex flex-col gap-2">
                   <div className="flex items-center justify-between text-[11px] font-mono text-[var(--ink-faint)]">
                     <span className="flex items-center gap-1.5 text-[var(--accent)] font-medium">
-                      <span>❖</span> Verified Attachments & Documents
                     </span>
                     <span className="text-[10px] hidden sm:inline">Click to open full document ↗</span>
                   </div>

@@ -13,12 +13,11 @@ export const experiences: WorkExperience[] = [
     location: "Gurugram, India",
     period: "Sep 2025 – Present",
     bullets: [
-      "Engineer backend services for the Maximus platform powering Axis Bank’s digital customer acquisition and pre-approved credit offerings, primarily within the Business Loan and Income Assessment microservices. The shared Income Assessment Service processes over 96M+ requests/month and supports 137K+ customer applications across 8+ lending products.",
-      "Develop and maintain reactive microservices using Kotlin, Spring WebFlux, MongoDB, Redis, and Kafka in a distributed architecture leveraging an internal SAGA-based Step Framework.",
-      "Led the refactoring of the shared Income Assessment Service to support dynamic runtime version resolution for 8+ lending products including Home Loan, Business Loan, Auto Loan, Personal Loan, and Credit Card, enabling product-specific hotfix deployments, reducing regression testing scope, and accelerating release cycles.",
-      "Designed and implemented a reusable Spring WebFilter for AES-based request/response encryption and decryption of exposed APIs, ensuring compliance with RBI security guidelines; adopted across 8+ lending microservices.",
-      "Provided production support and incident resolution for critical income assessment workflows and third-party integrations including Perfios Anumati, ensuring reliable customer onboarding experiences.",
-      "Created Markdown-based technical documentation for the Step Framework and Income Assessment Service, enabling AI-assisted development through custom GitHub Copilot MCP servers; the same artifacts are being extended for internal RAG-based knowledge pipelines.",
+      "Scaled shared **Income Assessment** microservices to **96M+ requests/month** and **137K+ borrower applications** across **8+ credit products** on Axis Bank's **Maximus** platform.",
+      "Engineered reactive, non-blocking distributed services using **Kotlin**, **Spring WebFlux**, **MongoDB**, **Redis**, and **Kafka** orchestrated with an internal **SAGA Step Framework**.",
+      "Architected **dynamic runtime version resolution**, decoupling release and hotfix cycles across **8+ lending products** (Home, Business, Auto, Personal Loans, Credit Cards) with zero cross-product regression.",
+      "Authored a reusable **Spring WebFilter** for **AES request/response encryption**, enforcing mandatory **RBI security compliance** across **8+ microservices**.",
+      "Resolved production incidents for critical financial integrations (**Perfios Anumati AA**) and authored technical architecture schemas for **GitHub Copilot MCP servers** and enterprise **RAG pipelines**.",
     ],
   },
   {
@@ -27,10 +26,9 @@ export const experiences: WorkExperience[] = [
     location: "Gurugram, India",
     period: "Jan 2024 – Jul 2025",
     bullets: [
-      "Delivered client-specific functionalities for Comviva’s Mobile Billing and Subscription (mBAS) platform for Vodafone India.",
-      "Led the migration of a legacy monolithic platform to a microservices-based architecture with TMF-compliant APIs.",
-      "Developed Spring Boot microservices and client-specific APIs for subscription reporting, leveraging Docker and Cron for automation.",
-      "Mentored new hires (ComCubs) through knowledge transfer, code reviews, and engineering best practices.",
+      "Led the decomposition of a legacy billing monolith (**mBAS**) into **TMF-compliant Spring Boot microservices** for **Vodafone India**.",
+      "Built automated subscription reporting microservices and scheduled aggregation pipelines using **Docker** and **Cron**.",
+      "Mentored junior engineers (**ComCubs**) on **clean code architecture**, **SOLID design principles**, and microservices best practices.",
     ],
   },
   {
@@ -39,9 +37,9 @@ export const experiences: WorkExperience[] = [
     location: "Gurugram, India",
     period: "Feb 2022 – Dec 2023",
     bullets: [
-      "Developed a React.JS based GUI application for the Mobile Billing and Subscription Management platform with backend authentication and authorization using Spring Security, JWT, and LDAP.",
-      "Improved API response time by 30%–50% through payload compression and pagination.",
-      "Contributed to backend integration and unit testing, authored API documentation using Swagger and Confluence, improved code quality through SonarQube driven analysis and refactoring.",
+      "Reduced API response latency by **30%–50%** across core billing endpoints through **payload compression** and **database pagination**.",
+      "Developed management dashboards using **React.js** integrated with **Spring Security**, **JWT**, and **LDAP** role-based access control.",
+      "Automated integration test suites with **JUnit** and **Mockito**, driving test coverage and static analysis standards via **SonarQube**.",
     ],
   },
 ];

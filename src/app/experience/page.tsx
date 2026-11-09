@@ -2,6 +2,7 @@ import Link from "next/link";
 import { profile } from "@/data/profile";
 import { experiences } from "@/data/experience";
 import { SteppedBaoliDot, SectionArchBadge, JaaliFriezeDivider } from "@/components/IndicMotif";
+import { FormattedText } from "@/components/FormattedText";
 
 export default function ExperienceIndexPage() {
   return (
@@ -36,7 +37,9 @@ export default function ExperienceIndexPage() {
             </span>
             <ul className="nn-tl-bullets mt-3">
               {exp.bullets.map((bullet, bIdx) => (
-                <li key={bIdx}>{bullet}</li>
+                <li key={bIdx}>
+                  <FormattedText text={bullet} />
+                </li>
               ))}
             </ul>
           </li>
