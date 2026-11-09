@@ -10,7 +10,6 @@ export interface ProfileData {
   name: string;
   title: string;
   tagline: string;
-  avatar?: string;
   yearsOfExperience: string;
   location: string;
   phone: string;
@@ -37,7 +36,6 @@ export const profile: ProfileData = {
   name: "Siddhant Bhanot",
   title: "Backend Software Development Engineer",
   tagline: "4+ years engineering scalable, reactive microservices, distributed transaction pipelines, and enterprise-grade platforms.",
-  avatar: "/images/profile-img.png",
   yearsOfExperience: "4+ Years",
   location: "Gurugram, India",
   phone: "+91 7838332124",

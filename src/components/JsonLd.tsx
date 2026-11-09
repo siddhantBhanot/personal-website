@@ -13,7 +13,7 @@ export function JsonLd() {
     jobTitle: "Backend Software Development Engineer",
     description: siteConfig.description,
     url: siteConfig.siteUrl,
-    image: `${siteConfig.siteUrl}/images/profile-img.png`,
+    image: `${siteConfig.siteUrl}${siteConfig.ogImage}`,
     email: `mailto:${siteConfig.author.email}`,
     telephone: siteConfig.author.phone,
     address: {
