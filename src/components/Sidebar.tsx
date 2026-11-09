@@ -88,21 +88,21 @@ export function Sidebar() {
           <Link href="/" className="inline-block" aria-label="Siddhant Bhanot - Portfolio Home">
             <div className="relative inline-flex items-center justify-center group">
               {/* Outer decorative ring with Indic terracotta accent */}
-              <div className="w-[58px] h-[58px] sm:w-[66px] sm:h-[66px] rounded-full p-[2px] border border-[var(--line-strong)] group-hover:border-[var(--accent)] transition-all duration-300 bg-[var(--surface-sunk)] shadow-sm">
+              <div className="w-[76px] h-[76px] sm:w-[88px] sm:h-[88px] rounded-full p-[2.5px] border border-[var(--line-strong)] group-hover:border-[var(--accent)] transition-all duration-300 bg-[var(--surface-sunk)] shadow-sm">
                 <div className="w-full h-full rounded-full overflow-hidden border border-[var(--line)] bg-[var(--surface)]">
                   <img
                     src="/images/profile-img.png"
                     alt="Siddhant Bhanot"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    width={66}
-                    height={66}
+                    width={88}
+                    height={88}
                     loading="eager"
                   />
                 </div>
               </div>
               {/* Architectural Stepped Baoli diamond indicator */}
-              <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[var(--surface)] border border-[var(--line)] flex items-center justify-center shadow-xs">
-                <span className="w-2 h-2 rotate-45 bg-[var(--accent)]" />
+              <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-[var(--surface)] border border-[var(--line)] flex items-center justify-center shadow-xs">
+                <span className="w-2.5 h-2.5 rotate-45 bg-[var(--accent)]" />
               </span>
             </div>
           </Link>
