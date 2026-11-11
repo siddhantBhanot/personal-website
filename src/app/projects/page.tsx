@@ -8,7 +8,7 @@ import { GithubIcon, ExternalLinkIcon } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Projects & Technical Architecture",
   description:
-    "Engineering breakdowns and architectural deep dives by Siddhant Bhanot: ContextFoundry (Autonomous RAG & AI Platform), Hinglish Sentiment Classifier, Geospatial Clustering, and Covid Q&A Chatbot.",
+    "Engineering breakdowns and architectural deep dives by Siddhant Bhanot: ContextFoundry (RAG platform for microservice codebases), Hinglish Sentiment Classifier, Geospatial Clustering, and Covid Q&A Chatbot.",
   alternates: {
     canonical: "/projects",
   },

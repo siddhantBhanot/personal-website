@@ -2,7 +2,7 @@
 title: "Hinglish Tweet Sentiment Classification"
 summary: "NLP classification pipeline to detect and categorize aggression in code-mixed Hinglish tweets across NAG, CAG, and OAG classes."
 period: "Minor Project • Manipal University Jaipur"
-role: "NLP & ML Engineer"
+role: "Academic Project • Manipal University Jaipur"
 metrics: "3-Class Multiclass NLP • Live Streamlit App"
 stack:
   - "Python"
@@ -44,13 +44,13 @@ Content moderation models are designed for standardized English or Devanagari Hi
 [Streamlit UI: NAG / CAG / OAG Probs] ◄── [Calibrated Classifier (LinearSVC / LogReg)]
 ```
 
-Decoupled offline artifact generation (pickled vectorizers and models) from stateless, low-latency online inference.
+Decoupled offline artifact generation (pickled vectorizers and models) from stateless online inference.
 
 ### Engineering Challenges
 
 - **Transliteration Drift**: Resolved arbitrary phonetic spellings by blending character n-grams with word n-grams, enabling morphological root recognition.
 - **CAG Class Imbalance**: Addressed sparse covert aggression samples by tuning cost-sensitive loss functions and evaluating against Macro F1 rather than accuracy.
-- **Inference Optimization**: Optimized model serialization to run inference under 50ms per tweet on lightweight CPU containers.
+- **Inference Optimization**: Optimized model serialization to keep inference lightweight on CPU containers.
 
 ### Potential Improvements
 

@@ -2,8 +2,8 @@
 title: "Covid Q&A Chatbot"
 summary: "Semantic retrieval chatbot built with Python Flask and Google's Universal Sentence Encoder to match user queries with verified healthcare FAQs."
 period: "Healthcare NLP Project"
-role: "Backend & NLP Engineer"
-metrics: "512D Semantic Vectors • Sub-20ms Cosine Retrieval"
+role: "Personal Project"
+metrics: "512D Semantic Vectors • In-Memory Vector Index • Flask"
 stack:
   - "Python"
   - "Flask"
@@ -24,7 +24,7 @@ During the COVID-19 pandemic, public health guidelines evolved rapidly across la
 ### Why It Was Interesting
 
 - **Lexical Gap**: Bridging queries and FAQ entries that share zero common keywords yet convey identical semantic meaning.
-- **Dense Vector Search**: Executing 512D embeddings and cosine similarity comparison under sub-20ms latency constraints on a lightweight web service.
+- **Dense Vector Search**: Executing 512D embeddings and cosine similarity comparison with fast vector matching on a lightweight web service.
 - **High-Stakes Safety**: Implementing strict confidence thresholds to prevent false positives on critical medical guidance.
 
 ### Approach
@@ -44,17 +44,16 @@ During the COVID-19 pandemic, public health guidelines evolved rapidly across la
                        (Score >= 0.65: FAQ Answer | < 0.65: Emergency Fallback)
 ```
 
-Decoupled offline knowledge embedding from the real-time inference path for sub-20ms response times.
+Decoupled offline knowledge embedding from the real-time inference path for responsive query answering.
 
 ### Engineering Challenges
 
-- **Model Cold-Start & Memory**: The TensorFlow USE graph has high initialization overhead; resolved by architecting the loader as a persistent in-memory singleton.
-- **False Positive Mitigation**: Calibrated empirical similarity cutoffs ($> 0.65$) to ensure the engine only asserts answers when confidence is statistically rigorous.
+- **Model Cold-Start & Memory**: The TensorFlow USE graph has high initialization overhead; resolved by structuring the loader as a persistent in-memory singleton.
+- **False Positive Mitigation**: Calibrated empirical similarity cutoffs ($> 0.65$) to ensure the engine only asserts answers when confidence is statistically sound.
 - **Out-of-Domain Inputs**: Handled ambiguous or off-topic queries with input validation and graceful fallback handling to guide users back to verified healthcare topics.
 
 ### Potential Improvements
 
-- **HNSW Vector Indexing**: Migrate in-memory NumPy dot-products to FAISS or Qdrant for scalable sub-millisecond Approximate Nearest Neighbor (ANN) search.
+- **HNSW Vector Indexing**: Migrate in-memory NumPy dot-products to FAISS or Qdrant for scalable Approximate Nearest Neighbor (ANN) search.
 - **Bi-Encoder + Cross-Encoder Pipeline**: Add a lightweight cross-encoder re-ranking stage to evaluate the top candidates for higher semantic precision.
 - **Reactive Runtime Migration**: Re-platform from Flask to Spring WebFlux or FastAPI with ONNX Runtime for hardware-accelerated non-blocking execution.
-

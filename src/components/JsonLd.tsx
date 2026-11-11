@@ -29,7 +29,7 @@ export function JsonLd() {
     },
     worksFor: {
       "@type": "Organization",
-      name: "FreechargeBiz (Axis Bank)",
+      name: "Freecharge (Axis Bank)",
       url: "https://www.freecharge.in",
     },
     sameAs: [

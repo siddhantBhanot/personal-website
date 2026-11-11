@@ -1,9 +1,9 @@
 ---
 title: "ContextFoundry"
-summary: "Autonomous Engineering Intelligence & RAG platform bridging microservice codebases, architectural knowledge, and developer onboarding with AST chunking, hybrid vector retrieval, and multi-provider LLM orchestration."
-period: "Distributed Systems & AI Platform"
-role: "Lead Systems & AI Engineer"
-metrics: "Sub-Second TTFT • Dense + BM25 RRF Hybrid Search • Multi-Provider Fallback"
+summary: "RAG platform for microservice codebases bridging code repositories, architectural knowledge, and developer onboarding with AST chunking, hybrid vector retrieval, and multi-provider LLM fallback."
+period: "Personal Project • Python, FastAPI"
+role: "Personal Project"
+metrics: "Dense + BM25 RRF Hybrid Search • AST Chunking • Multi-Provider Fallback"
 stack:
   - "FastAPI"
   - "Python"
@@ -24,19 +24,19 @@ image: "/images/projects/context-foundry.png"
 
 ### Problem Statement
 
-In distributed microservice organizations, technical knowledge is fragmented across multiple git repositories, outdated architecture wikis, and undocumented institutional memory. Tracing multi-service transaction flows across Kotlin, Java, and Python codebases is manual and error-prone, while generic consumer LLMs hallucinate endpoints and lack codebase-level citations. ContextFoundry was engineered to provide an autonomous engineering intelligence platform with grounded codebase Q&A, dynamic architecture visualization, and structured onboarding.
+In distributed microservice organizations, technical knowledge is fragmented across multiple git repositories, outdated architecture wikis, and undocumented institutional memory. Tracing multi-service transaction flows across Kotlin, Java, and Python codebases is manual and error-prone, while generic consumer LLMs hallucinate endpoints and lack codebase-level citations. ContextFoundry was built to provide a codebase-aware RAG platform with grounded Q&A, dynamic architecture visualization, and structured onboarding.
 
 ### Why It Was Interesting
 
 - **Dual Lexical & Semantic Retrieval**: Developer queries alternate between exact identifier lookups (`@RestController`, route paths) and conceptual questions, requiring both sparse keyword search and dense semantic vector matching.
 - **AST-Aware Structural Boundaries**: Arbitrarily splitting code by token count breaks function scopes and class hierarchies; requires AST-aware syntax decomposition across languages.
-- **Multi-Provider Resilience**: Commercial LLMs experience rate limits and downtime, requiring transparent failover across AWS Bedrock, Groq, and OpenAI without dropping Server-Sent Events (SSE) token streams.
+- **Multi-Provider Resilience**: Commercial LLMs experience rate limits and downtime, requiring transparent fallback across AWS Bedrock, Groq, and OpenAI without dropping Server-Sent Events (SSE) token streams.
 
 ### Approach
 
 - **AST-Aware Ingestion**: Built structural chunkers for Kotlin (`.kt`, `.kts`), Java (`.java`), Python (`.py`), and Markdown (`.md`) that preserve syntactic scopes and header hierarchies.
 - **Hybrid Retrieval (Dense + BM25 RRF)**: Combined 768D dense code embeddings (`jina-embeddings-v2-base-code`) with `Qdrant/bm25` sparse lexical search via Reciprocal Rank Fusion (RRF) and bidirectional 1-hop expansion.
-- **Multi-Provider Fallback**: Orchestrated fallback across AWS Bedrock (Claude 3.5 Sonnet), Groq (Llama 3.3 70B), and OpenAI (GPT-4o) with sub-second token streaming.
+- **Multi-Provider Fallback**: Orchestrated fallback across AWS Bedrock (Claude 3.5 Sonnet), Groq (Llama 3.3 70B), and OpenAI (GPT-4o) with SSE token streaming.
 - **Interactive Learning & Diagrams**: Integrated live Mermaid.js sequence diagram synthesis and Knowledge Cafe onboarding modules with automated quizzes.
 
 ### Architecture
@@ -59,13 +59,12 @@ Enforces clean separation between presentation, FastAPI gateway, domain RAG pipe
 
 ### Engineering Challenges
 
-- **Mid-Stream Failover**: Handled rate limits (HTTP 429) on stateful SSE connections via a pre-flight handshake window that validates provider health before streaming.
-- **Multi-Service Isolation**: Segmented Qdrant collections with strict metadata payload filters (`service_id`, `repo_name`) to eliminate cross-repository noise.
-- **AST Memory Spikes**: Handled thousands of repository files through async batching and memory-capped file processing queues.
+- **Multi-Provider Fallback**: Handled rate limits (HTTP 429) and upstream provider outages across AWS Bedrock, Groq, and OpenAI, routing to backup models before initiating streaming tokens.
+- **Repository Isolation**: Segmented Qdrant collections with metadata payload filters (`service_id`, `repo_name`) to keep vector retrieval strictly scoped to the selected codebase.
+- **Large Repository Chunking**: Processed code files asynchronously in batches to parse AST syntax trees without excessive memory consumption.
 
 ### Potential Improvements
 
 - **Tree-Sitter Call Graphs**: Integrate Tree-Sitter with graph databases (Neo4j) for cross-repository caller/callee traversal.
 - **Agentic Code Editing**: Extend with Model Context Protocol (MCP) tool execution to scaffold controllers, generate tests, and open pull requests.
 - **Local SLM Support**: Embed quantized models (DeepSeek-Coder via vLLM) for air-gapped on-premises deployments.
-

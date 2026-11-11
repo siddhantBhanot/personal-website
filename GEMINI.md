@@ -3,10 +3,10 @@
 ## 1. Verified Developer Identity & Persona
 - **Developer Name**: Siddhant Bhanot
 - **Contact**: `siddhantbhanot@gmail.com` | `+91 7838332124` | Gurugram, India
-- **Current Role**: Backend Software Development Engineer at FreechargeBiz (Axis Bank) (Sep 2025 – Present)
+- **Current Role**: Backend Software Development Engineer at Freecharge (Axis Bank) (Sep 2025 – Present)
 - **Previous Roles**:
   - Senior Product Development Engineer at Comviva (Jan 2024 – Jul 2025)
-  - Product Development Intern → Product Development Engineer at Comviva (Feb 2022 – Dec 2023)
+  - Product Development Engineer at Comviva (Feb 2022 – Dec 2023)
 - **Total Experience**: 4+ years of professional production backend engineering.
 - **Education**: B.Tech. in Information Technology, Manipal University Jaipur (2018 – 2022) | CGPA: 8.89/10.0
 - **Profiles**:
@@ -18,13 +18,13 @@
 ---
 
 ## 2. Core Technical Strengths & Production Metrics
-- **Production Scale**: Engineering shared Income Assessment services processing over **96M+ requests/month** and supporting **137K+ borrower applications** across 8+ lending products (Home Loan, Business Loan, Auto Loan, Personal Loan, Credit Card).
+- **Production Scale**: Engineering shared Income Assessment services handling over **96M+ requests/month** and supporting **137K+ borrower applications** across 8+ lending products (Home Loan, Business Loan, Auto Loan, Personal Loan, Credit Card).
 - **Architecture**: Reactive microservices with **Kotlin & Spring WebFlux**, **MongoDB**, **Redis**, **Apache Kafka**, and an internal **SAGA-based Step Framework** for distributed transaction orchestration.
-- **Engineering Innovations**:
-  - Designed dynamic runtime version resolution decoupling releases and hotfixes across 8+ credit products.
+- **Engineering Highlights**:
+  - Led the refactoring of the shared Income Assessment Service for dynamic runtime version resolution per lending product, so a hotfix ships to one product without regression or sandbox testing for the others.
   - Reusable Spring WebFilter for **AES request/response encryption and decryption** complying with **RBI security guidelines** across 8+ microservices.
-  - Deconstructed legacy telecom billing monoliths (mBAS for Vodafone India) into TMF-compliant Spring Boot microservices, cutting API latency by 30%–50%.
-  - Markdown-based technical architecture schemas and custom GitHub Copilot MCP servers for enterprise AI workflows and RAG pipelines.
+  - Contributed to decomposing legacy telecom billing monoliths into 9 domain services with TMF-compliant APIs for Vodafone India (180M+ subscribers across domains).
+  - Authored Markdown context for SAGA-based Step Framework and Income Assessment Service onboarded to GitHub Copilot MCP server for AI-assisted development and internal RAG.
 
 ---
 
@@ -43,7 +43,7 @@
 
 ## 4. Restructured Portfolio Architecture (Strict Alignment)
 1. **About**: Short, crisp, recruiter-focused summary in Jharokha alcove with 3 core pillars (Distributed Systems & SAGA, High-Throughput Reactive APIs, Security & Compliance), highlighting 4+ YOE and 96M+ req/mo scale.
-2. **Experience**: Verbatim resume timeline (FreechargeBiz, Comviva Sr PDE, Comviva PDE/Intern) with Stepped Baoli indicators and Education card (MUJ B.Tech IT, CGPA 8.89/10).
+2. **Experience**: Verbatim resume timeline (Freecharge, Comviva Sr PDE, Comviva PDE) with Stepped Baoli indicators and Education card (MUJ B.Tech IT, CGPA 8.89/10).
 3. **Tech Stack**: Strict 5-category taxonomy:
    - Languages: Java, Kotlin, JavaScript, Python, C++, SQL
    - Frameworks & Libraries: Spring Boot, Spring WebFlux, Spring Security, Hibernate, React.js, Next.js

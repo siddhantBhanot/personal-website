@@ -9,15 +9,14 @@ export interface WorkExperience {
 export const experiences: WorkExperience[] = [
   {
     role: "Backend Software Development Engineer",
-    company: "FreechargeBiz",
+    company: "Freecharge",
     location: "Gurugram, India",
     period: "Sep 2025 – Present",
     bullets: [
-      "Scaled shared **Income Assessment** microservices to **96M+ requests/month** and **137K+ borrower applications** across **8+ credit products** on Axis Bank's **Maximus** platform.",
-      "Engineered reactive, non-blocking distributed services using **Kotlin**, **Spring WebFlux**, **MongoDB**, **Redis**, and **Kafka** orchestrated with an internal **SAGA Step Framework**.",
-      "Architected **dynamic runtime version resolution**, decoupling release and hotfix cycles across **8+ lending products** (Home, Business, Auto, Personal Loans, Credit Cards) with zero cross-product regression.",
-      "Authored a reusable **Spring WebFilter** for **AES request/response encryption**, enforcing mandatory **RBI security compliance** across **8+ microservices**.",
-      "Resolved production incidents for critical financial integrations (**Perfios Anumati AA**) and authored technical architecture schemas for **GitHub Copilot MCP servers** and enterprise **RAG pipelines**.",
+      "Engineer reactive **Spring WebFlux** services (**Kotlin**, **MongoDB**, **Redis**, **Kafka**) for the **Maximus** platform powering **Axis Bank’s** digital customer acquisition and pre-approved credit offerings. The shared **Income Assessment Service** handles **96M+ requests/month** and **137K+ applications** across **8+ lending products**.",
+      "Led the refactoring of the shared Income Assessment Service for **dynamic runtime version resolution** per lending product, so a hotfix ships to one product without regression or sandbox testing for the others.",
+      "Built a reusable **Spring WebFilter** for **AES request/response encryption** of exposed APIs to meet **RBI security guidelines**; adopted across **8+ lending microservices**.",
+      "Authored Markdown context for the **SAGA-based Step Framework** and **Income Assessment Service**, onboarded to the organization’s **GitHub Copilot MCP server** for AI-assisted development; reusing it for internal RAG.",
     ],
   },
   {
@@ -26,20 +25,19 @@ export const experiences: WorkExperience[] = [
     location: "Gurugram, India",
     period: "Jan 2024 – Jul 2025",
     bullets: [
-      "Led the decomposition of a legacy billing monolith (**mBAS**) into **TMF-compliant Spring Boot microservices** for **Vodafone India**.",
-      "Built automated subscription reporting microservices and scheduled aggregation pipelines using **Docker** and **Cron**.",
-      "Mentored junior engineers (**ComCubs**) on **clean code architecture**, **SOLID design principles**, and microservices best practices.",
+      "Contributed to decomposing a legacy monolithic billing and subscription platform into **9 domain services** with **TMF-compliant APIs** for **Vodafone India** (**180M+ subscribers** across domains).",
+      "Built Vodafone-specific features and reporting REST APIs (**Spring Boot**, **Docker**); supported Phase 3 sandbox integration.",
+      "Mentored new hires (**ComCubs**) through knowledge transfer, code reviews, and engineering best practices.",
     ],
   },
   {
-    role: "Product Development Intern → Product Development Engineer",
+    role: "Product Development Engineer",
     company: "Comviva",
     location: "Gurugram, India",
     period: "Feb 2022 – Dec 2023",
     bullets: [
-      "Reduced API response latency by **30%–50%** across core billing endpoints through **payload compression** and **database pagination**.",
-      "Developed management dashboards using **React.js** integrated with **Spring Security**, **JWT**, and **LDAP** role-based access control.",
-      "Automated integration test suites with **JUnit** and **Mockito**, driving test coverage and static analysis standards via **SonarQube**.",
+      "Developed a **React.JS** management console for the billing and subscription platform, with **Spring Security**, **JWT**, and **LDAP** authentication and authorization.",
+      "Improved API response time by **30%–50%** through **payload compression** and **database pagination**.",
     ],
   },
 ];

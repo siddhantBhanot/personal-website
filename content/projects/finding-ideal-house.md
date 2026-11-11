@@ -2,7 +2,7 @@
 title: "Finding Ideal House"
 summary: "Geospatial clustering and neighborhood amenity profiling to identify optimal residential property locations across New Delhi."
 period: "Coursera Capstone Project"
-role: "Data & Geospatial Engineer"
+role: "Capstone Project • Coursera"
 metrics: "K-Means Clustering • Folium Maps • Streamlit"
 stack:
   - "Python"
@@ -59,4 +59,3 @@ Separates radial data harvesting and cluster modeling from interactive map tile 
 - **PostGIS Spatial Database**: Migrate data to PostgreSQL/PostGIS for native R-Tree spatial indexing and fast geographic boundary queries.
 - **Transit Accessibility Vectors**: Incorporate Delhi Metro station proximity, multimodal connectivity scores, and peak commute times into feature vectors.
 - **Density-Based Clustering (HDBSCAN)**: Adopt HDBSCAN to eliminate fixed $K$ selection and isolate irregular transitional localities as noise.
-
