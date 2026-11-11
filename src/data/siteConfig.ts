@@ -7,7 +7,13 @@ export const siteConfig = {
   titleTemplate: "%s | Siddhant Bhanot",
   description:
     "Official portfolio of Siddhant Bhanot, Backend Software Development Engineer specializing in distributed systems, reactive microservices (Kotlin, Spring WebFlux), and AI platforms. Processing 96M+ requests/month at FreechargeBiz (Axis Bank).",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://siddhantbhanot.github.io",
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "https://siddhantbhanot.vercel.app"),
   ogImage: "/og-image.png",
   locale: "en_US",
   author: {
