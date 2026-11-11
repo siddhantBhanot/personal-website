@@ -89,7 +89,7 @@ export default function HomePage() {
           <h2>
             <span className="text-[var(--accent)] font-mono font-normal">॥</span> Experience
           </h2>
-          <span className="nn-section-aside">4+ Years · Freecharge (Axis Bank) & Comviva</span>
+          <span className="nn-section-aside">4+ Years · FreechargeBiz (Axis Bank) & Comviva</span>
         </div>
 
         <ol className="nn-timeline">

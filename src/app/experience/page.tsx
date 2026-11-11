@@ -8,14 +8,14 @@ import { FormattedText } from "@/components/FormattedText";
 export const metadata: Metadata = {
   title: "Work Experience",
   description:
-    "Professional backend engineering history of Siddhant Bhanot across Freecharge (Axis Bank) and Comviva. 4+ years engineering reactive microservices, distributed transaction pipelines, and high-throughput systems.",
+    "Professional backend engineering history of Siddhant Bhanot across FreechargeBiz (Axis Bank) and Comviva. 4+ years engineering reactive microservices, distributed transaction pipelines, and high-throughput systems.",
   alternates: {
     canonical: "/experience",
   },
   openGraph: {
     title: "Work Experience | Siddhant Bhanot — Backend Software Engineer",
     description:
-      "4+ years of backend engineering: engineering shared Income Assessment services handling 96M+ req/mo at Freecharge (Axis Bank) and monolithic decomposition at Comviva.",
+      "4+ years of backend engineering: engineering shared Income Assessment services handling 96M+ req/mo at FreechargeBiz (Axis Bank) and monolithic decomposition at Comviva.",
     url: "/experience",
   },
 };
