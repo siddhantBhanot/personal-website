@@ -6,7 +6,7 @@ export const siteConfig = {
   title: "Siddhant Bhanot | Backend-Heavy Software Engineer (Spring, Kotlin, AI/RAG)",
   titleTemplate: "%s | Siddhant Bhanot",
   description:
-    "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at Freecharge (Axis Bank).",
+    "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at FreechargeBiz (Axis Bank).",
   siteUrl:
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -19,7 +19,7 @@ export const siteConfig = {
   author: {
     name: "Siddhant Bhanot",
     role: "Backend-Heavy Software Engineer",
-    company: "Freecharge (Axis Bank)",
+    company: "FreechargeBiz (Axis Bank)",
     previousCompany: "Comviva",
     location: "Gurugram, India",
     email: "siddhantbhanot@gmail.com",
@@ -34,7 +34,7 @@ export const siteConfig = {
     "Siddhant Bhanot Software Engineer",
     "Siddhant Bhanot Portfolio",
     "Siddhant Bhanot Backend",
-    "Siddhant Bhanot Freecharge",
+    "Siddhant Bhanot FreechargeBiz",
     "Siddhant Bhanot Axis Bank",
     "Siddhant Bhanot Comviva",
     "Backend-Heavy Software Engineer",

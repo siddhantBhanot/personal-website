@@ -9,7 +9,7 @@ export interface WorkExperience {
 export const experiences: WorkExperience[] = [
   {
     role: "Backend Software Development Engineer",
-    company: "Freecharge",
+    company: "FreechargeBiz",
     location: "Gurugram, India",
     period: "Sep 2025 – Present",
     bullets: [

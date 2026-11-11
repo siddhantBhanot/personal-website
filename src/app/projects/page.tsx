@@ -8,21 +8,21 @@ import { GithubIcon, ExternalLinkIcon } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Projects & Technical Architecture",
   description:
-    "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at Freecharge (Axis Bank). Features ContextFoundry (RAG platform), Hinglish Sentiment Classifier, Geospatial Clustering, and Covid Q&A Chatbot.",
+    "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at FreechargeBiz (Axis Bank). Features ContextFoundry (RAG platform), Hinglish Sentiment Classifier, Geospatial Clustering, and Covid Q&A Chatbot.",
   alternates: {
     canonical: "/projects",
   },
   openGraph: {
     title: "Projects & Technical Architecture | Siddhant Bhanot",
     description:
-      "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at Freecharge (Axis Bank).",
+      "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at FreechargeBiz (Axis Bank).",
     url: "/projects",
   },
   twitter: {
     card: "summary_large_image",
     title: "Projects & Technical Architecture | Siddhant Bhanot",
     description:
-      "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at Freecharge (Axis Bank).",
+      "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at FreechargeBiz (Axis Bank).",
   },
 };
 
