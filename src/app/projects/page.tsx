@@ -24,7 +24,7 @@ export default function ProjectsPage() {
   const projects = getItemsFromDirectory<ProjectMeta>("projects");
 
   return (
-    <div className="flex flex-col gap-10 max-w-[660px]">
+    <div className="flex flex-col gap-10 w-full max-w-[660px]">
       <div>
         <div className="mb-4">
           <Link href="/#projects" className="nn-pill">
@@ -32,22 +32,22 @@ export default function ProjectsPage() {
           </Link>
         </div>
         <SectionArchBadge label="Engineering Deep Dives" />
-        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Projects</h1>
+        <h1 className="text-2xl sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Projects</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           Technical architecture, engineering decisions, and implementation breakdowns for featured projects.
         </p>
       </div>
 
-      <div className="flex flex-col gap-14">
+      <div className="flex flex-col gap-10 sm:gap-14">
         {projects.map((proj) => (
           <article
             key={proj.slug}
             id={proj.slug}
-            className="relative flex flex-col gap-4 scroll-mt-12 p-6 rounded border border-[var(--line)] bg-[var(--surface)] group"
+            className="relative flex flex-col gap-4 scroll-mt-12 p-4 sm:p-6 rounded border border-[var(--line)] bg-[var(--surface)] group"
           >
             <HaveliCornerBracket position="top-right" />
 
-            <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-[var(--line)] pb-3">
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b border-[var(--line)] pb-3">
               <div>
                 <h2 className="text-xl font-mono font-medium text-[var(--ink)] flex items-center gap-2">
                   <span className="text-xs text-[var(--accent-gold)]">❖</span>

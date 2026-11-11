@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function ExperienceIndexPage() {
   return (
-    <div className="flex flex-col gap-10 max-w-[620px]">
+    <div className="flex flex-col gap-10 w-full max-w-[620px]">
       <div>
         <div className="mb-4">
           <Link href="/#experience" className="nn-pill">
@@ -30,7 +30,7 @@ export default function ExperienceIndexPage() {
           </Link>
         </div>
         <SectionArchBadge label="Production History" />
-        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Experience</h1>
+        <h1 className="text-2xl sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Experience</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           4+ Years of designing and maintaining distributed fintech and telecom systems in production.
         </p>
@@ -63,7 +63,7 @@ export default function ExperienceIndexPage() {
       </ol>
 
       {/* Education Block */}
-      <div className="p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-wrap items-baseline justify-between gap-2">
+      <div className="p-4 sm:p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3 sm:gap-2">
         <div>
           <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Education</span>
           <span className="text-base font-medium text-[var(--ink)]">{profile.education.degree}</span>
@@ -71,7 +71,7 @@ export default function ExperienceIndexPage() {
             {profile.education.institution} • {profile.education.location}
           </span>
         </div>
-        <div className="text-right">
+        <div className="text-left sm:text-right">
           <span className="text-sm font-mono text-[var(--accent)] font-semibold">CGPA: {profile.education.cgpa}</span>
           <span className="text-xs text-[var(--ink-faint)] block font-mono">{profile.education.period}</span>
         </div>

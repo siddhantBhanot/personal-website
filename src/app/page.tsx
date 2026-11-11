@@ -24,7 +24,7 @@ export default function HomePage() {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <SectionArchBadge label="Backend Software Engineer" />
-            <h1 className="text-[30px] sm:text-[36px] leading-[38px] sm:leading-[42px] font-medium text-[var(--ink)] tracking-tight mt-1 font-mono">
+            <h1 className="text-2xl sm:text-3xl md:text-[36px] leading-tight font-medium text-[var(--ink)] tracking-tight mt-1 font-mono">
               Siddhant Bhanot
             </h1>
           </div>
@@ -122,7 +122,7 @@ export default function HomePage() {
         </ol>
 
         {/* Education Card */}
-        <div className="mt-2 p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-wrap items-baseline justify-between gap-3">
+        <div className="mt-2 p-4 sm:p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3">
           <div>
             <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Education</span>
             <span className="text-base font-medium text-[var(--ink)]">{profile.education.degree}</span>
@@ -130,7 +130,7 @@ export default function HomePage() {
               {profile.education.institution} • {profile.education.location}
             </span>
           </div>
-          <div className="text-right">
+          <div className="text-left sm:text-right">
             <span className="text-sm font-mono text-[var(--accent)] font-semibold">CGPA: {profile.education.cgpa}</span>
             <span className="text-xs text-[var(--ink-faint)] block font-mono">{profile.education.period}</span>
           </div>
@@ -187,11 +187,11 @@ export default function HomePage() {
           {projects.map((proj) => (
             <div
               key={proj.slug}
-              className="relative p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-3 group"
+              className="relative p-4 sm:p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-3 group"
             >
               <HaveliCornerBracket position="top-right" />
 
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <div>
                   <h3 className="text-base font-mono font-medium text-[var(--ink)] flex items-center gap-2">
                     <span className="text-xs text-[var(--accent-gold)]">❖</span>
@@ -290,10 +290,10 @@ export default function HomePage() {
           {achievementsData.map((item) => (
             <div
               key={item.id}
-              className="p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-2 relative"
+              className="p-4 sm:p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-2 relative"
             >
               <HaveliCornerBracket position="top-right" />
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <h3 className="text-sm sm:text-base font-mono font-medium text-[var(--ink)] flex items-center gap-2">
                   <span className="text-xs text-[var(--accent-gold)]">❖</span>
                   {item.title}
@@ -381,13 +381,13 @@ export default function HomePage() {
         </div>
 
         {/* Contact Information & Action Card */}
-        <div className="p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="p-4 sm:p-5 rounded border border-[var(--line)] bg-[var(--surface)] flex flex-col gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <span className="text-xs font-mono text-[var(--accent-gold)] uppercase tracking-wider block">Email</span>
               <a
                 href={`mailto:${profile.links.email}`}
-                className="text-sm font-mono text-[var(--ink)] hover:text-[var(--accent)] transition-colors mt-0.5 block"
+                className="text-sm font-mono text-[var(--ink)] hover:text-[var(--accent)] transition-colors mt-0.5 block break-all"
               >
                 {profile.links.email}
               </a>

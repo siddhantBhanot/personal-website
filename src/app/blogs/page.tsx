@@ -22,7 +22,7 @@ export default function BlogsIndexPage() {
   const blogs = getItemsFromDirectory<BlogMeta>("blogs");
 
   return (
-    <div className="flex flex-col gap-10 max-w-[620px]">
+    <div className="flex flex-col gap-10 w-full max-w-[620px]">
       <div>
         <div className="mb-4">
           <Link href="/#blogs" className="nn-pill">
@@ -30,7 +30,7 @@ export default function BlogsIndexPage() {
           </Link>
         </div>
         <SectionArchBadge label="Essays & Retrospectives" />
-        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Writing & Essays</h1>
+        <h1 className="text-2xl sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Writing & Essays</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           Reflections on microservices, database bottlenecks, and engineering rigor.
         </p>

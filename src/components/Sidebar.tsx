@@ -83,24 +83,39 @@ export function Sidebar() {
           strokeWidth={0.85}
         />
 
-        {/* Profile Info */}
-        <div className="nn-side-profile relative z-10">
-          <p className="nn-side-name">
-            <Link href="/" className="text-[var(--ink)] no-underline hover:text-[var(--accent)]">
-              {profile.name}
-            </Link>
-          </p>
-        </div>
+        {/* Profile Info / Mobile Header Row */}
+        <div className="nn-side-header-row relative z-10">
+          <div className="nn-side-profile">
+            <p className="nn-side-name">
+              <Link href="/" className="text-[var(--ink)] no-underline hover:text-[var(--accent)]">
+                {profile.name}
+              </Link>
+            </p>
+          </div>
 
-        {/* Mobile menu toggle button */}
-        <button
-          className="nn-mobile-menu relative z-10"
-          type="button"
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? "Close" : "Menu"}
-        </button>
+          <div className="nn-mobile-controls">
+            {/* Quick theme toggle on mobile */}
+            <button
+              className="nn-btn nn-toggle text-xs py-1 px-2.5"
+              type="button"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === "dark" ? "Light" : "Dark"} theme`}
+            >
+              <span className="nn-toggle-glyph" aria-hidden="true" />
+              <span className="nn-toggle-label">{theme === "dark" ? "Light" : "Dark"}</span>
+            </button>
+
+            {/* Mobile menu toggle button */}
+            <button
+              className="nn-mobile-menu"
+              type="button"
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              <span>{mobileOpen ? "Close ✕" : "Menu ☰"}</span>
+            </button>
+          </div>
+        </div>
 
         {/* Navigation */}
         <nav className="nn-nav relative z-10" aria-label="sections">

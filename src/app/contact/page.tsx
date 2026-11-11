@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function ContactIndexPage() {
   return (
-    <div className="flex flex-col gap-8 max-w-[620px]">
+    <div className="flex flex-col gap-8 w-full max-w-[620px]">
       <div>
         <div className="mb-4">
           <Link href="/#contact" className="nn-pill">
@@ -29,7 +29,7 @@ export default function ContactIndexPage() {
           </Link>
         </div>
         <SectionArchBadge label="Get in Touch" />
-        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Contact</h1>
+        <h1 className="text-2xl sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Contact</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           Reach out for backend engineering, reactive distributed systems, or architecture consulting.
         </p>

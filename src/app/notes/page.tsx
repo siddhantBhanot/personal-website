@@ -22,7 +22,7 @@ export default function NotesIndexPage() {
   const notes = getItemsFromDirectory<NoteMeta>("notes");
 
   return (
-    <div className="flex flex-col gap-10 max-w-[620px]">
+    <div className="flex flex-col gap-10 w-full max-w-[620px]">
       <div>
         <div className="mb-4">
           <Link href="/#notes" className="nn-pill">
@@ -30,7 +30,7 @@ export default function NotesIndexPage() {
           </Link>
         </div>
         <SectionArchBadge label="Technical Knowledge Base" />
-        <h1 className="text-[30px] sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Engineering Notes</h1>
+        <h1 className="text-2xl sm:text-[34px] font-medium text-[var(--ink)] mt-1 font-mono">Engineering Notes</h1>
         <p className="text-sm font-mono text-[var(--ink-faint)] mt-2">
           Deep dives into database engines, concurrency primitives, and distributed systems design.
         </p>

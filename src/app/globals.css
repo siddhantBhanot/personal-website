@@ -91,6 +91,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -104,6 +105,7 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Subtle overall background jaali watermark */
@@ -325,6 +327,7 @@ h1, h2, h3, h4 {
 }
 
 /* Mobile Header / Menu */
+.nn-mobile-controls,
 .nn-mobile-menu {
   display: none;
 }
@@ -613,6 +616,7 @@ h1, h2, h3, h4 {
 }
 
 .post {
+  width: 100%;
   max-width: var(--measure);
   font: 400 14px/24px var(--font-mono);
   color: var(--ink-soft);
@@ -623,6 +627,7 @@ h1, h2, h3, h4 {
   color: var(--ink);
   font: 500 28px/36px var(--font-mono);
   letter-spacing: -0.01em;
+  word-break: break-word;
 }
 
 .nn-post-subtitle {
@@ -667,6 +672,7 @@ h1, h2, h3, h4 {
   color: var(--ink);
   font: 400 13px/22px var(--font-mono);
   overflow-x: auto;
+  max-width: 100%;
   border: 1px solid var(--line);
 }
 
@@ -737,58 +743,127 @@ h1, h2, h3, h4 {
   .nn-sidebar-slot {
     width: 100%;
     flex: none !important;
+    position: sticky;
+    top: 0;
+    z-index: 50;
   }
   .nn-side {
     position: relative;
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 16px 20px;
-    display: grid;
-    grid-template-columns: 1fr auto;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
     gap: 0;
     overflow: visible;
-    align-items: center;
     border-right: none;
     border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
-  .nn-side-avatar, .nn-side-role {
-    display: none;
+  .nn-side-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
   .nn-side-name {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .nn-mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   .nn-mobile-menu {
-    display: block;
-    color: var(--ink-faint);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink);
     font-family: var(--font-mono);
     font-size: 12px;
     line-height: 18px;
     background: var(--surface-sunk);
-    border: 1px solid var(--line);
-    padding: 4px 10px;
+    border: 1px solid var(--line-strong);
+    padding: 5px 10px;
     border-radius: var(--radius-sm);
     cursor: pointer;
   }
-  .nn-nav, .nn-side-foot {
+  .nn-nav,
+  .nn-side-foot {
     display: none;
   }
-  .nn-side.is-mobile-open .nn-nav,
+  .nn-side.is-mobile-open .nn-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .nn-side.is-mobile-open .nn-nav a {
+    padding: 8px 10px;
+    font-size: 13.5px;
+    border-radius: var(--radius-sm);
+  }
   .nn-side.is-mobile-open .nn-side-foot {
     display: flex;
-    grid-column: 1 / -1;
-    margin-top: 20px;
-  }
-  .nn-side.is-mobile-open .nn-nav {
     flex-direction: column;
-  }
-  .nn-side.is-mobile-open .nn-side-foot {
-    margin: 20px 0 0;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
   }
   .nn-main {
-    padding: 48px 20px 72px !important;
+    padding: 28px 16px 64px !important;
   }
   .nn-main-inner {
     gap: 32px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .nn-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .nn-section-aside {
+    white-space: normal;
+    font-size: 11.5px;
+  }
+  .jharokha-alcove {
+    padding: 16px 14px;
+  }
+  .nn-prose {
+    font-size: 14.5px;
+    line-height: 24px;
+  }
+  .nn-tech-pill {
+    height: 28px;
+    padding: 0 10px;
+    font-size: 11.5px;
+  }
+  .post h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .blog-body pre {
+    padding: 12px 14px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nn-main {
+    padding: 20px 12px 48px !important;
+  }
+  .nn-tl-bullets li {
+    font-size: 12.5px;
+    line-height: 20px;
+    padding-left: 14px;
   }
 }
