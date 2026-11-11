@@ -10,7 +10,7 @@ export function JsonLd() {
     familyName: "Bhanot",
     additionalName: "Siddhant",
     gender: "Male",
-    jobTitle: "Backend Software Development Engineer",
+    jobTitle: "Backend-Heavy Software Engineer",
     description: siteConfig.description,
     url: siteConfig.siteUrl,
     image: `${siteConfig.siteUrl}${siteConfig.ogImage}`,
@@ -29,7 +29,7 @@ export function JsonLd() {
     },
     worksFor: {
       "@type": "Organization",
-      name: "FreechargeBiz (Axis Bank)",
+      name: "Freecharge (Axis Bank)",
       url: "https://freechargebiz.com/",
     },
     sameAs: [

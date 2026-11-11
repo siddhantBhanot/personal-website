@@ -3,10 +3,10 @@
 ## 1. Verified Developer Identity & Persona
 - **Developer Name**: Siddhant Bhanot
 - **Contact**: `siddhantbhanot@gmail.com` | `+91 7838332124` | Gurugram, India
-- **Current Role**: Backend Software Development Engineer at FreechargeBiz (Axis Bank) (Sep 2025 – Present)
+- **Current Role**: Backend-Heavy Software Engineer at Freecharge (Axis Bank) (Sep 2025 – Present)
 - **Previous Roles**:
   - Senior Product Development Engineer at Comviva (Jan 2024 – Jul 2025)
-  - Product Development Intern → Product Development Engineer at Comviva (Feb 2022 – Dec 2023)
+  - Product Development Engineer at Comviva (Feb 2022 – Dec 2023)
 - **Total Experience**: 4+ years of professional production backend engineering.
 - **Education**: B.Tech. in Information Technology, Manipal University Jaipur (2018 – 2022) | CGPA: 8.89/10.0
 - **Profiles**:
@@ -43,7 +43,7 @@
 
 ## 4. Restructured Portfolio Architecture (Strict Alignment)
 1. **About**: Short, crisp, recruiter-focused summary in Jharokha alcove with 3 core pillars (Distributed Systems & SAGA, High-Throughput Reactive APIs, Security & Compliance), highlighting 4+ YOE and 96M+ req/mo scale.
-2. **Experience**: Verbatim resume timeline (FreechargeBiz, Comviva Sr PDE, Comviva PDE) with Stepped Baoli indicators and Education card (MUJ B.Tech IT, CGPA 8.89/10).
+2. **Experience**: Verbatim resume timeline (Freecharge, Comviva Sr PDE, Comviva PDE) with Stepped Baoli indicators and Education card (MUJ B.Tech IT, CGPA 8.89/10).
 3. **Tech Stack**: Strict 5-category taxonomy:
    - Languages: Java, Kotlin, JavaScript, Python, C++, SQL
    - Frameworks & Libraries: Spring Boot, Spring WebFlux, Spring Security, Hibernate, React.js, Next.js

@@ -1,9 +1,8 @@
 ---
 title: "ContextFoundry"
-summary: "RAG platform for microservice codebases bridging code repositories, architectural knowledge, and developer onboarding with AST chunking, hybrid vector retrieval, and multi-provider LLM fallback."
-period: "Personal Project • Python, FastAPI"
-role: "Personal Project"
-metrics: "Dense + BM25 RRF Hybrid Search • AST Chunking • Multi-Provider Fallback"
+summary: "RAG platform for querying microservice codebases, with AST-aware chunking, hybrid vector retrieval (dense + BM25 with RRF), and multi-provider LLM fallback."
+period: "Personal Project • RAG Platform"
+metrics: "Dense + BM25 RRF Hybrid Search • Multi-Provider Fallback"
 stack:
   - "FastAPI"
   - "Python"
@@ -15,7 +14,7 @@ stack:
   - "Tailwind CSS"
   - "SSE Streaming"
   - "Mermaid.js"
-github: "https://github.com/siddhantBhanot/context-foundry/tree/development"
+github: "https://github.com/siddhantBhanot/context-foundry"
 live: "https://contextfoundry-frontend.onrender.com/"
 featured: true
 order: 1
@@ -24,7 +23,7 @@ image: "/images/projects/context-foundry.png"
 
 ### Problem Statement
 
-In distributed microservice organizations, technical knowledge is fragmented across multiple git repositories, outdated architecture wikis, and undocumented institutional memory. Tracing multi-service transaction flows across Kotlin, Java, and Python codebases is manual and error-prone, while generic consumer LLMs hallucinate endpoints and lack codebase-level citations. ContextFoundry was built to provide a codebase-aware RAG platform with grounded Q&A, dynamic architecture visualization, and structured onboarding.
+In distributed microservice organizations, technical knowledge is fragmented across multiple git repositories, outdated architecture wikis, and undocumented institutional memory. Tracing multi-service transaction flows across Kotlin, Java, and Python codebases is manual and error-prone, while generic consumer LLMs hallucinate endpoints and lack codebase-level citations. ContextFoundry was built to provide a RAG platform with grounded codebase Q&A, dynamic architecture visualization, and structured onboarding.
 
 ### Why It Was Interesting
 

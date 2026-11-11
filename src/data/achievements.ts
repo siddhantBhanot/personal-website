@@ -22,7 +22,7 @@ export const achievementsData: Achievement[] = [
     organization: "Comviva",
     description: [
       "Developed ComHub, an AI-powered knowledge-sharing platform for technical and non-technical Q&A.",
-      "Leveraged Azure AI Search to create and train vector indexes across Comviva's enterprise codebase and historical Q&A data, enabling semantic search and highly accurate answer retrieval.",
+      "Leveraged Azure AI Search to build vector indexes across Comviva's enterprise codebase and historical Q&A data, enabling semantic search and highly accurate answer retrieval.",
       "Incorporated an engagement and gamification mechanism offering points, badges, and monetary incentives to drive developer contributions and knowledge retention.",
     ],
     metrics: "Top 5 Company-Wide",

@@ -8,15 +8,21 @@ import { GithubIcon, ExternalLinkIcon } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Projects & Technical Architecture",
   description:
-    "Engineering breakdowns and architectural deep dives by Siddhant Bhanot: ContextFoundry (RAG platform for microservice codebases), Hinglish Sentiment Classifier, Geospatial Clustering, and Covid Q&A Chatbot.",
+    "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at Freecharge (Axis Bank). Features ContextFoundry (RAG platform), Hinglish Sentiment Classifier, Geospatial Clustering, and Covid Q&A Chatbot.",
   alternates: {
     canonical: "/projects",
   },
   openGraph: {
     title: "Projects & Technical Architecture | Siddhant Bhanot",
     description:
-      "Architectural case studies, distributed systems design, and engineering deep dives by Siddhant Bhanot.",
+      "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at Freecharge (Axis Bank).",
     url: "/projects",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects & Technical Architecture | Siddhant Bhanot",
+    description:
+      "Portfolio of Siddhant Bhanot, a backend-heavy software engineer building reactive microservices (Spring, Kotlin) and RAG/MCP-based AI tooling. Works on an Income Assessment service handling 96M+ requests/month at Freecharge (Axis Bank).",
   },
 };
 
@@ -54,7 +60,7 @@ export default function ProjectsPage() {
                   {proj.data.title}
                 </h2>
                 <span className="font-mono text-xs text-[var(--accent)] mt-0.5 block">
-                  {proj.data.role} • {proj.data.period}
+                  {proj.data.role ? `${proj.data.role} • ` : ""}{proj.data.period}
                 </span>
               </div>
 

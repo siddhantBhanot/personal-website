@@ -9,14 +9,15 @@ export interface WorkExperience {
 export const experiences: WorkExperience[] = [
   {
     role: "Backend Software Development Engineer",
-    company: "FreechargeBiz",
+    company: "Freecharge",
     location: "Gurugram, India",
     period: "Sep 2025 – Present",
     bullets: [
-      "Engineer reactive **Spring WebFlux** services (**Kotlin**, **MongoDB**, **Redis**, **Kafka**) for the **Maximus** platform powering **Axis Bank’s** digital customer acquisition and pre-approved credit offerings. The shared **Income Assessment Service** handles **96M+ requests/month** and **137K+ applications** across **8+ lending products**.",
-      "Led the refactoring of the shared Income Assessment Service for **dynamic runtime version resolution** per lending product, so a hotfix ships to one product without regression or sandbox testing for the others.",
+      "Work on the shared **Income Assessment** microservices, which handle **96M+ requests/month** and **137K+ borrower applications** across **8+ credit products** on Axis Bank's **Maximus** platform.",
+      "Led the refactoring of the shared Income Assessment Service to support **dynamic runtime version resolution** per lending product (Home, Business, Auto, Personal Loans, Credit Cards), so a hotfix ships to one product without regression or sandbox testing for the others, shortening release cycles.",
       "Built a reusable **Spring WebFilter** for **AES request/response encryption** of exposed APIs to meet **RBI security guidelines**; adopted across **8+ lending microservices**.",
-      "Authored Markdown context for the **SAGA-based Step Framework** and **Income Assessment Service**, onboarded to the organization’s **GitHub Copilot MCP server** for AI-assisted development; reusing it for internal RAG.",
+      "Resolved production incidents for critical financial integrations (**Perfios Anumati AA**).",
+      "Authored Markdown context for the **SAGA-based Step Framework** and Income Assessment Service and onboarded it to the organization's **GitHub Copilot MCP server** (built by another team) for **AI-assisted development**; reusing it for an internal **RAG** pipeline.",
     ],
   },
   {
@@ -25,9 +26,9 @@ export const experiences: WorkExperience[] = [
     location: "Gurugram, India",
     period: "Jan 2024 – Jul 2025",
     bullets: [
-      "Contributed to decomposing a legacy monolithic billing and subscription platform into **9 domain services** with **TMF-compliant APIs** for **Vodafone India** (**180M+ subscribers** across domains).",
-      "Built Vodafone-specific features and reporting REST APIs (**Spring Boot**, **Docker**); supported Phase 3 sandbox integration.",
-      "Mentored new hires (**ComCubs**) through knowledge transfer, code reviews, and engineering best practices.",
+      "Contributed to the decomposition of a legacy billing and subscription monolith (**mBAS**) into **9 domain services** (catalog, subscription, order, rating/charging, billing, provisioning, network integration, analytics, notification) with **TMF-compliant APIs** for **Vodafone India** (**180M+ subscribers** across domains).",
+      "Built automated subscription reporting microservices and scheduled aggregation pipelines using **Docker** and **Cron**.",
+      "Mentored junior engineers (**ComCubs**) on **clean code architecture**, **SOLID design principles**, and microservices best practices.",
     ],
   },
   {

@@ -34,7 +34,7 @@ export interface ProfileData {
 
 export const profile: ProfileData = {
   name: "Siddhant Bhanot",
-  title: "Backend Software Development Engineer",
+  title: "Backend-Heavy Software Engineer",
   tagline: "4+ years engineering scalable, reactive microservices, distributed transaction pipelines, and enterprise-grade platforms.",
   yearsOfExperience: "4+ Years",
   location: "Gurugram, India",
@@ -48,7 +48,7 @@ export const profile: ProfileData = {
   },
   about: {
     summary: [
-      "Software Engineer with a strong foundation in backend engineering and distributed systems, complemented by experience in frontend development and AI-powered applications.",
+      "Backend-heavy software engineer (4+ years) with a strong foundation in distributed systems and reactive microservices, and hands-on experience in RAG, MCP, and AI-assisted development.",
     ],
   },
   highlights: [],

@@ -23,7 +23,7 @@ export default function HomePage() {
       <section id="about" className="flex flex-col gap-6 relative">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <SectionArchBadge label="Backend Software Engineer" />
+            <SectionArchBadge label="Backend-Heavy Software Engineer" />
             <h1 className="text-2xl sm:text-3xl md:text-[36px] leading-tight font-medium text-[var(--ink)] tracking-tight mt-1 font-mono">
               Siddhant Bhanot
             </h1>
@@ -89,7 +89,7 @@ export default function HomePage() {
           <h2>
             <span className="text-[var(--accent)] font-mono font-normal">॥</span> Experience
           </h2>
-          <span className="nn-section-aside">4+ Years · FreechargeBiz (Axis Bank) & Comviva</span>
+          <span className="nn-section-aside">4+ Years · Freecharge (Axis Bank) & Comviva</span>
         </div>
 
         <ol className="nn-timeline">
